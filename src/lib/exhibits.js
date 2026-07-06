@@ -52,12 +52,16 @@ export const FAI_COLOR = { light: 'oklch(94% 0.03 210)', fg: 'oklch(46% 0.1 210)
 const ULTIMI_GIORNI_SOGLIA = 14;
 
 // Luoghi that are permanent institutions/collections rather than time-boxed
-// shows: their date range (a placeholder like "— 31 dicembre 2099") is not
-// meaningful, so we label them "Permanente" and hide the redundant sede name.
+// shows: their date range is not meaningful, so we label them "Permanente".
 const PERMANENT_LUOGHI = new Set(['museo', 'mostra-permanente', 'monumento']);
 
+// An entry is "permanent" when its luogo is an institution type, or when its
+// dataFine uses the far-future placeholder (e.g. a permanent installation that
+// still carries a real opening date, like Kiefer's Sette Palazzi Celesti).
 export function isPermanent(exhibit) {
-  return PERMANENT_LUOGHI.has(exhibit.luogo);
+  if (PERMANENT_LUOGHI.has(exhibit.luogo)) return true;
+  const end = new Date(exhibit.dataFine);
+  return !Number.isNaN(end.getTime()) && end.getUTCFullYear() >= 2099;
 }
 
 export function getPeriodo(exhibit, today = new Date()) {

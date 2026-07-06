@@ -58,7 +58,7 @@ export default function ExhibitModal() {
           <LuogoIcon luogo={exhibit.luogo} size={34} strokeWidth={1.4} />
           <div>
             <div className={styles.name} style={{ color: `oklch(22% 0.05 ${hue})` }}>{exhibit.name}</div>
-            {!exhibit.isPermanent && exhibit.sede !== exhibit.name && (
+            {exhibit.sede !== exhibit.name && (
               <div className={styles.sede} style={{ color: `oklch(45% 0.1 ${hue})` }}>{exhibit.sede}</div>
             )}
           </div>
