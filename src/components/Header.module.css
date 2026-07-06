@@ -6,7 +6,6 @@
 
 .logo {
   font: 600 21px/1 var(--font-serif);
-  font-style: italic;
   color: var(--color-text);
   text-decoration: none;
 }

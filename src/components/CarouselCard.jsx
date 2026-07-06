@@ -8,7 +8,7 @@ export function CarouselCard({ item }) {
   return (
     <ExhibitLink id={item.id} className={styles.card}>
       <div className={styles.icon}>
-        <LuogoIcon luogo={item.luogo} size={28} />
+        <LuogoIcon luogo={item.luogo} size={23} />
       </div>
       <div className={styles.tags}>
         {item.tags.slice(0, 2).map((t) => (
