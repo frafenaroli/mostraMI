@@ -56,7 +56,10 @@ export default function ExhibitModal() {
 
         <div className={styles.titleRow}>
           <LuogoIcon luogo={exhibit.luogo} size={34} strokeWidth={1.4} />
-          <div className={styles.name} style={{ color: `oklch(22% 0.05 ${hue})` }}>{exhibit.name}</div>
+          <div>
+            <div className={styles.name} style={{ color: `oklch(22% 0.05 ${hue})` }}>{exhibit.name}</div>
+            <div className={styles.sede} style={{ color: `oklch(45% 0.1 ${hue})` }}>{exhibit.sede}</div>
+          </div>
         </div>
 
         <div className={styles.content}>

@@ -53,6 +53,11 @@
   color: var(--color-text);
 }
 
+.sede {
+  font: 500 13px var(--font-sans);
+  margin-top: 2px;
+}
+
 .content {
   position: relative;
   padding: 20px 22px 28px;
