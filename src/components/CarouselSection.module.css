@@ -17,7 +17,6 @@
 
 .title {
   font: 500 17px var(--font-serif);
-  font-style: italic;
   color: var(--color-text);
 }
 

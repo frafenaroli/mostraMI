@@ -5,7 +5,7 @@
   backdrop-filter: blur(14px);
   border: 1px solid var(--color-border-glass);
   border-radius: 18px;
-  padding: 20px;
+  padding: 14px 18px;
   display: flex;
   flex-direction: column;
   box-shadow: var(--shadow-glass);
@@ -13,13 +13,13 @@
 }
 
 .icon {
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .tags {
   display: flex;
   gap: 5px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   flex-wrap: wrap;
 }
 
@@ -38,30 +38,30 @@
 .arrowRow {
   display: flex;
   justify-content: flex-end;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 @media (min-width: 900px) {
   .card {
     width: 272px;
-    padding: 26px;
+    padding: 18px 24px;
     border-radius: 22px;
   }
   .icon {
-    margin-bottom: 20px;
+    margin-bottom: 14px;
   }
   .tags {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
   .name {
     font-size: 19px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   .desc {
     font-size: 13px;
-    line-height: 1.6;
+    line-height: 1.55;
   }
   .arrowRow {
-    margin-top: 16px;
+    margin-top: 12px;
   }
 }
