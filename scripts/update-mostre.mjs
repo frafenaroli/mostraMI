@@ -76,14 +76,14 @@ const USER_PROMPT = `Ecco l'elenco delle fonti ufficiali da consultare (usa web_
 
 ${TRUSTED_SOURCES}
 
-Apri le pagine principali (o la sezione "mostre"/"esposizioni" se la trovi linkata) di ciascun sito rilevante e produci un catalogo di 15-20 mostre, musei, gallerie, installazioni e monumenti, includendo:
+Non serve controllare tutte le fonti elencate: scegline circa 10-12, dando priorità a un mix di mostre temporanee in corso e ai musei principali, e produci un catalogo di 10-14 voci totali, includendo:
 - Alcune mostre temporanee attualmente in corso
-- Alcune mostre in arrivo nei prossimi mesi (data di inizio futura)
-- Le principali collezioni permanenti dei musei elencati sopra
-- Qualche monumento o bene FAI, se pertinente
+- Una o due mostre in arrivo nei prossimi mesi (data di inizio futura), se le trovi facilmente
+- Alcune delle principali collezioni permanenti dei musei elencati sopra
+- Al massimo un monumento o bene FAI, se pertinente
 - Indica abbonamentoLombardia:true solo per i luoghi che risultano nell'elenco su abbonamentomusei.it
 
-Usa web_search (limitata ai domini elencati) solo per trovare la pagina specifica delle mostre in corso quando la home page non basta — con parsimonia, non più di una ricerca per sito.
+Hai un budget totale limitato di chiamate a web_fetch/web_search: usale con parsimonia (una per sito, al massimo due se la prima non basta) e fermati appena hai abbastanza materiale per compilare il catalogo richiesto — non serve essere esaustivi.
 
 Rispondi SOLO con un blocco di codice \`\`\`json contenente un oggetto con questa struttura esatta (nessun testo prima o dopo il blocco):
 
@@ -110,14 +110,17 @@ Rispondi SOLO con un blocco di codice \`\`\`json contenente un oggetto con quest
 
 Ogni "id" deve essere univoco. Le date devono essere realistiche rispetto a oggi. Verifica ogni fatto con la ricerca web prima di includerlo.`;
 
-// Cost guardrails: Sonnet 5 is ~half Opus's per-token price; capping web
-// tool uses and retries bounds the worst case, since each retry resends the
-// full growing history (tokens compound) and each search/fetch has its own fee.
-// Fetching known URLs directly is cheaper and more targeted than searching
-// the open web, so this is set higher than the pre-source-list search cap.
-const MAX_CONTINUATIONS = 2;
-const MAX_SEARCHES = 10;
-const MAX_FETCHES = 20;
+// Cost & duration guardrails. Claude's server-side tool loop already caps
+// around ~10 tool calls per turn before it must pause — a previous run with
+// generous per-tool caps (10 searches + 20 fetches) and 2 retries did far
+// more real fetching than that in aggregate and ran long enough (~15 min on
+// one call) to trip the SDK's request timeout, wasting the whole run. Keep
+// combined tool use per turn comfortably under that internal ceiling, and
+// use a single attempt (no retry) so cost/duration can't compound. Streaming
+// (see callClaude) is the safety net if a turn ever runs long anyway.
+const MAX_CONTINUATIONS = 1;
+const MAX_SEARCHES = 4;
+const MAX_FETCHES = 8;
 
 function logUsage(attempt, usage) {
   console.log(
@@ -132,7 +135,9 @@ async function callClaude() {
   let response;
 
   for (let attempt = 0; attempt < MAX_CONTINUATIONS; attempt++) {
-    response = await client.messages.create({
+    // Streaming avoids the client-side request timeout that killed a
+    // previous run outright after ~15 minutes of real (but unfinished) work.
+    const stream = client.messages.stream({
       model: 'claude-sonnet-5',
       max_tokens: 8000,
       thinking: { type: 'adaptive' },
@@ -144,6 +149,7 @@ async function callClaude() {
       ],
       messages,
     });
+    response = await stream.finalMessage();
     logUsage(attempt, response.usage);
 
     if (response.stop_reason !== 'pause_turn') break;
