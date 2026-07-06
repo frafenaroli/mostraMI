@@ -56,12 +56,7 @@ export default function ExhibitModal() {
 
         <div className={styles.titleRow}>
           <LuogoIcon luogo={exhibit.luogo} size={34} strokeWidth={1.4} />
-          <div>
-            <div className={styles.name} style={{ color: `oklch(22% 0.05 ${hue})` }}>{exhibit.name}</div>
-            {exhibit.sede !== exhibit.name && (
-              <div className={styles.sede} style={{ color: `oklch(45% 0.1 ${hue})` }}>{exhibit.sede}</div>
-            )}
-          </div>
+          <div className={styles.name} style={{ color: `oklch(22% 0.05 ${hue})` }}>{exhibit.name}</div>
         </div>
 
         <div className={styles.content}>
@@ -71,7 +66,14 @@ export default function ExhibitModal() {
             ))}
           </div>
 
-          <div className={styles.dateRow} style={{ color: `oklch(45% 0.1 ${hue})` }}>
+          {exhibit.sede !== exhibit.name && (
+            <div className={styles.metaRow} style={{ color: `oklch(45% 0.1 ${hue})` }}>
+              <Icon name="mapPin" size={14} strokeWidth={1.8} />
+              {exhibit.sede}
+            </div>
+          )}
+
+          <div className={styles.metaRow} style={{ color: `oklch(45% 0.1 ${hue})` }}>
             <Icon name={exhibit.isPermanent ? 'mostra-permanente' : 'calendar'} size={14} strokeWidth={1.8} />
             {exhibit.dateRangeLabel}
           </div>
