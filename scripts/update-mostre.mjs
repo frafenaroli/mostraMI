@@ -15,7 +15,9 @@ const REQUIRED_FIELDS = [
 
 const SYSTEM_PROMPT = `Sei un ricercatore incaricato di mantenere aggiornato un catalogo pubblico di mostre, musei, gallerie e monumenti visitabili a Milano e dintorni (Lombardia). Usa lo strumento di ricerca web per trovare informazioni reali e attuali — non inventare mai date, indirizzi o URL. Se non trovi un dato con certezza, ometti quella voce piuttosto che inventarla.`;
 
-const USER_PROMPT = `Cerca sul web e produci un catalogo di 20-30 mostre, musei, gallerie, installazioni e monumenti visitabili a Milano (o in Lombardia se rilevanti per l'Abbonamento Musei Lombardia), includendo:
+const USER_PROMPT = `Hai a disposizione un numero limitato di ricerche web (circa 15): usale con parsimonia, preferendo query ampie che coprano più voci in un colpo solo (es. liste di mostre in corso a Milano) invece di una ricerca per ogni singolo luogo.
+
+Cerca sul web e produci un catalogo di 15-20 mostre, musei, gallerie, installazioni e monumenti visitabili a Milano (o in Lombardia se rilevanti per l'Abbonamento Musei Lombardia), includendo:
 - Alcune mostre temporanee attualmente in corso
 - Alcune mostre in arrivo nei prossimi mesi (data di inizio futura)
 - Le principali collezioni permanenti e musei di Milano (Museo del Novecento, Pinacoteca di Brera, Triennale, Castello Sforzesco, Museo Poldi Pezzoli, Museo Diocesano, Museo Nazionale Scienza e Tecnologia, GAM, Palazzo Reale, Fondazione Prada, ecc.)
@@ -46,19 +48,25 @@ Rispondi SOLO con un blocco di codice \`\`\`json contenente un oggetto con quest
 
 Ogni "id" deve essere univoco. Le date devono essere realistiche rispetto a oggi. Verifica ogni fatto con la ricerca web prima di includerlo.`;
 
+// Cost guardrails: Sonnet 5 is ~half Opus's per-token price; capping web
+// searches and retries bounds the worst case, since each retry resends the
+// full growing history (tokens compound) and each search has its own fee.
+const MAX_CONTINUATIONS = 3;
+const MAX_SEARCHES = 15;
+
 async function callClaude() {
   const client = new Anthropic();
   let messages = [{ role: 'user', content: USER_PROMPT }];
   let response;
 
-  for (let attempt = 0; attempt < 6; attempt++) {
+  for (let attempt = 0; attempt < MAX_CONTINUATIONS; attempt++) {
     response = await client.messages.create({
-      model: 'claude-opus-4-8',
+      model: 'claude-sonnet-5',
       max_tokens: 8000,
       thinking: { type: 'adaptive' },
-      output_config: { effort: 'high' },
+      output_config: { effort: 'medium' },
       system: SYSTEM_PROMPT,
-      tools: [{ type: 'web_search_20260209', name: 'web_search' }],
+      tools: [{ type: 'web_search_20260209', name: 'web_search', max_uses: MAX_SEARCHES }],
       messages,
     });
 
