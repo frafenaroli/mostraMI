@@ -1,8 +1,11 @@
 name: Update mostre.json
 
 on:
-  schedule:
-    - cron: '0 6 * * 5' # Every Friday at 06:00 UTC
+  # Scheduled trigger disabled after repeated cost issues while debugging —
+  # re-enable the `schedule:` block once the script is confirmed reliable
+  # and you've decided you want it running unattended.
+  # schedule:
+  #   - cron: '0 6 * * 5' # Every Friday at 06:00 UTC
   workflow_dispatch:
 
 permissions:
