@@ -1,0 +1,70 @@
+.wrap {
+  position: relative;
+  padding: 34px 22px 0;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-surface-glass);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border-glass);
+  border-radius: var(--radius-pill);
+  padding: 14px 18px;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 12px;
+}
+
+.input {
+  border: none;
+  outline: none;
+  background: none;
+  flex: 1;
+  min-width: 0;
+  font: 400 13.5px var(--font-sans);
+  color: var(--color-text);
+}
+.input::placeholder {
+  color: var(--color-text-quiet);
+}
+
+.buttonRow {
+  display: flex;
+  gap: 10px;
+}
+
+.buttonRow > * {
+  flex: 1;
+}
+
+@media (min-width: 900px) {
+  .wrap {
+    padding: 0 52px 20px;
+  }
+  .inputRow {
+    flex: 1;
+    min-width: 260px;
+    max-width: 480px;
+    padding: 15px 22px;
+    margin-bottom: 0;
+  }
+  .input {
+    font-size: 14.5px;
+  }
+  .buttonRow {
+    display: contents;
+  }
+  .buttonRow > * {
+    flex: none;
+  }
+  .desktopRow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .cercaButton {
+    display: none;
+  }
+}

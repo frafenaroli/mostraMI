@@ -1,0 +1,50 @@
+.topRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 22px 0;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border-soft);
+  border-radius: var(--radius-pill);
+  padding: 11px 16px;
+  flex: 1;
+}
+
+.input {
+  border: none;
+  outline: none;
+  background: none;
+  flex: 1;
+  min-width: 0;
+  font: 400 13.5px var(--font-sans);
+  color: var(--color-text);
+}
+
+.clearBtn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+}
+
+.loadMoreRow {
+  display: flex;
+  justify-content: center;
+  padding: 2px 0 22px;
+}
+
+@media (min-width: 900px) {
+  .topRow {
+    padding: 28px 52px 0;
+  }
+  .inputRow {
+    max-width: 480px;
+  }
+}

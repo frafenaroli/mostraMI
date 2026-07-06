@@ -1,0 +1,25 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  padding: 50px 30px 60px;
+}
+
+.title {
+  font: 600 17px var(--font-serif);
+  color: var(--color-text);
+}
+
+.desc {
+  font: 400 12.5px/1.5 var(--font-sans);
+  color: var(--color-text-soft);
+  max-width: 260px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}

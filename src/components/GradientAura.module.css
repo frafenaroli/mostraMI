@@ -1,0 +1,52 @@
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+.blob1 {
+  top: -90px;
+  left: -120px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, var(--aura-rosa), transparent 70%);
+}
+
+.blob2 {
+  top: 260px;
+  right: -140px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--aura-lilla), transparent 70%);
+}
+
+.blob3 {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .blob {
+    filter: blur(50px);
+  }
+  .blob1 {
+    top: -160px;
+    left: -180px;
+    width: 520px;
+    height: 520px;
+  }
+  .blob2 {
+    top: -120px;
+    right: -160px;
+    width: 480px;
+    height: 480px;
+  }
+  .blob3 {
+    display: block;
+    top: 560px;
+    right: -140px;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, var(--aura-pesca), transparent 70%);
+  }
+}

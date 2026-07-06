@@ -1,0 +1,36 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 20px;
+  border-radius: var(--radius-pill);
+  font: 600 13.5px var(--font-sans);
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  border: none;
+}
+
+.primary {
+  background: var(--gradient-accent);
+  color: white;
+}
+
+.secondary {
+  background: var(--color-surface-glass);
+  backdrop-filter: blur(14px);
+  border: 1.5px solid oklch(88% 0.05 20);
+  color: oklch(50% 0.14 20);
+}
+
+.outline {
+  background: none;
+  border: 1.5px solid oklch(85% 0.01 40);
+  color: oklch(35% 0.02 40);
+}
+
+.small {
+  padding: 8px 16px;
+  font-size: 12px;
+}

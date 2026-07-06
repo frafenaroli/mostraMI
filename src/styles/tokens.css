@@ -1,0 +1,44 @@
+:root {
+  /* Surfaces */
+  --color-bg: oklch(96% 0.012 70);
+  --color-surface: oklch(99% 0 0);
+  --color-surface-glass: oklch(99% 0 0 / 0.78);
+  --color-surface-glass-card: oklch(99% 0 0 / 0.72);
+  --color-surface-glass-strong: oklch(99% 0 0 / 0.85);
+  --color-border: oklch(90% 0.008 60);
+  --color-border-soft: oklch(89% 0.008 60);
+  --color-border-glass: oklch(100% 0 0 / 0.6);
+  --color-scrim: oklch(18% 0.01 40 / 0.5);
+
+  /* Text */
+  --color-text-strong: oklch(20% 0.02 40);
+  --color-text: oklch(22% 0.02 40);
+  --color-text-muted: oklch(45% 0.015 40);
+  --color-text-soft: oklch(48% 0.015 40);
+  --color-text-quiet: oklch(50% 0.015 40);
+  --color-text-faint: oklch(46% 0.015 40);
+  --color-icon-quiet: oklch(60% 0.01 60);
+
+  /* Accent gradient (mood: sobrio) */
+  --gradient-accent: linear-gradient(135deg, oklch(65% 0.14 20), oklch(65% 0.12 300));
+  --aura-rosa: oklch(88% 0.07 20 / 0.55);
+  --aura-lilla: oklch(87% 0.06 300 / 0.5);
+  --aura-pesca: oklch(90% 0.07 55 / 0.5);
+
+  /* Type-specific (luogo) accent, used for the popup aura */
+  --accent-mostra: oklch(82% 0.11 20 / 0.9);
+
+  /* Shadows */
+  --shadow-glass: 0 6px 20px oklch(0% 0 0 / 0.04);
+  --shadow-soft: 0 4px 20px oklch(0% 0 0 / 0.05);
+  --shadow-modal: 0 24px 60px oklch(0% 0 0 / 0.35);
+  --shadow-sheet: 0 -10px 40px oklch(0% 0 0 / 0.3);
+
+  /* Type */
+  --font-serif: 'Fraunces', serif;
+  --font-sans: 'Public Sans', sans-serif;
+
+  /* Layout */
+  --page-max-width: 1280px;
+  --radius-pill: 100px;
+}

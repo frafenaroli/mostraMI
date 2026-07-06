@@ -1,0 +1,12 @@
+.shell {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--color-bg);
+}
+
+.inner {
+  position: relative;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+}

@@ -1,0 +1,53 @@
+.section {
+  position: relative;
+  padding: 24px 0 0 22px;
+}
+
+.section:first-of-type {
+  padding-top: 28px;
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding-right: 22px;
+}
+
+.title {
+  font: 500 17px var(--font-serif);
+  font-style: italic;
+  color: var(--color-text);
+}
+
+.link {
+  font: 500 12px var(--font-sans);
+  color: var(--color-text-faint);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.track {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  padding-right: 22px;
+}
+
+@media (min-width: 900px) {
+  .section {
+    padding: 28px 52px 0;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .link {
+    font-size: 13px;
+  }
+  .track {
+    gap: 20px;
+    padding-right: 0;
+  }
+}

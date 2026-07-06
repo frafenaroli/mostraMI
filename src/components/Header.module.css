@@ -1,0 +1,35 @@
+.header {
+  position: relative;
+  padding: 36px 22px 0;
+  text-align: center;
+}
+
+.logo {
+  font: 600 21px/1 var(--font-serif);
+  font-style: italic;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.link {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 52px 0;
+    text-align: left;
+  }
+  .logo {
+    font-size: 26px;
+  }
+  .link {
+    display: block;
+    font: 500 14px var(--font-sans);
+    color: var(--color-text-faint);
+    text-decoration: none;
+  }
+}

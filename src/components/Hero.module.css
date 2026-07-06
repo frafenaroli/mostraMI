@@ -1,0 +1,35 @@
+.hero {
+  position: relative;
+  padding: 34px 22px 0;
+}
+
+.headline {
+  font: 500 28px/1.18 var(--font-serif);
+  color: var(--color-text-strong);
+}
+
+.mobileOnly {
+  display: block;
+}
+
+.desktopOnly {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    padding: 36px 52px 20px;
+  }
+  .headline {
+    font-size: 44px;
+    line-height: 1.12;
+    max-width: 680px;
+    margin: 0 0 22px;
+  }
+  .mobileOnly {
+    display: none;
+  }
+  .desktopOnly {
+    display: block;
+  }
+}

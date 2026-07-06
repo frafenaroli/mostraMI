@@ -1,0 +1,27 @@
+.topRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 22px 0;
+}
+
+.title {
+  font: 500 22px var(--font-serif);
+  font-style: italic;
+  color: var(--color-text-strong);
+}
+
+.loadMoreRow {
+  display: flex;
+  justify-content: center;
+  padding: 2px 0 22px;
+}
+
+@media (min-width: 900px) {
+  .topRow {
+    padding: 28px 52px 0;
+  }
+  .title {
+    font-size: 28px;
+  }
+}
