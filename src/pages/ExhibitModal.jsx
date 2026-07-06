@@ -3,7 +3,6 @@ import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { useExhibitsData } from '../lib/ExhibitsContext';
 import { LUOGO_HUES } from '../lib/exhibits';
 import { IconButton } from '../components/IconButton';
-import { LuogoIcon } from '../components/LuogoIcon';
 import { TagBadge } from '../components/TagBadge';
 import { Pill } from '../components/Pill';
 import { Icon } from '../icons/Icon';
@@ -48,14 +47,17 @@ export default function ExhibitModal() {
   return (
     <div className={styles.scrim} onClick={close}>
       <div className={styles.popup} onClick={(e) => e.stopPropagation()}>
-        <div className={styles.aura} style={{ background: `radial-gradient(circle, oklch(82% 0.11 ${hue} / .9), transparent 72%)` }} />
+        <div className={styles.auras} aria-hidden="true">
+          {exhibit.tags.map((t) => (
+            <div key={t.id} className={styles.aura} style={{ background: `radial-gradient(circle at center, ${t.fg}, transparent 70%)` }} />
+          ))}
+        </div>
 
         <div className={styles.closeRow}>
           <IconButton icon="close" size={36} iconSize={16} label="Chiudi" onClick={close} />
         </div>
 
         <div className={styles.titleRow}>
-          <LuogoIcon luogo={exhibit.luogo} size={34} strokeWidth={1.4} />
           <div className={styles.name} style={{ color: `oklch(22% 0.05 ${hue})` }}>{exhibit.name}</div>
         </div>
 

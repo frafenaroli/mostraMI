@@ -7,15 +7,6 @@
   color: inherit;
 }
 
-.icon {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
 .body {
   flex: 1;
   min-width: 0;
@@ -69,14 +60,8 @@
     backdrop-filter: blur(14px);
     box-shadow: var(--shadow-glass);
   }
-  .icon {
-    width: auto;
-    height: auto;
-    justify-content: flex-start;
-    margin-bottom: 4px;
-  }
   .body {
-    margin-top: 12px;
+    margin-top: 0;
   }
   .chevron {
     display: none;

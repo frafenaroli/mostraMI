@@ -1,15 +1,11 @@
 import styles from './ListRow.module.css';
 import { TagBadge } from './TagBadge';
-import { LuogoIcon } from './LuogoIcon';
 import { Icon } from '../icons/Icon';
 import { ExhibitLink } from './ExhibitLink';
 
 export function ListRow({ item }) {
   return (
     <ExhibitLink id={item.id} className={styles.row}>
-      <div className={styles.icon}>
-        <LuogoIcon luogo={item.luogo} size={26} strokeWidth={1.6} />
-      </div>
       <div className={styles.body}>
         <div className={styles.tags}>
           {item.tags.map((t) => (

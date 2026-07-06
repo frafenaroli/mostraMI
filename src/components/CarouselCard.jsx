@@ -1,15 +1,11 @@
 import styles from './CarouselCard.module.css';
 import { TagBadge } from './TagBadge';
-import { LuogoIcon } from './LuogoIcon';
 import { Icon } from '../icons/Icon';
 import { ExhibitLink } from './ExhibitLink';
 
 export function CarouselCard({ item }) {
   return (
     <ExhibitLink id={item.id} className={styles.card}>
-      <div className={styles.icon}>
-        <LuogoIcon luogo={item.luogo} size={23} />
-      </div>
       <div className={styles.tags}>
         {item.tags.slice(0, 2).map((t) => (
           <TagBadge key={t.id} {...t} />
