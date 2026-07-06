@@ -88,15 +88,18 @@ export function decorateExhibit(exhibit, today = new Date()) {
   const periodo = getPeriodo(exhibit, today);
   const permanent = isPermanent(exhibit);
   const luogoColor = LUOGO_COLORS[exhibit.luogo] || LUOGO_COLORS.altro;
+  const luogoHue = LUOGO_HUES[exhibit.luogo] ?? 60;
+  // `aura` is a light, airy pastel per tag used for the popup's blobs: light
+  // colours stay light where they overlap, so several never mix into grey mud.
   const tags = [
-    { id: 'luogo', label: LUOGO_LABELS[exhibit.luogo] || exhibit.luogo, light: luogoColor.light, fg: luogoColor.fg, border: luogoColor.border },
-    { id: 'tema', label: TEMA_LABELS[exhibit.tema] || exhibit.tema, light: TEMA_COLOR.light, fg: TEMA_COLOR.fg, border: TEMA_COLOR.border },
+    { id: 'luogo', label: LUOGO_LABELS[exhibit.luogo] || exhibit.luogo, light: luogoColor.light, fg: luogoColor.fg, border: luogoColor.border, aura: `oklch(87% 0.06 ${luogoHue})` },
+    { id: 'tema', label: TEMA_LABELS[exhibit.tema] || exhibit.tema, light: TEMA_COLOR.light, fg: TEMA_COLOR.fg, border: TEMA_COLOR.border, aura: 'oklch(87% 0.06 300)' },
   ];
   if (exhibit.abbonamentoLombardia) {
-    tags.push({ id: 'abbonamento', label: 'Abb. Lombardia', light: ABBONAMENTO_COLOR.light, fg: ABBONAMENTO_COLOR.fg, border: ABBONAMENTO_COLOR.border });
+    tags.push({ id: 'abbonamento', label: 'Abb. Lombardia', light: ABBONAMENTO_COLOR.light, fg: ABBONAMENTO_COLOR.fg, border: ABBONAMENTO_COLOR.border, aura: 'oklch(87% 0.07 150)' });
   }
   if (exhibit.beneFai) {
-    tags.push({ id: 'fai', label: 'Bene FAI', light: FAI_COLOR.light, fg: FAI_COLOR.fg, border: FAI_COLOR.border });
+    tags.push({ id: 'fai', label: 'Bene FAI', light: FAI_COLOR.light, fg: FAI_COLOR.fg, border: FAI_COLOR.border, aura: 'oklch(87% 0.07 210)' });
   }
   return {
     ...exhibit,

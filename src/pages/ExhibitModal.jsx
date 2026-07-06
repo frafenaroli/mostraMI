@@ -49,7 +49,7 @@ export default function ExhibitModal() {
       <div className={styles.popup} onClick={(e) => e.stopPropagation()}>
         <div className={styles.auras} aria-hidden="true">
           {exhibit.tags.map((t) => (
-            <div key={t.id} className={styles.aura} style={{ background: `radial-gradient(circle at center, ${t.fg}, transparent 70%)` }} />
+            <div key={t.id} className={styles.aura} style={{ background: `radial-gradient(circle at center, ${t.aura}, transparent 70%)` }} />
           ))}
         </div>
 
