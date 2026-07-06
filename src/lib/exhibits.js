@@ -51,6 +51,15 @@ export const FAI_COLOR = { light: 'oklch(94% 0.03 210)', fg: 'oklch(46% 0.1 210)
 // Threshold for the "ultimi giorni" badge, in days-until-dataFine.
 const ULTIMI_GIORNI_SOGLIA = 14;
 
+// Luoghi that are permanent institutions/collections rather than time-boxed
+// shows: their date range (a placeholder like "— 31 dicembre 2099") is not
+// meaningful, so we label them "Permanente" and hide the redundant sede name.
+const PERMANENT_LUOGHI = new Set(['museo', 'mostra-permanente', 'monumento']);
+
+export function isPermanent(exhibit) {
+  return PERMANENT_LUOGHI.has(exhibit.luogo);
+}
+
 export function getPeriodo(exhibit, today = new Date()) {
   const start = new Date(exhibit.dataInizio);
   const end = new Date(exhibit.dataFine);
@@ -73,6 +82,7 @@ export function formatDateRange(dataInizio, dataFine) {
 // Decorates a raw exhibit with derived display data: periodo, tag list, colors.
 export function decorateExhibit(exhibit, today = new Date()) {
   const periodo = getPeriodo(exhibit, today);
+  const permanent = isPermanent(exhibit);
   const luogoColor = LUOGO_COLORS[exhibit.luogo] || LUOGO_COLORS.altro;
   const tags = [
     { id: 'luogo', label: LUOGO_LABELS[exhibit.luogo] || exhibit.luogo, light: luogoColor.light, fg: luogoColor.fg, border: luogoColor.border },
@@ -87,12 +97,13 @@ export function decorateExhibit(exhibit, today = new Date()) {
   return {
     ...exhibit,
     periodo,
-    isUltimiGiorni: periodo === 'ultimi-giorni',
-    isInArrivo: periodo === 'in-arrivo',
+    isPermanent: permanent,
+    isUltimiGiorni: !permanent && periodo === 'ultimi-giorni',
+    isInArrivo: !permanent && periodo === 'in-arrivo',
     tags,
     luogoColor,
     mapsUrl: buildMapsUrl(exhibit.indirizzo),
-    dateRangeLabel: formatDateRange(exhibit.dataInizio, exhibit.dataFine),
+    dateRangeLabel: permanent ? 'Permanente' : formatDateRange(exhibit.dataInizio, exhibit.dataFine),
   };
 }
 
