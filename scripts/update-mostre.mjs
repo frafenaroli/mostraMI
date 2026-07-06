@@ -15,9 +15,9 @@ const REQUIRED_FIELDS = [
 
 const SYSTEM_PROMPT = `Sei un ricercatore incaricato di mantenere aggiornato un catalogo pubblico di mostre, musei, gallerie e monumenti visitabili a Milano e dintorni (Lombardia). Usa lo strumento di ricerca web per trovare informazioni reali e attuali — non inventare mai date, indirizzi o URL. Se non trovi un dato con certezza, ometti quella voce piuttosto che inventarla.`;
 
-const USER_PROMPT = `Hai a disposizione un numero limitato di ricerche web (circa 15): usale con parsimonia, preferendo query ampie che coprano più voci in un colpo solo (es. liste di mostre in corso a Milano) invece di una ricerca per ogni singolo luogo.
+const USER_PROMPT = `Hai a disposizione un numero limitato di ricerche web (circa 6): usale con parsimonia, preferendo query ampie che coprano più voci in un colpo solo (es. liste di mostre in corso a Milano) invece di una ricerca per ogni singolo luogo.
 
-Cerca sul web e produci un catalogo di 15-20 mostre, musei, gallerie, installazioni e monumenti visitabili a Milano (o in Lombardia se rilevanti per l'Abbonamento Musei Lombardia), includendo:
+Cerca sul web e produci un catalogo di 10-14 mostre, musei, gallerie, installazioni e monumenti visitabili a Milano (o in Lombardia se rilevanti per l'Abbonamento Musei Lombardia), includendo:
 - Alcune mostre temporanee attualmente in corso
 - Alcune mostre in arrivo nei prossimi mesi (data di inizio futura)
 - Le principali collezioni permanenti e musei di Milano (Museo del Novecento, Pinacoteca di Brera, Triennale, Castello Sforzesco, Museo Poldi Pezzoli, Museo Diocesano, Museo Nazionale Scienza e Tecnologia, GAM, Palazzo Reale, Fondazione Prada, ecc.)
@@ -51,8 +51,15 @@ Ogni "id" deve essere univoco. Le date devono essere realistiche rispetto a oggi
 // Cost guardrails: Sonnet 5 is ~half Opus's per-token price; capping web
 // searches and retries bounds the worst case, since each retry resends the
 // full growing history (tokens compound) and each search has its own fee.
-const MAX_CONTINUATIONS = 3;
-const MAX_SEARCHES = 15;
+const MAX_CONTINUATIONS = 1;
+const MAX_SEARCHES = 6;
+
+function logUsage(attempt, usage) {
+  console.log(
+    `[usage] tentativo ${attempt + 1}: input=${usage.input_tokens} output=${usage.output_tokens} ` +
+    `cache_write=${usage.cache_creation_input_tokens ?? 0} cache_read=${usage.cache_read_input_tokens ?? 0}`,
+  );
+}
 
 async function callClaude() {
   const client = new Anthropic();
@@ -69,6 +76,7 @@ async function callClaude() {
       tools: [{ type: 'web_search_20260209', name: 'web_search', max_uses: MAX_SEARCHES }],
       messages,
     });
+    logUsage(attempt, response.usage);
 
     if (response.stop_reason !== 'pause_turn') break;
     messages = [...messages, { role: 'assistant', content: response.content }];
