@@ -18,10 +18,10 @@ export default function HomePage() {
   const sections = useMemo(() => {
     if (!exhibits.length) return [];
     return [
-      { title: 'Da visitare ora', link: 'Vedi tutte', linkTo: '/mostre?periodo=in-corso', items: exhibits.filter((e) => e.periodo === 'in-corso').slice(0, 3) },
-      { title: 'Abbonamento Musei Lombardia', link: 'Vedi tutte', linkTo: '/mostre?abbonamento=1', items: exhibits.filter((e) => e.abbonamentoLombardia).slice(0, 3) },
-      { title: 'Musei', link: 'Vedi tutti', linkTo: '/mostre?luogo=museo', items: exhibits.filter((e) => e.luogo === 'museo').slice(0, 3) },
-      { title: 'In arrivo', link: 'Vedi tutte', linkTo: '/mostre?periodo=in-arrivo', items: exhibits.filter((e) => e.periodo === 'in-arrivo').slice(0, 3) },
+      { title: 'Da visitare ora', link: 'Vedi tutte', linkTo: '/mostre?periodo=in-corso', items: exhibits.filter((e) => e.periodo === 'in-corso').slice(0, 6) },
+      { title: 'Abbonamento Musei Lombardia', link: 'Vedi tutte', linkTo: '/mostre?abbonamento=1', items: exhibits.filter((e) => e.abbonamentoLombardia).slice(0, 6) },
+      { title: 'Musei', link: 'Vedi tutti', linkTo: '/mostre?luogo=museo', items: exhibits.filter((e) => e.luogo === 'museo').slice(0, 6) },
+      { title: 'In arrivo', link: 'Vedi tutte', linkTo: '/mostre?periodo=in-arrivo', items: exhibits.filter((e) => e.periodo === 'in-arrivo').slice(0, 6) },
     ].filter((s) => s.items.length > 0);
   }, [exhibits]);
 

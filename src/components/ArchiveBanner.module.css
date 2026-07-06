@@ -28,6 +28,14 @@
 
 @media (min-width: 900px) {
   .banner {
-    display: none;
+    margin: 28px 52px 0;
+    padding: 26px 32px;
+    border-radius: 20px;
+  }
+  .title {
+    font-size: 19px;
+  }
+  .subtitle {
+    font-size: 13px;
   }
 }
