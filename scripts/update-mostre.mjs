@@ -70,12 +70,24 @@ async function callClaude() {
 }
 
 function extractJson(response) {
-  const textBlock = response.content.find((b) => b.type === 'text');
-  if (!textBlock) throw new Error('La risposta di Claude non contiene un blocco di testo.');
+  const textBlocks = response.content.filter((b) => b.type === 'text');
+  if (textBlocks.length === 0) throw new Error('La risposta di Claude non contiene alcun blocco di testo.');
 
-  const match = textBlock.text.match(/```json\s*([\s\S]*?)```/);
-  const jsonStr = match ? match[1] : textBlock.text;
-  return JSON.parse(jsonStr);
+  // Web search responses often include narration text blocks ("Cerco...")
+  // before the final block with the JSON — search across all of them, not
+  // just the first, and prefer a fenced ```json block over raw braces.
+  const combinedText = textBlocks.map((b) => b.text).join('\n');
+
+  const fenced = combinedText.match(/```json\s*([\s\S]*?)```/);
+  if (fenced) return JSON.parse(fenced[1]);
+
+  const firstBrace = combinedText.indexOf('{');
+  const lastBrace = combinedText.lastIndexOf('}');
+  if (firstBrace !== -1 && lastBrace > firstBrace) {
+    return JSON.parse(combinedText.slice(firstBrace, lastBrace + 1));
+  }
+
+  throw new Error(`Nessun JSON trovato nella risposta. Testo ricevuto: ${combinedText.slice(0, 500)}`);
 }
 
 function validate(data) {
