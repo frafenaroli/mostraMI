@@ -13,15 +13,77 @@ const REQUIRED_FIELDS = [
   'descrizioneBreve', 'descrizioneLunga', 'dataInizio', 'dataFine', 'indirizzo', 'sitoWeb', 'fonteUrl',
 ];
 
-const SYSTEM_PROMPT = `Sei un ricercatore incaricato di mantenere aggiornato un catalogo pubblico di mostre, musei, gallerie e monumenti visitabili a Milano e dintorni (Lombardia). Usa lo strumento di ricerca web per trovare informazioni reali e attuali — non inventare mai date, indirizzi o URL. Se non trovi un dato con certezza, ometti quella voce piuttosto che inventarla.`;
+// Curated trusted sources — provided by the site owner. Listing exact URLs
+// lets Claude fetch them directly (web_fetch only fetches URLs already
+// present in the conversation), and restricting web_search to these domains
+// avoids burning searches on the open web.
+const TRUSTED_SOURCES = `Musei civici del Comune di Milano
+- https://www.palazzorealemilano.it
+- https://www.museodelnovecento.org
+- https://www.gam-milano.com
+- https://www.milanocastello.it
+- https://www.pacmilano.it
+- https://www.mudec.it
+- https://www.museoarcheologicomilano.it
+- https://www.museorisorgimentomilano.it
+- https://www.museostorianaturale.mi.it
+- https://www.palazzomorando.it
 
-const USER_PROMPT = `Hai a disposizione un numero limitato di ricerche web (circa 6): usale con parsimonia, preferendo query ampie che coprano più voci in un colpo solo (es. liste di mostre in corso a Milano) invece di una ricerca per ogni singolo luogo.
+Fondazioni e istituzioni private
+- https://www.fondazioneprada.org
+- https://www.hangarbicocca.org
+- https://www.triennale.org
+- https://www.gallerieditalia.com
+- https://www.ambrosiana.it
+- https://www.museopolpezzoli.it
+- https://www.fondazionerovatimilano.org
+- https://www.adidesignmuseum.org
+- https://www.museodiocesanomilano.it
+- https://www.icamilano.it
+- https://www.fondazionestelline.it
+- https://www.fabbricadelvapore.org
+- https://www.museoscienza.org
 
-Cerca sul web e produci un catalogo di 10-14 mostre, musei, gallerie, installazioni e monumenti visitabili a Milano (o in Lombardia se rilevanti per l'Abbonamento Musei Lombardia), includendo:
+Istituzioni statali
+- https://www.pinacotecabrera.org
+
+Case museo e collezioni
+- https://www.museobagattiivalsecchi.org
+- https://fondoambiente.it/luoghi/villa-necchi-campiglio
+- https://www.casaboschidestefano.mi.it
+- https://www.armanihotels.com/armanisilos
+
+Arte contemporanea e digitale
+- https://meet.media
+
+Abbonamenti e portali istituzionali
+- https://www.abbonamentomusei.it
+- https://www.comune.milano.it/cultura`;
+
+const ALLOWED_DOMAINS = [
+  'palazzorealemilano.it', 'museodelnovecento.org', 'gam-milano.com', 'milanocastello.it', 'pacmilano.it',
+  'mudec.it', 'museoarcheologicomilano.it', 'museorisorgimentomilano.it', 'museostorianaturale.mi.it', 'palazzomorando.it',
+  'fondazioneprada.org', 'hangarbicocca.org', 'triennale.org', 'gallerieditalia.com', 'ambrosiana.it',
+  'museopolpezzoli.it', 'fondazionerovatimilano.org', 'adidesignmuseum.org', 'museodiocesanomilano.it', 'icamilano.it',
+  'fondazionestelline.it', 'fabbricadelvapore.org', 'museoscienza.org', 'pinacotecabrera.org',
+  'museobagattiivalsecchi.org', 'fondoambiente.it', 'casaboschidestefano.mi.it', 'armanihotels.com',
+  'meet.media', 'abbonamentomusei.it', 'comune.milano.it',
+];
+
+const SYSTEM_PROMPT = `Sei un ricercatore incaricato di mantenere aggiornato un catalogo pubblico di mostre, musei, gallerie e monumenti visitabili a Milano e dintorni (Lombardia). Usa esclusivamente le fonti elencate nel messaggio dell'utente: apri direttamente le pagine con web_fetch e, solo se necessario per trovare la pagina giusta all'interno di un sito, usa web_search limitata a quei domini. Non inventare mai date, indirizzi o URL. Se non trovi un dato con certezza, ometti quella voce piuttosto che inventarla.`;
+
+const USER_PROMPT = `Ecco l'elenco delle fonti ufficiali da consultare (usa web_fetch per aprirle direttamente — sono già elencate qui, quindi puoi recuperarle subito senza cercarle prima):
+
+${TRUSTED_SOURCES}
+
+Apri le pagine principali (o la sezione "mostre"/"esposizioni" se la trovi linkata) di ciascun sito rilevante e produci un catalogo di 15-20 mostre, musei, gallerie, installazioni e monumenti, includendo:
 - Alcune mostre temporanee attualmente in corso
 - Alcune mostre in arrivo nei prossimi mesi (data di inizio futura)
-- Le principali collezioni permanenti e musei di Milano (Museo del Novecento, Pinacoteca di Brera, Triennale, Castello Sforzesco, Museo Poldi Pezzoli, Museo Diocesano, Museo Nazionale Scienza e Tecnologia, GAM, Palazzo Reale, Fondazione Prada, ecc.)
+- Le principali collezioni permanenti dei musei elencati sopra
 - Qualche monumento o bene FAI, se pertinente
+- Indica abbonamentoLombardia:true solo per i luoghi che risultano nell'elenco su abbonamentomusei.it
+
+Usa web_search (limitata ai domini elencati) solo per trovare la pagina specifica delle mostre in corso quando la home page non basta — con parsimonia, non più di una ricerca per sito.
 
 Rispondi SOLO con un blocco di codice \`\`\`json contenente un oggetto con questa struttura esatta (nessun testo prima o dopo il blocco):
 
@@ -49,10 +111,13 @@ Rispondi SOLO con un blocco di codice \`\`\`json contenente un oggetto con quest
 Ogni "id" deve essere univoco. Le date devono essere realistiche rispetto a oggi. Verifica ogni fatto con la ricerca web prima di includerlo.`;
 
 // Cost guardrails: Sonnet 5 is ~half Opus's per-token price; capping web
-// searches and retries bounds the worst case, since each retry resends the
-// full growing history (tokens compound) and each search has its own fee.
-const MAX_CONTINUATIONS = 1;
-const MAX_SEARCHES = 6;
+// tool uses and retries bounds the worst case, since each retry resends the
+// full growing history (tokens compound) and each search/fetch has its own fee.
+// Fetching known URLs directly is cheaper and more targeted than searching
+// the open web, so this is set higher than the pre-source-list search cap.
+const MAX_CONTINUATIONS = 2;
+const MAX_SEARCHES = 10;
+const MAX_FETCHES = 20;
 
 function logUsage(attempt, usage) {
   console.log(
@@ -73,7 +138,10 @@ async function callClaude() {
       thinking: { type: 'adaptive' },
       output_config: { effort: 'medium' },
       system: SYSTEM_PROMPT,
-      tools: [{ type: 'web_search_20260209', name: 'web_search', max_uses: MAX_SEARCHES }],
+      tools: [
+        { type: 'web_search_20260209', name: 'web_search', max_uses: MAX_SEARCHES, allowed_domains: ALLOWED_DOMAINS },
+        { type: 'web_fetch_20260209', name: 'web_fetch', max_uses: MAX_FETCHES, allowed_domains: ALLOWED_DOMAINS },
+      ],
       messages,
     });
     logUsage(attempt, response.usage);
