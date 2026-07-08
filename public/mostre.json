@@ -225,6 +225,22 @@
       "fonteUrl": "https://gallerieditalia.com/en/milan/exhibitions-and-initiatives/"
     },
     {
+      "id": "bellezza-bruttezza-gallerie-italia",
+      "name": "Bellezza e Bruttezza. Ideale, reale e caricaturale nel Rinascimento",
+      "luogo": "mostra",
+      "sede": "Gallerie d'Italia - Piazza Scala",
+      "tema": "arte",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "La dialettica tra bellezza ideale e deformità nel Rinascimento, da Botticelli e Michelangelo a Dürer e Cranach.",
+      "descrizioneLunga": "Alle Gallerie d'Italia di Piazza Scala, in collaborazione con Bozar di Bruxelles, la mostra indaga la tensione rinascimentale tra bellezza ideale, realismo e caricatura, con opere di Botticelli, Michelangelo, Tiziano, Dürer e Cranach. A cura di Chiara Rabbi Bernard.",
+      "dataInizio": "2026-07-10",
+      "dataFine": "2026-10-18",
+      "indirizzo": "Piazza della Scala 6, 20121 Milano",
+      "sitoWeb": "https://gallerieditalia.com/it/milano/",
+      "fonteUrl": "https://gallerieditalia.com/it/milano/mostre-e-iniziative/mostre/2026/07/10/mostra-bellezza-e-bruttezza-ideale-reale-caricaturale-rinascimento-milano/"
+    },
+    {
       "id": "tiravanija-hangar-bicocca",
       "name": "Rirkrit Tiravanija. The House That Jack Built",
       "luogo": "mostra",
@@ -609,5 +625,5 @@
       "fonteUrl": "https://www.milanocastello.it/it/cosa-vedere/i-musei-del-castello-sforzesco"
     }
   ],
-  "generatedAt": "2026-07-06T14:53:48.000Z"
+  "generatedAt": "2026-07-08T07:42:41.000Z"
 }
