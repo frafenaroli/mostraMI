@@ -14,11 +14,12 @@
   text-align: center;
 }
 
-/* Claude Code icon sized to match the ❤️ emoji next to it. */
+/* Claude Code icon sized to match the ❤️ emoji next to it. The source PNG
+   has transparent padding, so it needs a larger box to look the same height. */
 .ccLogo {
-  height: 1.15em;
+  height: 1.5em;
   width: auto;
-  vertical-align: -0.28em;
+  vertical-align: -0.4em;
   display: inline-block;
 }
 
