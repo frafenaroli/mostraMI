@@ -63,14 +63,14 @@
 
 .closeRow {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 24px;
+  right: 16px;
   z-index: 3;
 }
 
 .titleRow {
   position: relative;
-  padding: 32px 24px 0;
+  padding: 28px 24px 0;
 }
 
 .tags {
@@ -78,6 +78,8 @@
   gap: 6px;
   margin-bottom: 12px;
   flex-wrap: wrap;
+  /* Reserve room for the floating close button so wide tags never run under it. */
+  padding-right: 40px;
 }
 
 .name {
@@ -87,7 +89,7 @@
 
 .content {
   position: relative;
-  padding: 16px 24px 32px;
+  padding: 16px 24px 28px;
 }
 
 .metaRow {
@@ -104,8 +106,7 @@
 }
 
 .descBreve {
-  font: 500 15px/1.5 var(--font-serif);
-  font-style: italic;
+  font: 500 14px/1.55 var(--font-sans);
   color: var(--color-text);
   margin-bottom: 16px;
 }

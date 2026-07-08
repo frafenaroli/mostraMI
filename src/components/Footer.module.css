@@ -14,6 +14,14 @@
   text-align: center;
 }
 
+/* Claude Code icon sized to match the ❤️ emoji next to it. */
+.ccLogo {
+  height: 1.15em;
+  width: auto;
+  vertical-align: -0.28em;
+  display: inline-block;
+}
+
 @media (min-width: 900px) {
   .footer {
     margin-top: 44px;
