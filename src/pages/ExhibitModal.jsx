@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { useExhibitsData } from '../lib/ExhibitsContext';
 import { LUOGO_HUES } from '../lib/exhibits';
-import { IconButton } from '../components/IconButton';
 import { TagBadge } from '../components/TagBadge';
 import { Pill } from '../components/Pill';
 import { Icon } from '../icons/Icon';
@@ -54,7 +53,9 @@ export default function ExhibitModal() {
         </div>
 
         <div className={styles.closeRow}>
-          <IconButton icon="close" size={36} iconSize={16} label="Chiudi" onClick={close} />
+          <button className={styles.closeBtn} onClick={close} aria-label="Chiudi" type="button">
+            <Icon name="close" size={13} strokeWidth={2} color="oklch(42% 0.02 40)" />
+          </button>
         </div>
 
 

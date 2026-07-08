@@ -63,9 +63,24 @@
 
 .closeRow {
   position: absolute;
-  top: 24px;
-  right: 16px;
+  top: 27px;
+  right: 22px;
   z-index: 3;
+}
+
+/* Close button styled to match the tag chips: same height, rounded, light
+   neutral fill with a 1px border. */
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 21px;
+  height: 21px;
+  padding: 0;
+  border-radius: 50%;
+  background: oklch(96% 0.004 60);
+  border: 1px solid oklch(88% 0.006 60);
+  cursor: pointer;
 }
 
 .titleRow {
@@ -78,8 +93,8 @@
   gap: 6px;
   margin-bottom: 12px;
   flex-wrap: wrap;
-  /* Reserve room for the floating close button so wide tags never run under it. */
-  padding-right: 40px;
+  /* Reserve room for the close button so wide tags never run under it. */
+  padding-right: 34px;
 }
 
 .name {
