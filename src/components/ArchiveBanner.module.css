@@ -27,13 +27,9 @@
 
 .iconWrap {
   flex-shrink: 0;
-  width: 42px;
-  height: 42px;
-  border-radius: 13px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: oklch(100% 0 0 / 0.5);
 }
 
 .text {
