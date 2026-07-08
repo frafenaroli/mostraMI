@@ -1119,6 +1119,70 @@
       "indirizzo": "Via Edmondo De Amicis 17, 20123 Milano",
       "sitoWeb": "https://www.comune.milano.it",
       "fonteUrl": "https://www.turismo.milano.it/wps/portal/tur/it/vieniamilano/luoghi-cultura/musei/antiquarium-alda-levi"
+    },
+    {
+      "id": "palazzo-citterio-grande-brera",
+      "name": "Palazzo Citterio - Grande Brera",
+      "luogo": "museo",
+      "sede": "Palazzo Citterio - Grande Brera",
+      "tema": "arte",
+      "abbonamentoLombardia": true,
+      "beneFai": false,
+      "descrizioneBreve": "Il nuovo polo della Grande Brera con le collezioni Jesi e Vitali, capolavori dell'arte italiana del Novecento.",
+      "descrizioneLunga": "Aperto nel dicembre 2024 dopo oltre cinquant'anni di attesa, Palazzo Citterio è il cuore moderno della Grande Brera: nel piano nobile, negli spazi firmati da Mario Cucinella, sono esposte le collezioni Jesi e Vitali con oltre 200 opere di Modigliani, Boccioni, Carrà, Morandi, Sironi, Marino Marini, Picasso e de Pisis.",
+      "dataInizio": "2024-12-08",
+      "dataFine": "2099-12-31",
+      "indirizzo": "Via Brera 12, 20121 Milano",
+      "sitoWeb": "https://palazzocitterio.org",
+      "fonteUrl": "https://palazzocitterio.org/en/"
+    },
+    {
+      "id": "gastel-rewind-citterio",
+      "name": "Giovanni Gastel. Rewind",
+      "luogo": "mostra",
+      "sede": "Palazzo Citterio - Grande Brera",
+      "tema": "fotografia",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Omaggio a Giovanni Gastel, tra i maestri della fotografia contemporanea, negli spazi della Grande Brera.",
+      "descrizioneLunga": "A Palazzo Citterio, la Grande Brera rende omaggio a Giovanni Gastel (Milano, 1955-2021), tra i grandi maestri della fotografia contemporanea. La mostra, a cura di Uberto Frigerio e prodotta con l'Archivio Giovanni Gastel, ripercorre a ritroso la sua ricerca tra ritratto e moda.",
+      "dataInizio": "2026-01-30",
+      "dataFine": "2026-07-26",
+      "indirizzo": "Via Brera 12, 20121 Milano",
+      "sitoWeb": "https://palazzocitterio.org",
+      "fonteUrl": "https://palazzocitterio.org/en/news/mostra/giovanni-gastel-rewind/"
+    },
+    {
+      "id": "orto-botanico-brera",
+      "name": "Orto Botanico di Brera",
+      "luogo": "altro",
+      "sede": "Orto Botanico di Brera",
+      "tema": "scienza",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Storico giardino settecentesco della Grande Brera, un'oasi verde nascosta nel cuore della città.",
+      "descrizioneLunga": "Parte della Grande Brera, l'Orto Botanico fu istituito nel 1774 per volere di Maria Teresa d'Austria a fini didattici e scientifici. Nascosto dietro il Palazzo di Brera, custodisce antichi ginkgo biloba, aiuole di piante officinali, vasche settecentesche e un arboreto storico. Ingresso gratuito.",
+      "dataInizio": "1774-01-01",
+      "dataFine": "2099-12-31",
+      "indirizzo": "Via Brera 28, 20121 Milano",
+      "sitoWeb": "https://www.ortobotanico.unimi.it",
+      "fonteUrl": "https://palazzocitterio.org/en/"
+    },
+    {
+      "id": "biblioteca-braidense",
+      "name": "Biblioteca Nazionale Braidense",
+      "luogo": "museo",
+      "sede": "Biblioteca Nazionale Braidense",
+      "tema": "storia",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Storica biblioteca della Grande Brera con la scenografica Sala Maria Teresa a lume di candela.",
+      "descrizioneLunga": "Fondata nel 1770 e parte della Grande Brera, la Biblioteca Nazionale Braidense conserva oltre un milione di volumi, manoscritti e cinquecentine. Il suo cuore è la spettacolare Sala Maria Teresa, con gli scaffali lignei originali, un tempo illuminata a candele.",
+      "dataInizio": "1786-01-01",
+      "dataFine": "2099-12-31",
+      "indirizzo": "Via Brera 28, 20121 Milano",
+      "sitoWeb": "https://www.braidense.it",
+      "fonteUrl": "https://www.braidense.it/"
     }
   ],
   "refreshGuidance": {
@@ -1135,5 +1199,5 @@
     ],
     "note": "Extra top-level key ignored by the app; kept here to guide future manual refreshes."
   },
-  "generatedAt": "2026-07-08T09:12:31.000Z"
+  "generatedAt": "2026-07-08T14:35:51.000Z"
 }
