@@ -35,8 +35,8 @@
   --shadow-sheet: 0 -10px 40px oklch(0% 0 0 / 0.3);
 
   /* Type */
-  --font-serif: 'Fraunces', serif;
-  --font-sans: 'Public Sans', sans-serif;
+  --font-serif: 'Poppins', sans-serif;
+  --font-sans: 'Poppins', sans-serif;
 
   /* Layout */
   --page-max-width: 1280px;
