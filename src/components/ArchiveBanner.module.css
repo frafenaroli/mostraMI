@@ -1,16 +1,44 @@
+.row {
+  /* Bottom margin matches the inter-carousel gap so the first section
+     ("Da visitare ora") sits the same distance below as the banners. */
+  margin: 34px 22px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .banner {
   position: relative;
-  /* Bottom margin matches the inter-carousel gap so the first section
-     ("Da visitare ora") sits the same distance below as the others. */
-  margin: 34px 22px 26px;
-  padding: 20px;
+  padding: 18px 20px;
   border-radius: 18px;
-  background: linear-gradient(135deg, oklch(93% 0.05 20), oklch(92% 0.045 300));
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  gap: 14px;
   text-decoration: none;
+}
+
+.all {
+  background: linear-gradient(135deg, oklch(93% 0.05 20), oklch(92% 0.045 300));
+}
+
+.abbonamento {
+  background: linear-gradient(135deg, oklch(93% 0.06 150), oklch(94% 0.045 165));
+}
+
+.iconWrap {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: oklch(100% 0 0 / 0.5);
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
 }
 
 .title {
@@ -29,9 +57,15 @@
 }
 
 @media (min-width: 900px) {
-  .banner {
+  .row {
     margin: 28px 52px 26px;
-    padding: 26px 32px;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .banner {
+    flex: 1;
+    min-width: 0;
+    padding: 24px 28px;
     border-radius: 20px;
   }
   .title {
