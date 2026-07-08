@@ -74,8 +74,11 @@ export function getPeriodo(exhibit, today = new Date()) {
   return 'in-corso';
 }
 
-export function buildMapsUrl(indirizzo) {
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(indirizzo)}`;
+// Search Google Maps by venue name + address (not the bare street address),
+// so it resolves to the actual place/POI instead of a point on the street.
+export function buildMapsUrl(sede, indirizzo) {
+  const query = [sede, indirizzo].filter(Boolean).join(', ');
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }
 
 export function formatDateRange(dataInizio, dataFine) {
@@ -109,7 +112,7 @@ export function decorateExhibit(exhibit, today = new Date()) {
     isInArrivo: !permanent && periodo === 'in-arrivo',
     tags,
     luogoColor,
-    mapsUrl: buildMapsUrl(exhibit.indirizzo),
+    mapsUrl: buildMapsUrl(exhibit.sede, exhibit.indirizzo),
     dateRangeLabel: permanent ? 'Permanente' : formatDateRange(exhibit.dataInizio, exhibit.dataFine),
   };
 }
