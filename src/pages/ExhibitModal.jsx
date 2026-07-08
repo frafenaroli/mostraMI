@@ -57,9 +57,6 @@ export default function ExhibitModal() {
           <IconButton icon="close" size={36} iconSize={16} label="Chiudi" onClick={close} />
         </div>
 
-        <div className={styles.titleRow}>
-          <div className={styles.name} style={{ color: `oklch(22% 0.05 ${hue})` }}>{exhibit.name}</div>
-        </div>
 
         <div className={styles.content}>
           <div className={styles.tags}>
@@ -67,6 +64,10 @@ export default function ExhibitModal() {
               <TagBadge key={t.id} {...t} />
             ))}
           </div>
+
+           <div className={styles.titleRow}>
+          <div className={styles.name} style={{ color: `oklch(22% 0.05 ${hue})` }}>{exhibit.name}</div>
+        </div>
 
           {exhibit.sede !== exhibit.name && (
             <div className={styles.metaRow} style={{ color: `oklch(45% 0.1 ${hue})` }}>
