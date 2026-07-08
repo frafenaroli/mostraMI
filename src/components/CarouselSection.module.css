@@ -1,10 +1,10 @@
 .section {
   position: relative;
-  padding: 24px 0 0 22px;
+  padding: 14px 0 0 22px;
 }
 
 .section:first-of-type {
-  padding-top: 28px;
+  padding-top: 22px;
 }
 
 .head {
@@ -31,18 +31,15 @@
   display: flex;
   gap: 14px;
   overflow-x: auto;
-  padding-bottom: 8px;
+  /* Generous bottom padding so the cards' drop shadow isn't clipped by the
+     scroll container (overflow-x forces overflow-y to clip as well). */
+  padding-bottom: 26px;
   padding-right: 22px;
-}
-
-/* Mobile keeps exactly 3 cards per carousel; desktop shows all 6. */
-.track > :nth-child(n + 4) {
-  display: none;
 }
 
 @media (min-width: 900px) {
   .section {
-    padding: 28px 52px 0;
+    padding: 18px 52px 0;
   }
   .title {
     font-size: 20px;
@@ -53,8 +50,5 @@
   .track {
     gap: 20px;
     padding-right: 0;
-  }
-  .track > :nth-child(n + 4) {
-    display: flex;
   }
 }

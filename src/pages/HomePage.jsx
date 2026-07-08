@@ -10,6 +10,17 @@ import { CarouselSection } from '../components/CarouselSection';
 import { Footer } from '../components/Footer';
 import styles from './HomePage.module.css';
 
+// Shuffle a copy (Fisher-Yates) so each category shows a fresh random 6 in a
+// new order on every visit, rather than always the same first six.
+function pick6(list) {
+  const a = [...list];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a.slice(0, 6);
+}
+
 export default function HomePage() {
   const { status, exhibits, error } = useExhibitsData();
   const [surpriseId, setSurpriseId] = useState(null);
@@ -18,10 +29,10 @@ export default function HomePage() {
   const sections = useMemo(() => {
     if (!exhibits.length) return [];
     return [
-      { title: 'Da visitare ora', link: 'Vedi tutte', linkTo: '/mostre?periodo=in-corso', items: exhibits.filter((e) => e.periodo === 'in-corso').slice(0, 6) },
-      { title: 'Abbonamento Musei Lombardia', link: 'Vedi tutte', linkTo: '/mostre?abbonamento=1', items: exhibits.filter((e) => e.abbonamentoLombardia).slice(0, 6) },
-      { title: 'Musei', link: 'Vedi tutti', linkTo: '/mostre?luogo=museo', items: exhibits.filter((e) => e.luogo === 'museo').slice(0, 6) },
-      { title: 'In arrivo', link: 'Vedi tutte', linkTo: '/mostre?periodo=in-arrivo', items: exhibits.filter((e) => e.periodo === 'in-arrivo').slice(0, 6) },
+      { title: 'Da visitare ora', link: 'Vedi tutte', linkTo: '/mostre?periodo=in-corso', items: pick6(exhibits.filter((e) => e.periodo === 'in-corso')) },
+      { title: 'Abbonamento Musei Lombardia', link: 'Vedi tutte', linkTo: '/mostre?abbonamento=1', items: pick6(exhibits.filter((e) => e.abbonamentoLombardia)) },
+      { title: 'Musei', link: 'Vedi tutti', linkTo: '/mostre?luogo=museo', items: pick6(exhibits.filter((e) => e.luogo === 'museo')) },
+      { title: 'In arrivo', link: 'Vedi tutte', linkTo: '/mostre?periodo=in-arrivo', items: pick6(exhibits.filter((e) => e.periodo === 'in-arrivo')) },
     ].filter((s) => s.items.length > 0);
   }, [exhibits]);
 
