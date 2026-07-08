@@ -30,7 +30,7 @@ export default function HomePage() {
     if (!exhibits.length) return [];
     return [
       { title: 'Da visitare ora', link: 'Vedi tutte', linkTo: '/mostre?periodo=in-corso', items: pick6(exhibits.filter((e) => e.periodo === 'in-corso')) },
-      { title: 'Abbonamento Musei Lombardia', link: 'Vedi tutte', linkTo: '/mostre?abbonamento=1', items: pick6(exhibits.filter((e) => e.abbonamentoLombardia)) },
+      { title: 'Abb. Musei Lombardia', link: 'Vedi tutte', linkTo: '/mostre?abbonamento=1', items: pick6(exhibits.filter((e) => e.abbonamentoLombardia)) },
       { title: 'Musei', link: 'Vedi tutti', linkTo: '/mostre?luogo=museo', items: pick6(exhibits.filter((e) => e.luogo === 'museo')) },
       { title: 'In arrivo', link: 'Vedi tutte', linkTo: '/mostre?periodo=in-arrivo', items: pick6(exhibits.filter((e) => e.periodo === 'in-arrivo')) },
     ].filter((s) => s.items.length > 0);
