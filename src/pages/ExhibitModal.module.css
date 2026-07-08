@@ -63,23 +63,21 @@
 
 .closeRow {
   position: absolute;
-  top: 27px;
-  right: 22px;
+  top: 26px;
+  right: 20px;
   z-index: 3;
 }
 
-/* Close button styled to match the tag chips: same height, rounded, light
-   neutral fill with a 1px border. */
+/* Plain close icon, vertically centered with the tag row — no background. */
 .closeBtn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 21px;
-  height: 21px;
+  width: 24px;
+  height: 24px;
   padding: 0;
-  border-radius: 50%;
-  background: oklch(96% 0.004 60);
-  border: 1px solid oklch(88% 0.006 60);
+  border: none;
+  background: none;
   cursor: pointer;
 }
 

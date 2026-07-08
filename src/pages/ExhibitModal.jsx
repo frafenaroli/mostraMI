@@ -54,7 +54,7 @@ export default function ExhibitModal() {
 
         <div className={styles.closeRow}>
           <button className={styles.closeBtn} onClick={close} aria-label="Chiudi" type="button">
-            <Icon name="close" size={13} strokeWidth={2} color="oklch(42% 0.02 40)" />
+            <Icon name="close" size={17} strokeWidth={2} color="oklch(42% 0.02 40)" />
           </button>
         </div>
 
