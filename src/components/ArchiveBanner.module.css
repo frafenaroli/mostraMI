@@ -1,6 +1,8 @@
 .banner {
   position: relative;
-  margin: 34px 22px 0;
+  /* Bottom margin matches the inter-carousel gap so the first section
+     ("Da visitare ora") sits the same distance below as the others. */
+  margin: 34px 22px 26px;
   padding: 20px;
   border-radius: 18px;
   background: linear-gradient(135deg, oklch(93% 0.05 20), oklch(92% 0.045 300));
@@ -28,7 +30,7 @@
 
 @media (min-width: 900px) {
   .banner {
-    margin: 28px 52px 0;
+    margin: 28px 52px 26px;
     padding: 26px 32px;
     border-radius: 20px;
   }

@@ -3,10 +3,6 @@
   padding: 14px 0 0 22px;
 }
 
-.section:first-of-type {
-  padding-top: 22px;
-}
-
 .head {
   display: flex;
   align-items: baseline;
