@@ -67,10 +67,14 @@
 
 .titleRow {
   position: relative;
-  padding: 6px 22px 0;
+  padding: 2px 22px 0;
+}
+
+.tags {
   display: flex;
-  align-items: center;
-  gap: 14px;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
 }
 
 .name {
@@ -80,14 +84,7 @@
 
 .content {
   position: relative;
-  padding: 20px 22px 28px;
-}
-
-.tags {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 14px;
-  flex-wrap: wrap;
+  padding: 14px 22px 28px;
 }
 
 .metaRow {
