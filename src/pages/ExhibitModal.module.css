@@ -70,7 +70,7 @@
 
 .titleRow {
   position: relative;
-  padding: 22px 22px 0;
+  padding: 32px 24px 0;
 }
 
 .tags {
@@ -87,7 +87,7 @@
 
 .content {
   position: relative;
-  padding: 14px 22px 24px;
+  padding: 16px 24px 32px;
 }
 
 .metaRow {
