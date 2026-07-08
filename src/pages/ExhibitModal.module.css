@@ -21,12 +21,15 @@
   margin: auto;
 }
 
-/* Soft, subtle color blobs — one per tag — scattered around the card edges. */
+/* Soft, subtle color blobs — one per tag — scattered around the card edges.
+   The rounded clip (matching the popup) keeps the blurred blobs from bleeding
+   past the corners on browsers that don't clip filtered layers by radius. */
 .auras {
   position: absolute;
   inset: 0;
   pointer-events: none;
   overflow: hidden;
+  border-radius: 26px;
 }
 
 .aura {
@@ -34,8 +37,8 @@
   width: 300px;
   height: 240px;
   border-radius: 50%;
-  filter: blur(46px);
-  opacity: 0.7;
+  filter: blur(52px);
+  opacity: 0.5;
 }
 
 .aura:nth-child(1) {
@@ -59,15 +62,15 @@
 }
 
 .closeRow {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-  padding: 18px 18px 0;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
 }
 
 .titleRow {
   position: relative;
-  padding: 2px 22px 0;
+  padding: 22px 22px 0;
 }
 
 .tags {
@@ -84,7 +87,7 @@
 
 .content {
   position: relative;
-  padding: 14px 22px 28px;
+  padding: 14px 22px 24px;
 }
 
 .metaRow {
