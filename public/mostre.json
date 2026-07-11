@@ -1183,6 +1183,22 @@
       "indirizzo": "Via Brera 28, 20121 Milano",
       "sitoWeb": "https://www.braidense.it",
       "fonteUrl": "https://www.braidense.it/"
+    },
+    {
+      "id": "galleria-villepin",
+      "name": "Villepin",
+      "luogo": "galleria",
+      "sede": "Chiesa di San Vittore e 40 Martiri",
+      "tema": "arte",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Nuova galleria d'arte internazionale in una scenografica chiesa sconsacrata del quartiere Corvetto.",
+      "descrizioneLunga": "Inaugurata nel giugno 2026 dai fratelli Arthur e Marie de Villepin, la prima sede italiana della galleria Villepin occupa la chiesa sconsacrata di San Vittore e 40 Martiri, costruita nel 1928 al Corvetto. Con due mostre l'anno, mette in dialogo arti visive, musica, cinema e design negli spazi monumentali dell'ex chiesa.",
+      "dataInizio": "2026-06-17",
+      "dataFine": "2099-12-31",
+      "indirizzo": "Viale Lucania, 20139 Milano",
+      "sitoWeb": "https://www.villepinart.com",
+      "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2026/06/villepin-milano-chiesa-san-vittore-40-martiri/"
     }
   ],
   "refreshGuidance": {
@@ -1199,5 +1215,5 @@
     ],
     "note": "Extra top-level key ignored by the app; kept here to guide future manual refreshes."
   },
-  "generatedAt": "2026-07-08T14:35:51.000Z"
+  "generatedAt": "2026-07-11T11:09:21.000Z"
 }
