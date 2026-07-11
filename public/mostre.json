@@ -1,6 +1,38 @@
 {
   "exhibits": [
     {
+      "id": "small-is-beautiful-fabbrica-vapore",
+      "name": "Small is Beautiful. Museo d'Arte in Miniatura",
+      "luogo": "mostra",
+      "sede": "Fabbrica del Vapore",
+      "tema": "arte",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Mostra immersiva dedicata all'arte in miniatura, con oltre 100 opere di 19 artisti internazionali.",
+      "descrizioneLunga": "Alla Fabbrica del Vapore, Small is Beautiful invita a scoprire mondi intricati in scala ridotta, ricchi di creativita e visione artistica. Il percorso riunisce oltre cento opere di diciannove artisti internazionali, tra cui Slinkachu, Samsofy e il duo Minimiam, tra street art, fotografia e installazioni.",
+      "dataInizio": "2026-05-09",
+      "dataFine": "2026-09-22",
+      "indirizzo": "Via Giulio Cesare Procaccini 4, 20154 Milano",
+      "sitoWeb": "https://www.fabbricadelvapore.org",
+      "fonteUrl": "https://feverup.com/m/164942/en"
+    },
+    {
+      "id": "matisse-mondo-in-una-stanza-mudec",
+      "name": "Matisse. Il mondo in una stanza",
+      "luogo": "mostra",
+      "sede": "MUDEC - Museo delle Culture",
+      "tema": "arte",
+      "abbonamentoLombardia": true,
+      "beneFai": false,
+      "descrizioneBreve": "Grande mostra sul rapporto tra Henri Matisse e le culture del mondo che ne plasmarono il linguaggio.",
+      "descrizioneLunga": "Il MUDEC dedica a Henri Matisse una mostra che indaga il legame sistematico dell'artista con le culture incontrate nei suoi studi e viaggi oltre l'Europa. Circa cento opere, tra dipinti, disegni e sculture da istituzioni come il Philadelphia Museum of Art, il MoMA e il Musee de l'Orangerie, raccontano come arte africana, islamica, russa, cinese e del Pacifico abbiano nutrito il suo linguaggio.",
+      "dataInizio": "2026-10-08",
+      "dataFine": "2027-02-21",
+      "indirizzo": "Via Tortona 56, 20144 Milano",
+      "sitoWeb": "https://www.mudec.it",
+      "fonteUrl": "https://www.mudec.it/en/matisse/"
+    },
+    {
       "id": "kiefer-le-alchimiste-palazzo-reale",
       "name": "Anselm Kiefer. Le alchimiste",
       "luogo": "mostra",
@@ -1201,5 +1233,5 @@
       "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2026/06/villepin-milano-chiesa-san-vittore-40-martiri/"
     }
   ],
-  "generatedAt": "2026-07-11T11:09:21.000Z"
+  "generatedAt": "2026-07-11T11:30:42.214Z"
 }
