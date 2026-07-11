@@ -1,5 +1,7 @@
-// Data contract: public/mostre.json, published on GitHub Pages and refreshed weekly
-// by a separate agent. Shape: { generatedAt, exhibits: [...] }. See README-data.md.
+// Data contract: public/mostre.json, published on GitHub Pages and refreshed on
+// demand via the /update-mostre skill. Shape: { generatedAt, exhibits: [...] }.
+// Valid `luogo`/`tema` values are the keys of LUOGO_LABELS / TEMA_LABELS below
+// (also enforced by scripts/validate-mostre.mjs).
 
 export const LUOGO_LABELS = {
   mostra: 'Mostra',

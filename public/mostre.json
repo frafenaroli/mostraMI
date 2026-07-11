@@ -1201,19 +1201,5 @@
       "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2026/06/villepin-milano-chiesa-san-vittore-40-martiri/"
     }
   ],
-  "refreshGuidance": {
-    "targetMinEntries": 70,
-    "coverage": "Include all current AND upcoming (in-arrivo) exhibitions plus permanent museums, house/studio museums, monuments, galleries and unconventional cultural sites in the city of Milan only (no hinterland, no other Lombardy cities). Branch across themes: arte, fotografia, design, architettura, scienza, storia. Keep a healthy share of upcoming shows. Prune exhibitions whose dataFine has passed.",
-    "aggregatorSources": [
-      "https://www.milanoguida.com/mostre-milano/",
-      "https://www.yesmilano.it/en/whats-on/all-events/exhibitions-milano-2026",
-      "https://www.milanopocket.it/eventi/milano/mostre/",
-      "https://artsupp.com/it/milano",
-      "https://www.arte.it/calendario-arte/milano",
-      "https://www.museocity.it/",
-      "https://casemuseo.it/"
-    ],
-    "note": "Extra top-level key ignored by the app; kept here to guide future manual refreshes."
-  },
   "generatedAt": "2026-07-11T11:09:21.000Z"
 }
