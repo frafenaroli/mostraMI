@@ -7,7 +7,7 @@ export function Hero() {
         Le mostre di Milano,<br /><span style={{ fontStyle: 'italic' }}>a portata di mano.</span>
       </div>
       <div className={`${styles.headline} ${styles.desktopOnly}`}>
-        Le mostre di Milano, <span style={{ fontStyle: 'italic' }}>a portata di mano.</span>
+        Le mostre di Milano,<br /><span style={{ fontStyle: 'italic' }}>a portata di mano.</span>
       </div>
     </div>
   );

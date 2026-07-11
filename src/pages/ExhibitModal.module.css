@@ -38,7 +38,7 @@
   height: 240px;
   border-radius: 50%;
   filter: blur(52px);
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .aura:nth-child(1) {
