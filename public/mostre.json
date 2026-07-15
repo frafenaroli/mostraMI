@@ -1,6 +1,22 @@
 {
   "exhibits": [
     {
+      "id": "passione-disegno-castello-sforzesco",
+      "name": "Passione Disegno. Da Leonardo da Vinci a Keith Haring",
+      "luogo": "mostra",
+      "sede": "Castello Sforzesco",
+      "tema": "arte",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Oltre sessanta capolavori su carta del Gabinetto dei Disegni, da Leonardo a Keith Haring, a ingresso libero.",
+      "descrizioneLunga": "Nelle Salette della Grafica del Castello Sforzesco, la mostra presenta oltre sessanta capolavori scelti tra le collezioni del Gabinetto dei Disegni, che conserva piu di trentamila opere su carta dal Quattrocento al Novecento. Il percorso attraversa cinque secoli di disegno con fogli di Leonardo da Vinci, Tiepolo, Appiani, Previati, Boccioni e Keith Haring, a ingresso gratuito.",
+      "dataInizio": "2026-06-26",
+      "dataFine": "2026-09-27",
+      "indirizzo": "Piazza Castello, 20121 Milano",
+      "sitoWeb": "https://www.milanocastello.it",
+      "fonteUrl": "https://www.milanocastello.it/-/passione-disegno"
+    },
+    {
       "id": "small-is-beautiful-fabbrica-vapore",
       "name": "Small is Beautiful. Museo d'Arte in Miniatura",
       "luogo": "mostra",
@@ -1233,5 +1249,5 @@
       "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2026/06/villepin-milano-chiesa-san-vittore-40-martiri/"
     }
   ],
-  "generatedAt": "2026-07-11T11:30:42.214Z"
+  "generatedAt": "2026-07-15T08:02:44.291Z"
 }
