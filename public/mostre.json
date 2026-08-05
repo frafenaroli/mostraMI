@@ -1,6 +1,22 @@
 {
   "exhibits": [
     {
+      "id": "i-brueghel-palazzo-reale",
+      "name": "I Brueghel. Le origini dei generi pittorici in Europa",
+      "luogo": "mostra",
+      "sede": "Palazzo Reale",
+      "tema": "arte",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Grande mostra su una delle dinastie piu influenti della pittura europea, con oltre 80 opere.",
+      "descrizioneLunga": "Palazzo Reale dedica alla celebre famiglia fiamminga dei Brueghel la prima grande mostra italiana sulla dinastia che rivoluziono la pittura europea. Oltre ottanta opere tra dipinti, disegni e stampe raccontano la nascita dei generi pittorici moderni, dal paesaggio alla natura morta, dalla scena di genere all'allegoria.",
+      "dataInizio": "2026-09-29",
+      "dataFine": "2027-01-31",
+      "indirizzo": "Piazza del Duomo 12, 20122 Milano",
+      "sitoWeb": "https://www.palazzorealemilano.it",
+      "fonteUrl": "https://www.palazzorealemilano.it/web/palazzo-reale-milano/-/brueghel"
+    },
+    {
       "id": "passione-disegno-castello-sforzesco",
       "name": "Passione Disegno. Da Leonardo da Vinci a Keith Haring",
       "luogo": "mostra",
@@ -287,22 +303,6 @@
       "indirizzo": "Piazza della Scala 6, 20121 Milano",
       "sitoWeb": "https://gallerieditalia.com/it/milano/",
       "fonteUrl": "https://gallerieditalia.com/it/milano/mostre-e-iniziative/mostre/2026/07/10/mostra-bellezza-e-bruttezza-ideale-reale-caricaturale-rinascimento-milano/"
-    },
-    {
-      "id": "tiravanija-hangar-bicocca",
-      "name": "Rirkrit Tiravanija. The House That Jack Built",
-      "luogo": "mostra",
-      "sede": "Pirelli HangarBicocca",
-      "tema": "arte",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Grande mostra a ingresso libero dell'artista Rirkrit Tiravanija nelle Navate del Pirelli HangarBicocca.",
-      "descrizioneLunga": "Nelle imponenti Navate del Pirelli HangarBicocca, l'artista di origine thailandese Rirkrit Tiravanija, tra i protagonisti dell'arte relazionale, presenta un ampio progetto a ingresso gratuito che coinvolge il pubblico in esperienze condivise e partecipative.",
-      "dataInizio": "2026-03-26",
-      "dataFine": "2026-07-26",
-      "indirizzo": "Via Chiese 2, 20126 Milano",
-      "sitoWeb": "https://pirellihangarbicocca.org",
-      "fonteUrl": "https://pirellihangarbicocca.org/exhibitions/in-corso/"
     },
     {
       "id": "giovanni-agostino-da-lodi-brera",
@@ -945,22 +945,6 @@
       "fonteUrl": "https://www.armanisilos.com/"
     },
     {
-      "id": "ica-arjan-martins",
-      "name": "Arjan Martins. O Estrangeiro",
-      "luogo": "mostra",
-      "sede": "Fondazione ICA Milano",
-      "tema": "arte",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Personale dell'artista afro-brasiliano Arjan Martins alla Fondazione ICA Milano.",
-      "descrizioneLunga": "Nella sede della Fondazione ICA Milano, primo istituto contemporaneo per le arti fuori dal mondo anglosassone, la personale di Arjan Martins indaga migrazioni, memoria atlantica e identità attraverso una pittura densa e stratificata.",
-      "dataInizio": "2026-06-11",
-      "dataFine": "2026-07-24",
-      "indirizzo": "Via Orobia 26, 20139 Milano",
-      "sitoWeb": "https://www.icamilano.it",
-      "fonteUrl": "https://www.icamilano.it/en/exhibitions"
-    },
-    {
       "id": "galleria-massimo-de-carlo",
       "name": "Massimo De Carlo",
       "luogo": "galleria",
@@ -1185,22 +1169,6 @@
       "fonteUrl": "https://palazzocitterio.org/en/"
     },
     {
-      "id": "gastel-rewind-citterio",
-      "name": "Giovanni Gastel. Rewind",
-      "luogo": "mostra",
-      "sede": "Palazzo Citterio - Grande Brera",
-      "tema": "fotografia",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Omaggio a Giovanni Gastel, tra i maestri della fotografia contemporanea, negli spazi della Grande Brera.",
-      "descrizioneLunga": "A Palazzo Citterio, la Grande Brera rende omaggio a Giovanni Gastel (Milano, 1955-2021), tra i grandi maestri della fotografia contemporanea. La mostra, a cura di Uberto Frigerio e prodotta con l'Archivio Giovanni Gastel, ripercorre a ritroso la sua ricerca tra ritratto e moda.",
-      "dataInizio": "2026-01-30",
-      "dataFine": "2026-07-26",
-      "indirizzo": "Via Brera 12, 20121 Milano",
-      "sitoWeb": "https://palazzocitterio.org",
-      "fonteUrl": "https://palazzocitterio.org/en/news/mostra/giovanni-gastel-rewind/"
-    },
-    {
       "id": "orto-botanico-brera",
       "name": "Orto Botanico di Brera",
       "luogo": "altro",
@@ -1249,5 +1217,5 @@
       "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2026/06/villepin-milano-chiesa-san-vittore-40-martiri/"
     }
   ],
-  "generatedAt": "2026-07-15T08:02:44.291Z"
+  "generatedAt": "2026-08-05T14:41:27.119Z"
 }
