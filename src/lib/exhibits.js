@@ -152,6 +152,36 @@ export function countActiveFilters(filters) {
   );
 }
 
+export const ARCHIVE_DEFAULT_TITLE = 'Tutte le mostre';
+
+// Plural section labels, used for the archive heading when a single luogo is the
+// only active filter (matches the home page's "Musei" wording).
+const LUOGO_PLURAL_LABELS = {
+  mostra: 'Mostre',
+  museo: 'Musei',
+  'mostra-permanente': 'Mostre permanenti',
+  galleria: 'Gallerie',
+  installazione: 'Installazioni',
+  monumento: 'Monumenti',
+  altro: 'Altro',
+};
+
+const PERIODO_TITLES = { 'in-corso': 'In corso', 'in-arrivo': 'In arrivo', 'ultimi-giorni': 'Ultimi giorni' };
+
+// Contextual heading for the archive page. When the active filters name exactly
+// one facet (e.g. arriving from the "Abbonamento Musei Lombardia" banner or a
+// home section), label the list after that section; when nothing is filtered or
+// several facets are combined, it is the full/mixed set — "Tutte le mostre".
+export function archiveTitle(filters) {
+  if (countActiveFilters(filters) !== 1) return ARCHIVE_DEFAULT_TITLE;
+  if (filters.abbonamento) return 'Abbonamento Musei Lombardia';
+  if (filters.fai) return 'Bene FAI';
+  if (filters.periodo !== 'tutti') return PERIODO_TITLES[filters.periodo] || ARCHIVE_DEFAULT_TITLE;
+  if (filters.luogo !== 'tutti') return LUOGO_PLURAL_LABELS[filters.luogo] || LUOGO_LABELS[filters.luogo] || ARCHIVE_DEFAULT_TITLE;
+  if (filters.temi.length === 1) return TEMA_LABELS[filters.temi[0]] || ARCHIVE_DEFAULT_TITLE;
+  return ARCHIVE_DEFAULT_TITLE;
+}
+
 export function matchesQuery(exhibit, query) {
   const q = query.trim().toLowerCase();
   if (!q) return true;

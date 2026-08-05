@@ -8,7 +8,7 @@ import { ResultsList } from '../components/ResultsList';
 import { FilterSheet } from '../components/FilterSheet';
 import { EmptyState } from '../components/EmptyState';
 import { Pill } from '../components/Pill';
-import { EMPTY_FILTERS, matchesFilters, sortExhibits, countActiveFilters } from '../lib/exhibits';
+import { EMPTY_FILTERS, matchesFilters, sortExhibits, countActiveFilters, archiveTitle } from '../lib/exhibits';
 import styles from './ArchivioPage.module.css';
 
 const PAGE_SIZE = 6;
@@ -54,7 +54,7 @@ export default function ArchivioPage() {
     <PageShell>
       <div className={styles.topRow}>
         <IconButton icon="back" to="/" label="Torna alla home" glass={false} />
-        <div className={styles.title}>Tutte le mostre</div>
+        <div className={styles.title}>{archiveTitle(filters)}</div>
       </div>
 
       <ListToolbar
