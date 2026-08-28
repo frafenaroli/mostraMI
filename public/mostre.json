@@ -1,6 +1,86 @@
 {
   "exhibits": [
     {
+      "id": "francis-picabia-palazzo-reale",
+      "name": "Francis Picabia",
+      "luogo": "mostra",
+      "sede": "Palazzo Reale",
+      "tema": "arte",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Grande retrospettiva su uno dei protagonisti piu inafferrabili delle avanguardie del Novecento.",
+      "descrizioneLunga": "Palazzo Reale dedica a Francis Picabia una grande mostra con oltre 150 opere tra dipinti, disegni, libri illustrati e lavori grafici. Il percorso ripercorre la carriera imprevedibile dell'artista franco-cubano, dal dadaismo alle continue metamorfosi di stile che ne hanno fatto una figura chiave delle avanguardie europee.",
+      "dataInizio": "2026-10-09",
+      "dataFine": "2027-01-24",
+      "indirizzo": "Piazza del Duomo 12, 20122 Milano",
+      "sitoWeb": "https://www.palazzorealemilano.it",
+      "fonteUrl": "https://www.milanoguida.com/mostre-milano/"
+    },
+    {
+      "id": "charmaine-poh-mudec",
+      "name": "Charmaine Poh. Make a travel deep of your inside, and don't forget me to take",
+      "luogo": "mostra",
+      "sede": "MUDEC - Museo delle Culture",
+      "tema": "arte",
+      "abbonamentoLombardia": true,
+      "beneFai": false,
+      "descrizioneBreve": "Prima personale italiana della Deutsche Bank Artist of the Year 2025, tra identita, corpo e futuro.",
+      "descrizioneLunga": "Il MUDEC presenta la prima mostra personale in Italia di Charmaine Poh, artista sino-singaporiana vincitrice del premio Deutsche Bank Artist of the Year 2025. Attraverso video, fotografia e performance, il suo lavoro indaga identita, corpo e immaginari del futuro, interrogando il modo in cui ci raccontiamo e ci rappresentiamo.",
+      "dataInizio": "2026-09-18",
+      "dataFine": "2026-11-01",
+      "indirizzo": "Via Tortona 56, 20144 Milano",
+      "sitoWeb": "https://www.mudec.it",
+      "fonteUrl": "https://www.agenziacult.it/eventi/milano-da-settembre-al-mudec-la-prima-personale-italiana-di-charmaine-poh/"
+    },
+    {
+      "id": "shilpa-gupta-furla-series-gam",
+      "name": "Furla Series - Shilpa Gupta. One Palm Closer to the Sky",
+      "luogo": "mostra",
+      "sede": "GAM - Galleria d'Arte Moderna",
+      "tema": "arte",
+      "abbonamentoLombardia": true,
+      "beneFai": false,
+      "descrizioneBreve": "Ottava edizione di Furla Series: personale dell'artista indiana Shilpa Gupta alla GAM.",
+      "descrizioneLunga": "La GAM ospita l'ottava edizione di Furla Series con la personale di Shilpa Gupta, a cura di Bruna Roccasalva. Con una pratica multidisciplinare tra scultura, installazioni luminose, video, suono e performance, l'artista indiana esplora linguaggio, censura, mobilita e le strutture che modellano identita e liberta.",
+      "dataInizio": "2026-09-15",
+      "dataFine": "2027-01-06",
+      "indirizzo": "Via Palestro 16, 20121 Milano",
+      "sitoWeb": "https://www.gam-milano.com",
+      "fonteUrl": "https://www.gam-milano.com/it/mostre"
+    },
+    {
+      "id": "libere-1946-2026-gallerie-italia",
+      "name": "LIBERE! 1946-2026. Le conquiste delle donne",
+      "luogo": "mostra",
+      "sede": "Gallerie d'Italia - Piazza Scala",
+      "tema": "fotografia",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Mostra fotografica che ripercorre ottant'anni di conquiste delle donne in Italia.",
+      "descrizioneLunga": "Alle Gallerie d'Italia di Piazza Scala, LIBERE! ripercorre attraverso la fotografia ottant'anni di storia italiana lette dalle trasformazioni della condizione femminile: dal lavoro ai diritti civili, dalla partecipazione alla vita pubblica ai grandi mutamenti sociali e culturali. La mostra, a cura di Renata Ferri, e promossa da iO Donna per i trent'anni del settimanale.",
+      "dataInizio": "2026-09-26",
+      "dataFine": "2027-01-07",
+      "indirizzo": "Piazza della Scala 6, 20121 Milano",
+      "sitoWeb": "https://gallerieditalia.com/it/milano/",
+      "fonteUrl": "https://www.revenews.it/mostre/2026/08/20/autunno-2026-gallerie-italia-otto-nuove-mostre/"
+    },
+    {
+      "id": "frida-kahlo-attraverso-i-miei-occhi",
+      "name": "Attraverso i miei occhi. Frida Kahlo e la costruzione del mito",
+      "luogo": "mostra",
+      "sede": "My Own Gallery",
+      "tema": "fotografia",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Mostra fotografica sul mito di Frida Kahlo attraverso gli scatti dei grandi fotografi del Novecento.",
+      "descrizioneLunga": "Negli spazi di My Own Gallery, al Superstudio Piu di via Tortona, la mostra racconta la costruzione del mito di Frida Kahlo attraverso l'obiettivo dei grandi fotografi del Novecento. A cura di Vittoria Mainoldi, il percorso ricostruisce l'immagine pubblica dell'artista messicana tra ritratto, autorappresentazione e leggenda.",
+      "dataInizio": "2026-10-08",
+      "dataFine": "2027-01-11",
+      "indirizzo": "Via Tortona 27, 20144 Milano",
+      "sitoWeb": "https://www.superstudioevents.com/venues/superstudio-piu/my-own-gallery/",
+      "fonteUrl": "https://www.milanopocket.it/eventi-milano/frida-kahlo-milano-2026/"
+    },
+    {
       "id": "i-brueghel-palazzo-reale",
       "name": "I Brueghel. Le origini dei generi pittorici in Europa",
       "luogo": "mostra",
@@ -1217,5 +1297,5 @@
       "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2026/06/villepin-milano-chiesa-san-vittore-40-martiri/"
     }
   ],
-  "generatedAt": "2026-08-05T14:41:27.119Z"
+  "generatedAt": "2026-08-28T19:19:09.122Z"
 }
