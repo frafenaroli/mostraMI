@@ -1,0 +1,19 @@
+{
+  "name": "MostraMI — Le mostre di Milano",
+  "short_name": "MostraMI",
+  "description": "Mostre, musei e gallerie aperti a Milano, sempre aggiornati. Filtra per luogo, tema, Abbonamento Musei Lombardia e Bene FAI.",
+  "lang": "it",
+  "dir": "ltr",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F5F1E9",
+  "theme_color": "#9B62C4",
+  "categories": ["travel", "lifestyle", "education"],
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
