@@ -1,6 +1,22 @@
 {
   "exhibits": [
     {
+      "id": "the-gentleman-palazzo-morando",
+      "name": "The Gentleman. Stile e gioielli al maschile",
+      "luogo": "mostra",
+      "sede": "Palazzo Morando - Costume Moda Immagine",
+      "tema": "storia",
+      "abbonamentoLombardia": true,
+      "beneFai": false,
+      "descrizioneBreve": "Indagine storica sull'eleganza maschile tra ornamento e abito, dal Settecento a oggi.",
+      "descrizioneLunga": "A Palazzo Morando la mostra propone un'indagine storica, cronologica e tematica sull'estetica maschile, tra gioiello, ornamento e abito. Il percorso attraversa i secoli dal Settecento a oggi, raccontando come lo stile al maschile si sia fatto simbolo di status e, a volte, messaggio politico. Ingresso gratuito.",
+      "dataInizio": "2026-01-16",
+      "dataFine": "2026-09-27",
+      "indirizzo": "Via Sant'Andrea 6, 20121 Milano",
+      "sitoWeb": "https://www.costumemodaimmagine.mi.it",
+      "fonteUrl": "https://www.comune.milano.it/en/w/cultura.-a-palazzo-morando-apre-la-mostra-the-gentleman-stile-e-gioielli-al-maschile-"
+    },
+    {
       "id": "francis-picabia-palazzo-reale",
       "name": "Francis Picabia",
       "luogo": "mostra",
@@ -383,22 +399,6 @@
       "indirizzo": "Piazza della Scala 6, 20121 Milano",
       "sitoWeb": "https://gallerieditalia.com/it/milano/",
       "fonteUrl": "https://gallerieditalia.com/it/milano/mostre-e-iniziative/mostre/2026/07/10/mostra-bellezza-e-bruttezza-ideale-reale-caricaturale-rinascimento-milano/"
-    },
-    {
-      "id": "giovanni-agostino-da-lodi-brera",
-      "name": "Giovanni Agostino da Lodi",
-      "luogo": "mostra",
-      "sede": "Pinacoteca di Brera",
-      "tema": "arte",
-      "abbonamentoLombardia": true,
-      "beneFai": false,
-      "descrizioneBreve": "Prima mostra mai dedicata a Giovanni Agostino da Lodi, pittore originale attivo attorno al 1500 tra Milano e Venezia.",
-      "descrizioneLunga": "La Pinacoteca di Brera dedica la prima mostra monografica a Giovanni Agostino da Lodi, ricostruendone la vicenda tra Milano e Venezia attraverso confronti con maestri come Bramantino, Leonardo, Alvise Vivarini, Giovanni Bellini, Giorgione e Albrecht Dürer.",
-      "dataInizio": "2026-05-14",
-      "dataFine": "2026-08-30",
-      "indirizzo": "Via Brera 28, 20121 Milano",
-      "sitoWeb": "https://pinacotecabrera.org",
-      "fonteUrl": "https://pinacotecabrera.org/en/exhibitions-and-events/exhibitions/"
     },
     {
       "id": "werner-bischof-museo-diocesano",
@@ -1297,5 +1297,5 @@
       "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2026/06/villepin-milano-chiesa-san-vittore-40-martiri/"
     }
   ],
-  "generatedAt": "2026-08-28T19:19:09.122Z"
+  "generatedAt": "2026-09-03T14:00:54.626Z"
 }
