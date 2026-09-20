@@ -1,6 +1,38 @@
 {
   "exhibits": [
     {
+      "id": "sheila-hicks-in-the-thread-of-love-pac",
+      "name": "Sheila Hicks. In the Thread of Love",
+      "luogo": "mostra",
+      "sede": "PAC - Padiglione d'Arte Contemporanea",
+      "tema": "arte",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Prima grande personale italiana della pioniera della fiber art, con oltre 200 opere.",
+      "descrizioneLunga": "Il PAC dedica a Sheila Hicks la sua prima grande mostra personale in Italia, con oltre duecento opere da collezioni pubbliche e private internazionali. Pioniera della fiber art, l'artista trasforma il tessuto in materia scultorea e installativa, dialogando con l'architettura razionalista di Ignazio Gardella tra colore, identita e dimensione monumentale.",
+      "dataInizio": "2026-11-17",
+      "dataFine": "2027-02-14",
+      "indirizzo": "Via Palestro 14, 20121 Milano",
+      "sitoWeb": "https://www.pacmilano.it",
+      "fonteUrl": "https://www.pacmilano.it/en/"
+    },
+    {
+      "id": "correspondences-soundwalk-patti-smith-triennale",
+      "name": "Correspondences. Soundwalk Collective & Patti Smith",
+      "luogo": "mostra",
+      "sede": "Triennale Milano",
+      "tema": "arte",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Installazioni audiovisive immersive dall'incontro tra Patti Smith e Soundwalk Collective.",
+      "descrizioneLunga": "Triennale Milano presenta Correspondences, progetto nato dall'incontro tra la poetessa e cantautrice Patti Smith e il collettivo di arte sonora sperimentale Soundwalk Collective. Il percorso alterna installazioni audiovisive immersive e opere grafiche, in un dialogo tra parola, suono e paesaggio.",
+      "dataInizio": "2026-11-26",
+      "dataFine": "2027-03-07",
+      "indirizzo": "Viale Emilio Alemagna 6, 20121 Milano",
+      "sitoWeb": "https://triennale.org",
+      "fonteUrl": "https://triennale.org/program/mostre"
+    },
+    {
       "id": "the-gentleman-palazzo-morando",
       "name": "The Gentleman. Stile e gioielli al maschile",
       "luogo": "mostra",
@@ -177,54 +209,6 @@
       "fonteUrl": "https://www.ilgiorno.it/milano/cosa-fare/mostre-estate-2026--p9kqytm3-sck/3"
     },
     {
-      "id": "troilo-the-breach-palazzo-reale",
-      "name": "Troilo. The Breach - Il muro rompe il silenzio",
-      "luogo": "mostra",
-      "sede": "Palazzo Reale",
-      "tema": "arte",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Paolo Troilo reinterpreta gli arazzi storici dell'Appartamento dei Principi con la sua pittura a mano nuda.",
-      "descrizioneLunga": "Mostra site-specific gratuita nell'Appartamento dei Principi: Paolo Troilo, noto per la pittura iperrealista eseguita con le dita, dialoga con gli arazzi storici realizzati dalla stessa manifattura Rubelli, trasformandoli in varchi temporali tra passato e presente.",
-      "dataInizio": "2026-06-18",
-      "dataFine": "2026-09-13",
-      "indirizzo": "Piazza del Duomo 12, 20122 Milano",
-      "sitoWeb": "https://www.palazzorealemilano.it",
-      "fonteUrl": "https://www.milanopost.info/2026/06/18/palazzo-reale-milano-apre-al-pubblico-the-breach-mostra-inedita-site-specific-di-paolo-troilo/"
-    },
-    {
-      "id": "raciti-opere-palazzo-reale",
-      "name": "Mario Raciti. Opere 1952-2025",
-      "luogo": "mostra",
-      "sede": "Palazzo Reale",
-      "tema": "arte",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Antologica gratuita dedicata a Mario Raciti, oltre settant'anni di attività pittorica.",
-      "descrizioneLunga": "Palazzo Reale dedica una mostra antologica a ingresso libero a Mario Raciti, ripercorrendo oltre settant'anni della sua ricerca pittorica, dagli esordi degli anni Cinquanta fino alle opere più recenti.",
-      "dataInizio": "2026-07-01",
-      "dataFine": "2026-09-20",
-      "indirizzo": "Piazza del Duomo 12, 20122 Milano",
-      "sitoWeb": "https://www.palazzorealemilano.it",
-      "fonteUrl": "https://www.ilgiorno.it/milano/cosa-fare/mostre-estate-2026--p9kqytm3-sck/3"
-    },
-    {
-      "id": "amendola-capolavori-fotografati-palazzo-reale",
-      "name": "Aurelio Amendola. Capolavori fotografati",
-      "luogo": "mostra",
-      "sede": "Palazzo Reale",
-      "tema": "fotografia",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Retrospettiva dedicata a uno dei più importanti interpreti della fotografia d'arte italiana.",
-      "descrizioneLunga": "Palazzo Reale rende omaggio ad Aurelio Amendola, tra i massimi fotografi italiani d'arte, con una selezione di scatti che documentano capolavori della scultura e della pittura attraverso il suo sguardo fotografico.",
-      "dataInizio": "2026-06-16",
-      "dataFine": "2026-09-06",
-      "indirizzo": "Piazza del Duomo 12, 20122 Milano",
-      "sitoWeb": "https://www.palazzorealemilano.it",
-      "fonteUrl": "https://www.ilgiorno.it/milano/cosa-fare/mostre-estate-2026--p9kqytm3-sck/3"
-    },
-    {
       "id": "mona-hatoum-fondazione-prada",
       "name": "Mona Hatoum. Over, Under and in Between",
       "luogo": "mostra",
@@ -303,54 +287,6 @@
       "indirizzo": "Viale Emilio Alemagna 6, 20121 Milano",
       "sitoWeb": "https://triennale.org",
       "fonteUrl": "https://www.ansa.it/canale_lifestyle/notizie/design_giardino/2026/03/18/in-triennale-milano-andrea-branzi-by-toyo-ito.-continuous-present_4830a122-f647-49c7-9d2e-4a763e3dc664.html"
-    },
-    {
-      "id": "francesco-clemente-in-between-triennale",
-      "name": "Francesco Clemente. In Between",
-      "luogo": "mostra",
-      "sede": "Triennale Milano",
-      "tema": "arte",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Prima grande retrospettiva milanese di Francesco Clemente, circa 70 opere dagli anni '70 a oggi.",
-      "descrizioneLunga": "Prima mostra dedicata a Francesco Clemente in un'istituzione pubblica milanese, con circa 70 opere che ripercorrono oltre cinquant'anni della sua ricerca pittorica tra disegno, acquerello, pastello, affresco e pittura a olio o tempera.",
-      "dataInizio": "2026-05-29",
-      "dataFine": "2026-09-06",
-      "indirizzo": "Viale Emilio Alemagna 6, 20121 Milano",
-      "sitoWeb": "https://triennale.org",
-      "fonteUrl": "https://www.fattitaliani.it/2026/05/dal-29-maggio-al-6-settembre-2026.html?m=1"
-    },
-    {
-      "id": "vignelli-language-of-clarity-triennale",
-      "name": "Lella e Massimo Vignelli. A Language of Clarity",
-      "luogo": "mostra",
-      "sede": "Triennale Milano",
-      "tema": "design",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Grande retrospettiva sui coniugi Vignelli e il loro contributo al design e alla grafica internazionale.",
-      "descrizioneLunga": "La mostra ripercorre l'opera di Lella e Massimo Vignelli e il loro metodo di 'chiarezza' applicato al design, alla grafica e all'identità visiva, con un allestimento firmato dal Jasper Morrison Office for Design. Curata da Francesca Picchi con Marco Sammicheli e Studio Mut.",
-      "dataInizio": "2026-03-25",
-      "dataFine": "2026-09-06",
-      "indirizzo": "Viale Emilio Alemagna 6, 20121 Milano",
-      "sitoWeb": "https://triennale.org",
-      "fonteUrl": "https://triennale.org/en/events/vignelli"
-    },
-    {
-      "id": "performing-pac-2026",
-      "name": "Performing PAC 2026 - These Fragments I Have Shored Against My Ruins",
-      "luogo": "mostra",
-      "sede": "PAC - Padiglione d'Arte Contemporanea",
-      "tema": "arte",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Sette artisti contemporanei dialogano con la poetica dell'assemblaggio di Kurt Schwitters, nel trentennale della ricostruzione del PAC.",
-      "descrizioneLunga": "Ispirata a una storica mostra del 2001 su Kurt Schwitters, l'edizione 2026 di Performing PAC mette in dialogo la poetica dell'assemblaggio e della stratificazione con la ricerca di sette artisti contemporanei, nel trentennale della ricostruzione del padiglione dopo l'attentato del 1993.",
-      "dataInizio": "2026-07-03",
-      "dataFine": "2026-09-13",
-      "indirizzo": "Via Palestro 14, 20121 Milano",
-      "sitoWeb": "https://www.pacmilano.it",
-      "fonteUrl": "https://www.weblombardia.info/2026/07/02/performing-pac-2026-il-padiglione-darte-contemporanea-di-milano-celebra-30-anni-dalla-ricostruzione/"
     },
     {
       "id": "munari-vedere-aria-museo-novecento",
@@ -1297,5 +1233,5 @@
       "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2026/06/villepin-milano-chiesa-san-vittore-40-martiri/"
     }
   ],
-  "generatedAt": "2026-09-03T14:00:54.626Z"
+  "generatedAt": "2026-09-20T18:03:08.365Z"
 }
