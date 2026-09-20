@@ -30,11 +30,27 @@ research is done with the built-in web tools in this session.
 5. **Validate**: run `npm run validate`. It must print `✓ ... is valid`. Fix any
    `✗` errors before continuing. (Warnings about ended shows mean you missed a
    prune — go back and remove them.)
-6. **Publish**: `node scripts/publish-mostre.mjs "Refresh mostre.json (<date>): <one-line summary>"`.
-   This commits `public/mostre.json` to `main`; the Deploy workflow then rebuilds
-   the site (and re-runs validation as a safety gate).
-7. **Confirm the deploy** finished (watch the latest `deploy.yml` run) and give
-   the user a short summary: what was added, what was pruned, and the new total.
+6. **Publish** — commit `public/mostre.json` and push it to `main`; the Deploy
+   workflow then rebuilds the site (and re-runs validation as a safety gate):
+
+   ```sh
+   git add public/mostre.json
+   git commit -m "Refresh mostre.json (<date>): <one-line summary>"
+   git push origin HEAD:main
+   ```
+
+   This needs the Claude GitHub App to have **write** access to the repo; if the
+   push is rejected with `403`, connect/authorize it once from claude.ai and
+   retry. The helper `scripts/publish-mostre.mjs` does the same over the GitHub
+   API, but it shells out to `gh auth token` and the `gh` CLI is **not** installed
+   in the Claude-on-the-web environment (it fails with `gh: not found`) — prefer
+   `git push` here and keep the script only for a local checkout where `gh` is
+   authenticated.
+7. **Confirm the deploy** finished: watch the latest `deploy.yml` run on `main`
+   until it reports `success` (via the GitHub MCP `actions_list` / `actions_get`
+   tools, or by polling `/actions/runs?branch=main` with `$GITHUB_TOKEN`). Then
+   give the user a short summary: what was added, what was pruned, and the new
+   total.
 
 ## Schema
 
@@ -90,6 +106,13 @@ treats them as expired.
 
 ## Notes
 
-- `git push` is sandboxed here; always publish via `scripts/publish-mostre.mjs`.
+- **Publishing**: push straight to `main` with `git push origin HEAD:main` — it
+  works once the Claude GitHub App has write access to the repo. Don't rely on
+  `scripts/publish-mostre.mjs` in the Claude-on-the-web environment: it needs the
+  `gh` CLI, which isn't installed there, so it fails with `gh: not found`. Use the
+  script only in a local checkout where `gh` is logged in.
 - The web search tool is US-based and can occasionally return "unavailable" —
   just retry, or fetch an official page directly.
+- Web tools often get `403` from aggregator sites via `WebFetch`; when that
+  happens, lean on `WebSearch` snippets and official venue pages to confirm exact
+  dates and venues.
