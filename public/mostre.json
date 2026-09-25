@@ -1,6 +1,54 @@
 {
   "exhibits": [
     {
+      "id": "carla-cerati-plurale-femminile-palazzo-reale",
+      "name": "Carla Cerati. Plurale femminile. Fotografia e scrittura, 1926-2026",
+      "luogo": "mostra",
+      "sede": "Palazzo Reale",
+      "tema": "fotografia",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Antologica per il centenario di Carla Cerati, tra fotografia civile e scrittura.",
+      "descrizioneLunga": "Palazzo Reale celebra il centenario della nascita di Carla Cerati con una grande antologica che restituisce la forza rigorosa e civile del suo sguardo. Fotografie, documenti, libri, materiali d'archivio e video ne raccontano l'attraversamento del Novecento: dall'osservazione di Milano al progetto Morire di Classe, dai ritratti al teatro fino alle ricerche su corpo, memoria e trasformazioni sociali.",
+      "dataInizio": "2026-09-26",
+      "dataFine": "2027-01-10",
+      "indirizzo": "Piazza del Duomo 12, 20122 Milano",
+      "sitoWeb": "https://www.palazzorealemilano.it",
+      "fonteUrl": "https://www.palazzorealemilano.it/-/carla-cerati.-plurale-femminile-fotografia-e-scrittura-1926-2026"
+    },
+    {
+      "id": "tommaso-trini-terra-vista-dalla-luna-novecento",
+      "name": "Tommaso Trini. La terra vista dalla luna",
+      "luogo": "mostra",
+      "sede": "Museo del Novecento",
+      "tema": "arte",
+      "abbonamentoLombardia": true,
+      "beneFai": false,
+      "descrizioneBreve": "Progetto dedicato a Tommaso Trini, tra le voci centrali della critica d'arte italiana del secondo Novecento.",
+      "descrizioneLunga": "Il Museo del Novecento dedica un progetto a Tommaso Trini, figura centrale della critica d'arte italiana della seconda meta del Novecento. Nato dalle ricerche negli Archivi Ettore e Claudia Gian Ferrari e nell'archivio personale del critico, il percorso ricostruisce attraverso documenti e opere il suo sguardo sull'arte contemporanea.",
+      "dataInizio": "2026-10-06",
+      "dataFine": "2027-03-14",
+      "indirizzo": "Via Guglielmo Marconi 1, 20123 Milano",
+      "sitoWeb": "https://www.museodelnovecento.org",
+      "fonteUrl": "https://www.museodelnovecento.org/"
+    },
+    {
+      "id": "abiti-in-scena-mose-bianchi-palazzo-morando",
+      "name": "Abiti in scena. Il Settecento dipinto di Mosè Bianchi",
+      "luogo": "mostra",
+      "sede": "Palazzo Morando - Costume Moda Immagine",
+      "tema": "storia",
+      "abbonamentoLombardia": true,
+      "beneFai": false,
+      "descrizioneBreve": "Gli abiti del Settecento collezionati da Mosè Bianchi accanto ai dipinti in cui li ritrasse.",
+      "descrizioneLunga": "Palazzo Morando espone per la prima volta gli abiti settecenteschi raccolti dal pittore Mosè Bianchi accanto ai dipinti in cui li utilizzo. Caso unico tra i pittori italiani, la collezione superstite di abiti torna riunita in un confronto tra i capi originali e la loro trasposizione pittorica.",
+      "dataInizio": "2026-11-04",
+      "dataFine": "2027-06-13",
+      "indirizzo": "Via Sant'Andrea 6, 20121 Milano",
+      "sitoWeb": "https://www.costumemodaimmagine.mi.it",
+      "fonteUrl": "https://www.comune.milano.it/w/cultura.-presentato-il-programma-espositivo-26/27-oltre-40-mostre-nei-musei-e-nelle-sedi-civiche"
+    },
+    {
       "id": "sheila-hicks-in-the-thread-of-love-pac",
       "name": "Sheila Hicks. In the Thread of Love",
       "luogo": "mostra",
@@ -50,7 +98,7 @@
     },
     {
       "id": "francis-picabia-palazzo-reale",
-      "name": "Francis Picabia",
+      "name": "Francis Picabia. Aprire le porte della notte",
       "luogo": "mostra",
       "sede": "Palazzo Reale",
       "tema": "arte",
@@ -159,22 +207,6 @@
       "indirizzo": "Piazza Castello, 20121 Milano",
       "sitoWeb": "https://www.milanocastello.it",
       "fonteUrl": "https://www.milanocastello.it/-/passione-disegno"
-    },
-    {
-      "id": "small-is-beautiful-fabbrica-vapore",
-      "name": "Small is Beautiful. Museo d'Arte in Miniatura",
-      "luogo": "mostra",
-      "sede": "Fabbrica del Vapore",
-      "tema": "arte",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Mostra immersiva dedicata all'arte in miniatura, con oltre 100 opere di 19 artisti internazionali.",
-      "descrizioneLunga": "Alla Fabbrica del Vapore, Small is Beautiful invita a scoprire mondi intricati in scala ridotta, ricchi di creativita e visione artistica. Il percorso riunisce oltre cento opere di diciannove artisti internazionali, tra cui Slinkachu, Samsofy e il duo Minimiam, tra street art, fotografia e installazioni.",
-      "dataInizio": "2026-05-09",
-      "dataFine": "2026-09-22",
-      "indirizzo": "Via Giulio Cesare Procaccini 4, 20154 Milano",
-      "sitoWeb": "https://www.fabbricadelvapore.org",
-      "fonteUrl": "https://feverup.com/m/164942/en"
     },
     {
       "id": "matisse-mondo-in-una-stanza-mudec",
@@ -1233,5 +1265,5 @@
       "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2026/06/villepin-milano-chiesa-san-vittore-40-martiri/"
     }
   ],
-  "generatedAt": "2026-09-20T18:03:08.365Z"
+  "generatedAt": "2026-09-25T14:22:11.583Z"
 }
