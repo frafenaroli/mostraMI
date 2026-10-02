@@ -1,6 +1,38 @@
 {
   "exhibits": [
     {
+      "id": "luca-locatelli-future-studies-leica",
+      "name": "Luca Locatelli. Future Studies",
+      "luogo": "mostra",
+      "sede": "Leica Galerie Milano",
+      "tema": "fotografia",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Fotografie e video di Luca Locatelli sul rapporto tra uomo, tecnologia e futuro del pianeta.",
+      "descrizioneLunga": "La Leica Galerie Milano presenta Future Studies, una selezione dei lavori piu significativi del fotografo e filmmaker Luca Locatelli. Circa venti fotografie, insieme a video e materiali di backstage, raccontano la sua ricerca sul rapporto tra uomo, tecnologia e sostenibilita, tra inchiesta documentaria e visione del futuro. A cura di Giada Triola, ingresso libero.",
+      "dataInizio": "2026-10-02",
+      "dataFine": "2027-01-16",
+      "indirizzo": "Via Giuseppe Mengoni 4, 20121 Milano",
+      "sitoWeb": "https://leica-camera.com",
+      "fonteUrl": "http://www.arte.it/calendario-arte/milano/mostra-luca-locatelli-future-studies-104487"
+    },
+    {
+      "id": "susumu-shingu-il-cosmo-fabbrica-vapore",
+      "name": "Susumu Shingu. Il cosmo",
+      "luogo": "mostra",
+      "sede": "Fabbrica del Vapore",
+      "tema": "arte",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Grande personale del maestro giapponese dell'arte cinetica, tra vento, movimento e natura.",
+      "descrizioneLunga": "Negli spazi della Cattedrale della Fabbrica del Vapore, Il cosmo riunisce oltre sessant'anni di ricerca di Susumu Shingu, poeta del vento e tra i maestri dell'arte cinetica contemporanea. La mostra, la piu ampia personale dell'artista in Italia, presenta sculture in dialogo con movimento, natura e percezione, molte esposte per la prima volta nel Paese.",
+      "dataInizio": "2026-06-17",
+      "dataFine": "2026-10-14",
+      "indirizzo": "Via Giulio Cesare Procaccini 4, 20154 Milano",
+      "sitoWeb": "https://www.fabbricadelvapore.org",
+      "fonteUrl": "https://www.fabbricadelvapore.org/-/il-cosmo/"
+    },
+    {
       "id": "carla-cerati-plurale-femminile-palazzo-reale",
       "name": "Carla Cerati. Plurale femminile. Fotografia e scrittura, 1926-2026",
       "luogo": "mostra",
@@ -79,22 +111,6 @@
       "indirizzo": "Viale Emilio Alemagna 6, 20121 Milano",
       "sitoWeb": "https://triennale.org",
       "fonteUrl": "https://triennale.org/program/mostre"
-    },
-    {
-      "id": "the-gentleman-palazzo-morando",
-      "name": "The Gentleman. Stile e gioielli al maschile",
-      "luogo": "mostra",
-      "sede": "Palazzo Morando - Costume Moda Immagine",
-      "tema": "storia",
-      "abbonamentoLombardia": true,
-      "beneFai": false,
-      "descrizioneBreve": "Indagine storica sull'eleganza maschile tra ornamento e abito, dal Settecento a oggi.",
-      "descrizioneLunga": "A Palazzo Morando la mostra propone un'indagine storica, cronologica e tematica sull'estetica maschile, tra gioiello, ornamento e abito. Il percorso attraversa i secoli dal Settecento a oggi, raccontando come lo stile al maschile si sia fatto simbolo di status e, a volte, messaggio politico. Ingresso gratuito.",
-      "dataInizio": "2026-01-16",
-      "dataFine": "2026-09-27",
-      "indirizzo": "Via Sant'Andrea 6, 20121 Milano",
-      "sitoWeb": "https://www.costumemodaimmagine.mi.it",
-      "fonteUrl": "https://www.comune.milano.it/en/w/cultura.-a-palazzo-morando-apre-la-mostra-the-gentleman-stile-e-gioielli-al-maschile-"
     },
     {
       "id": "francis-picabia-palazzo-reale",
@@ -193,22 +209,6 @@
       "fonteUrl": "https://www.palazzorealemilano.it/web/palazzo-reale-milano/-/brueghel"
     },
     {
-      "id": "passione-disegno-castello-sforzesco",
-      "name": "Passione Disegno. Da Leonardo da Vinci a Keith Haring",
-      "luogo": "mostra",
-      "sede": "Castello Sforzesco",
-      "tema": "arte",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Oltre sessanta capolavori su carta del Gabinetto dei Disegni, da Leonardo a Keith Haring, a ingresso libero.",
-      "descrizioneLunga": "Nelle Salette della Grafica del Castello Sforzesco, la mostra presenta oltre sessanta capolavori scelti tra le collezioni del Gabinetto dei Disegni, che conserva piu di trentamila opere su carta dal Quattrocento al Novecento. Il percorso attraversa cinque secoli di disegno con fogli di Leonardo da Vinci, Tiepolo, Appiani, Previati, Boccioni e Keith Haring, a ingresso gratuito.",
-      "dataInizio": "2026-06-26",
-      "dataFine": "2026-09-27",
-      "indirizzo": "Piazza Castello, 20121 Milano",
-      "sitoWeb": "https://www.milanocastello.it",
-      "fonteUrl": "https://www.milanocastello.it/-/passione-disegno"
-    },
-    {
       "id": "matisse-mondo-in-una-stanza-mudec",
       "name": "Matisse. Il mondo in una stanza",
       "luogo": "mostra",
@@ -225,22 +225,6 @@
       "fonteUrl": "https://www.mudec.it/en/matisse/"
     },
     {
-      "id": "kiefer-le-alchimiste-palazzo-reale",
-      "name": "Anselm Kiefer. Le alchimiste",
-      "luogo": "mostra",
-      "sede": "Palazzo Reale",
-      "tema": "arte",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Opera site-specific di Anselm Kiefer per la Sala delle Cariatidi, un ciclo di grandi tele dedicato alle donne dell'alchimia.",
-      "descrizioneLunga": "Nella Sala delle Cariatidi, segnata dal bombardamento del 1943, Anselm Kiefer presenta 'Le alchimiste', un progetto site-specific composto da 42 grandi tele che rendono omaggio alle figure femminili legate all'alchimia, in un dialogo tra memoria storica e materia pittorica.",
-      "dataInizio": "2026-02-07",
-      "dataFine": "2026-09-27",
-      "indirizzo": "Piazza del Duomo 12, 20122 Milano",
-      "sitoWeb": "https://www.palazzorealemilano.it",
-      "fonteUrl": "https://www.ilgiorno.it/milano/cosa-fare/mostre-estate-2026--p9kqytm3-sck/3"
-    },
-    {
       "id": "mona-hatoum-fondazione-prada",
       "name": "Mona Hatoum. Over, Under and in Between",
       "luogo": "mostra",
@@ -252,22 +236,6 @@
       "descrizioneLunga": "Negli spazi della Cisterna, Mona Hatoum presenta un progetto site-specific composto da tre installazioni dedicate ai motivi della ragnatela, della mappa e della griglia, che riflettono sull'instabilità e la precarietà dell'esistenza coinvolgendo fisicamente il visitatore.",
       "dataInizio": "2026-01-29",
       "dataFine": "2026-11-09",
-      "indirizzo": "Largo Isarco 2, 20139 Milano",
-      "sitoWeb": "https://www.fondazioneprada.org",
-      "fonteUrl": "https://atpdiary.com/mostre-2026-fondazione-prada-milano-venezia/"
-    },
-    {
-      "id": "cao-fei-dash-fondazione-prada",
-      "name": "Cao Fei. Dash",
-      "luogo": "mostra",
-      "sede": "Fondazione Prada",
-      "tema": "arte",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Progetto multimediale dell'artista cinese Cao Fei sulla smart agriculture nelle campagne asiatiche.",
-      "descrizioneLunga": "'Dash' è un progetto multimediale di Cao Fei nato da una ricerca pluriennale sulle campagne cinesi e del sud-est asiatico, tra fotografia e video installazioni, che esplora le tensioni tra tecnologia, lavoro umano, territorio ed ecologia.",
-      "dataInizio": "2026-04-09",
-      "dataFine": "2026-09-28",
       "indirizzo": "Largo Isarco 2, 20139 Milano",
       "sitoWeb": "https://www.fondazioneprada.org",
       "fonteUrl": "https://atpdiary.com/mostre-2026-fondazione-prada-milano-venezia/"
@@ -319,22 +287,6 @@
       "indirizzo": "Viale Emilio Alemagna 6, 20121 Milano",
       "sitoWeb": "https://triennale.org",
       "fonteUrl": "https://www.ansa.it/canale_lifestyle/notizie/design_giardino/2026/03/18/in-triennale-milano-andrea-branzi-by-toyo-ito.-continuous-present_4830a122-f647-49c7-9d2e-4a763e3dc664.html"
-    },
-    {
-      "id": "munari-vedere-aria-museo-novecento",
-      "name": "Bruno Munari. Vedere l'aria",
-      "luogo": "mostra",
-      "sede": "Museo del Novecento",
-      "tema": "arte",
-      "abbonamentoLombardia": true,
-      "beneFai": false,
-      "descrizioneBreve": "Progetto FOCUS900 dedicato all'arte cinetica e programmata di Bruno Munari, tra macchine inutili e opere in movimento.",
-      "descrizioneLunga": "Parte del programma FOCUS900, la mostra esplora uno dei filoni più poetici della ricerca di Bruno Munari: rendere visibile l'aria attraverso opere che integrano tempo e movimento, dalle celebri 'Macchine inutili' ai 'Filipesi', fino all'azione 'Far vedere l'aria' del 1969.",
-      "dataInizio": "2026-04-09",
-      "dataFine": "2026-09-27",
-      "indirizzo": "Via Guglielmo Marconi 1, 20123 Milano",
-      "sitoWeb": "https://www.museodelnovecento.org",
-      "fonteUrl": "https://www.museodelnovecento.org/-/focus900-vedere-l-aria-bruno-munari"
     },
     {
       "id": "arnaldo-pomodoro-gallerie-italia",
@@ -1041,22 +993,6 @@
       "fonteUrl": "https://kaufmannrepetto.com/"
     },
     {
-      "id": "picasso-homme-assis-novecento",
-      "name": "Il primo Picasso di Milano. Homme assis",
-      "luogo": "mostra",
-      "sede": "Museo del Novecento",
-      "tema": "arte",
-      "abbonamentoLombardia": true,
-      "beneFai": false,
-      "descrizioneBreve": "Focus sull'Homme assis di Picasso, primo dipinto del maestro entrato nelle collezioni civiche milanesi.",
-      "descrizioneLunga": "Il Museo del Novecento dedica un focus a 'Homme assis' (1967), il primo Picasso entrato nelle collezioni civiche di Milano: attraverso documenti, fotografie e materiali d'archivio la mostra ne racconta la vicenda, tra antifranchismo e solidarietà internazionale.",
-      "dataInizio": "2026-06-03",
-      "dataFine": "2026-09-27",
-      "indirizzo": "Via Guglielmo Marconi 1, 20123 Milano",
-      "sitoWeb": "https://www.museodelnovecento.org",
-      "fonteUrl": "https://www.museodelnovecento.org/-/il-primo-picasso-di-milano.-un-moschettiere-tra-rivoluzione-antifranchismo-e-solidarieta-internazionale"
-    },
-    {
       "id": "dali-e-la-moda-palazzo-reale",
       "name": "Dalí e la moda",
       "luogo": "mostra",
@@ -1265,5 +1201,5 @@
       "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2026/06/villepin-milano-chiesa-san-vittore-40-martiri/"
     }
   ],
-  "generatedAt": "2026-09-25T14:22:11.583Z"
+  "generatedAt": "2026-10-02T19:40:27.559Z"
 }
