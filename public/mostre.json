@@ -1,6 +1,54 @@
 {
   "exhibits": [
     {
+      "id": "artemisia-gentileschi-annunciazione-diocesano",
+      "name": "Artemisia Gentileschi. L'Annunciazione",
+      "luogo": "mostra",
+      "sede": "Museo Diocesano Carlo Maria Martini",
+      "tema": "arte",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "L'Annunciazione di Artemisia Gentileschi da Capodimonte, Capolavoro per Milano 2026.",
+      "descrizioneLunga": "Il Museo Diocesano accoglie, come Capolavoro per Milano 2026, L'Annunciazione di Artemisia Gentileschi proveniente dal Museo e Real Bosco di Capodimonte. Il dipinto seicentesco e presentato insieme ai risultati di nuove analisi diagnostiche, in un percorso che ne approfondisce la tecnica e la vicenda, a cura di Mario Epifani e Nadia Righi.",
+      "dataInizio": "2026-10-27",
+      "dataFine": "2027-01-31",
+      "indirizzo": "Corso di Porta Ticinese 95, 20123 Milano",
+      "sitoWeb": "https://www.museodiocesano.it",
+      "fonteUrl": "https://www.finestresullarte.info/en/exhibitions/artemisia-gentileschi-s-the-annunciation-is-the-masterpiece-for-milan-2026"
+    },
+    {
+      "id": "martin-parr-ironia-amore-varesina204",
+      "name": "Martin Parr. Ironia & Amore: istruzioni per una vita felice",
+      "luogo": "mostra",
+      "sede": "Spazio Varesina 204",
+      "tema": "fotografia",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Settanta fotografie di Martin Parr tra ironia e sguardo affettuoso sulla societa contemporanea.",
+      "descrizioneLunga": "Nello Spazio Varesina 204, nel Milano Certosa District, la mostra riunisce settanta fotografie realizzate da Martin Parr in oltre trent'anni di carriera. Con immagini tratte da progetti come Common Sense, Signs of the Times e The Last Resort, il percorso racconta l'ironia pungente e lo sguardo affettuoso del maestro britannico sulla societa contemporanea, a cura di Arianna Rinaldo.",
+      "dataInizio": "2026-10-15",
+      "dataFine": "2027-02-28",
+      "indirizzo": "Via Varesina 204, 20156 Milano",
+      "sitoWeb": "https://www.varesina204.it",
+      "fonteUrl": "https://www.varesina204.it/eventi/martin-parr/"
+    },
+    {
+      "id": "segno-di-san-francesco-ambrosiana",
+      "name": "Il 'segno' di San Francesco. Immagini di una vita nell'ottavo centenario della morte",
+      "luogo": "mostra",
+      "sede": "Pinacoteca Ambrosiana",
+      "tema": "storia",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Immagini e opere sulla vita di san Francesco negli ottocento anni dalla morte.",
+      "descrizioneLunga": "La Veneranda Biblioteca Ambrosiana celebra l'ottavo centenario della morte di san Francesco con una mostra che ne ripercorre la vita attraverso immagini e opere, molte inedite. A cura di Marco Navoni e Francesco Braschi, il percorso indaga come la figura del santo sia stata rappresentata e tramandata nei secoli.",
+      "dataInizio": "2026-10-01",
+      "dataFine": "2027-01-12",
+      "indirizzo": "Piazza Pio XI 2, 20123 Milano",
+      "sitoWeb": "https://www.ambrosiana.it",
+      "fonteUrl": "https://www.ambrosiana.it/en/"
+    },
+    {
       "id": "luca-locatelli-future-studies-leica",
       "name": "Luca Locatelli. Future Studies",
       "luogo": "mostra",
@@ -271,22 +319,6 @@
       "indirizzo": "Largo Isarco 2, 20139 Milano",
       "sitoWeb": "https://www.fondazioneprada.org",
       "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2025/12/mostre-2026-milano-venezia-fondazione-prada/"
-    },
-    {
-      "id": "branzi-toyo-ito-triennale",
-      "name": "Andrea Branzi by Toyo Ito. Continuous Present",
-      "luogo": "mostra",
-      "sede": "Triennale Milano",
-      "tema": "design",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Monografica su Andrea Branzi letta attraverso lo sguardo dell'architetto Toyo Ito, con oltre 400 opere.",
-      "descrizioneLunga": "Curata secondo la visione dell'architetto premio Pritzker Toyo Ito, amico e collaboratore di lunga data, la mostra ripercorre il pensiero di Andrea Branzi attraverso installazioni ambientali, modelli, disegni, oggetti e documenti d'archivio, in un percorso fluido concepito come un 'presente continuo'.",
-      "dataInizio": "2026-03-19",
-      "dataFine": "2026-10-04",
-      "indirizzo": "Viale Emilio Alemagna 6, 20121 Milano",
-      "sitoWeb": "https://triennale.org",
-      "fonteUrl": "https://www.ansa.it/canale_lifestyle/notizie/design_giardino/2026/03/18/in-triennale-milano-andrea-branzi-by-toyo-ito.-continuous-present_4830a122-f647-49c7-9d2e-4a763e3dc664.html"
     },
     {
       "id": "arnaldo-pomodoro-gallerie-italia",
@@ -769,22 +801,6 @@
       "fonteUrl": "https://www.fondazioneluigirovati.org/en/"
     },
     {
-      "id": "rovati-etruschi-olanda",
-      "name": "Gli Etruschi e l'Olanda. A/R dei bronzi Corazzi",
-      "luogo": "mostra",
-      "sede": "Fondazione Luigi Rovati",
-      "tema": "storia",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Preziosi bronzi etruschi della collezione Corazzi tornano eccezionalmente in Italia dal Rijksmuseum di Leiden.",
-      "descrizioneLunga": "Nel piano ipogeo della Fondazione Luigi Rovati, in collaborazione con il Rijksmuseum van Oudheden di Leiden e il MAEC di Cortona, la mostra riunisce i preziosi bronzi etruschi della collezione Corazzi, che tornano eccezionalmente in Italia dopo secoli.",
-      "dataInizio": "2026-04-01",
-      "dataFine": "2026-10-04",
-      "indirizzo": "Corso Venezia 52, 20121 Milano",
-      "sitoWeb": "https://www.fondazioneluigirovati.org",
-      "fonteUrl": "https://www.fondazioneluigirovati.org/en/"
-    },
-    {
       "id": "casa-manzoni",
       "name": "Casa del Manzoni",
       "luogo": "museo",
@@ -1201,5 +1217,5 @@
       "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2026/06/villepin-milano-chiesa-san-vittore-40-martiri/"
     }
   ],
-  "generatedAt": "2026-10-02T19:40:27.559Z"
+  "generatedAt": "2026-10-09T20:16:37.060Z"
 }
