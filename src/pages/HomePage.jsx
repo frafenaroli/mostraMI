@@ -7,6 +7,7 @@ import { SearchBar } from '../components/SearchBar';
 import { SurpriseBanner } from '../components/SurpriseBanner';
 import { ArchiveBanner } from '../components/ArchiveBanner';
 import { CarouselSection } from '../components/CarouselSection';
+import { SisterAppBanner } from '../components/SisterAppBanner';
 import { Footer } from '../components/Footer';
 import styles from './HomePage.module.css';
 
@@ -82,6 +83,7 @@ export default function HomePage() {
           linkLabel={section.link}
         />
       ))}
+      <SisterAppBanner />
       <Footer />
     </PageShell>
   );

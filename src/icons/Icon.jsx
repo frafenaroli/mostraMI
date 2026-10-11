@@ -1,7 +1,7 @@
 import {
   Ticket, Landmark, Image, Infinity as InfinityIcon, Box, MapPin, Tag,
   Search, X, ArrowLeft, ArrowUpRight, ArrowRight, ChevronRight, ChevronDown,
-  Sparkle, Clock, Calendar, Filter, SearchX, LayoutGrid,
+  Sparkle, Clock, Calendar, Filter, SearchX, LayoutGrid, Droplet,
 } from 'lucide-react';
 
 // Semantic name -> lucide-react component. Keeps call sites (<Icon name="mostra" />)
@@ -28,6 +28,7 @@ const ICONS = {
   mapPin: MapPin,
   filter: Filter,
   grid: LayoutGrid,
+  droplet: Droplet,
 };
 
 export function Icon({ name, size = 20, color = 'currentColor', strokeWidth = 2, style, className }) {
