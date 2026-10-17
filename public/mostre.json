@@ -1,6 +1,38 @@
 {
   "exhibits": [
     {
+      "id": "oriana-fallaci-palazzo-reale",
+      "name": "Oriana Fallaci. Solo io posso raccontare la mia storia",
+      "luogo": "mostra",
+      "sede": "Palazzo Reale",
+      "tema": "storia",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "A vent'anni dalla morte, una grande mostra su Oriana Fallaci tra foto inedite e manoscritti.",
+      "descrizioneLunga": "Palazzo Reale dedica a Oriana Fallaci, a vent'anni dalla scomparsa, una grande mostra che ne ripercorre la vita e il lavoro di giornalista e scrittrice. Fotografie inedite, manoscritti, documenti e materiali d'archivio raccontano il suo attraversamento del Novecento, dai reportage di guerra alle interviste ai potenti della Terra.",
+      "dataInizio": "2026-11-15",
+      "dataFine": "2027-02-21",
+      "indirizzo": "Piazza del Duomo 12, 20122 Milano",
+      "sitoWeb": "https://www.palazzorealemilano.it",
+      "fonteUrl": "https://www.palazzorealemilano.it/en/-/solo-io-posso-raccontare-la-mia-storia-oriana-fallaci"
+    },
+    {
+      "id": "cento-anni-per-brera-amici-pinacoteca",
+      "name": "Cento anni per Brera. Acquisti e doni degli Amici",
+      "luogo": "mostra",
+      "sede": "Pinacoteca di Brera",
+      "tema": "arte",
+      "abbonamentoLombardia": true,
+      "beneFai": false,
+      "descrizioneBreve": "Un secolo di acquisti e doni dell'associazione Amici di Brera alla Pinacoteca.",
+      "descrizioneLunga": "La Pinacoteca di Brera celebra i cento anni dell'associazione Amici di Brera con una mostra che ripercorre un secolo di acquisti e donazioni. Dipinti, sculture, codici miniati e documenti raccontano il contributo dell'associazione alla crescita delle collezioni del museo.",
+      "dataInizio": "2026-10-06",
+      "dataFine": "2027-01-10",
+      "indirizzo": "Via Brera 28, 20121 Milano",
+      "sitoWeb": "https://pinacotecabrera.org",
+      "fonteUrl": "https://pinacotecabrera.org/en/"
+    },
+    {
       "id": "artemisia-gentileschi-annunciazione-diocesano",
       "name": "Artemisia Gentileschi. L'Annunciazione",
       "luogo": "mostra",
@@ -63,22 +95,6 @@
       "indirizzo": "Via Giuseppe Mengoni 4, 20121 Milano",
       "sitoWeb": "https://leica-camera.com",
       "fonteUrl": "http://www.arte.it/calendario-arte/milano/mostra-luca-locatelli-future-studies-104487"
-    },
-    {
-      "id": "susumu-shingu-il-cosmo-fabbrica-vapore",
-      "name": "Susumu Shingu. Il cosmo",
-      "luogo": "mostra",
-      "sede": "Fabbrica del Vapore",
-      "tema": "arte",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Grande personale del maestro giapponese dell'arte cinetica, tra vento, movimento e natura.",
-      "descrizioneLunga": "Negli spazi della Cattedrale della Fabbrica del Vapore, Il cosmo riunisce oltre sessant'anni di ricerca di Susumu Shingu, poeta del vento e tra i maestri dell'arte cinetica contemporanea. La mostra, la piu ampia personale dell'artista in Italia, presenta sculture in dialogo con movimento, natura e percezione, molte esposte per la prima volta nel Paese.",
-      "dataInizio": "2026-06-17",
-      "dataFine": "2026-10-14",
-      "indirizzo": "Via Giulio Cesare Procaccini 4, 20154 Milano",
-      "sitoWeb": "https://www.fabbricadelvapore.org",
-      "fonteUrl": "https://www.fabbricadelvapore.org/-/il-cosmo/"
     },
     {
       "id": "carla-cerati-plurale-femminile-palazzo-reale",
@@ -1217,5 +1233,5 @@
       "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2026/06/villepin-milano-chiesa-san-vittore-40-martiri/"
     }
   ],
-  "generatedAt": "2026-10-09T20:16:37.060Z"
+  "generatedAt": "2026-10-17T11:56:47.375Z"
 }
