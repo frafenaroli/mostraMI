@@ -1,6 +1,54 @@
 {
   "exhibits": [
     {
+      "id": "carlo-maria-mariani-eternita-pittura-citterio",
+      "name": "Carlo Maria Mariani. L'eternità della pittura",
+      "luogo": "mostra",
+      "sede": "Palazzo Citterio - Grande Brera",
+      "tema": "arte",
+      "abbonamentoLombardia": true,
+      "beneFai": false,
+      "descrizioneBreve": "Prima retrospettiva postuma del maestro dell'Anacronismo, con settanta opere dagli anni Quaranta al 2019.",
+      "descrizioneLunga": "Palazzo Citterio dedica a Carlo Maria Mariani la prima retrospettiva postuma, riunendo circa settanta opere tra dipinti e grandi cartoni dagli anni Quaranta al 2019. A cura di Eike Schmidt e Clayton Calvert, il percorso ripercorre la ricerca del pittore, tra i protagonisti dell'Anacronismo e del ritorno alla pittura colta di fine Novecento.",
+      "dataInizio": "2026-10-09",
+      "dataFine": "2027-01-10",
+      "indirizzo": "Via Brera 12, 20121 Milano",
+      "sitoWeb": "https://palazzocitterio.org",
+      "fonteUrl": "http://www.arte.it/calendario-arte/milano/mostra-carlo-maria-mariani-l-eternit%C3%A0-della-pittura-104455"
+    },
+    {
+      "id": "nel-segno-di-leonardo-gallerie-italia",
+      "name": "Nel segno di Leonardo",
+      "luogo": "mostra",
+      "sede": "Gallerie d'Italia - Piazza Scala",
+      "tema": "arte",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Grande mostra sull'eredità di Leonardo e sui leonardeschi nella pittura lombarda.",
+      "descrizioneLunga": "Le Gallerie d'Italia di Piazza Scala dedicano una grande mostra all'eredità di Leonardo da Vinci a Milano e in Lombardia. A cura di Arturo Galansino e Simone Facchinetti, il percorso ricostruisce come il linguaggio del maestro si sia diffuso tra allievi e seguaci, da Marco d'Oggiono e Boltraffio a Cesare da Sesto, Andrea Solario e Bernardino Luini.",
+      "dataInizio": "2026-11-27",
+      "dataFine": "2027-04-04",
+      "indirizzo": "Piazza della Scala 6, 20121 Milano",
+      "sitoWeb": "https://gallerieditalia.com/it/milano/",
+      "fonteUrl": "https://www.ilgiornaledellarte.com/Mostre/Alle-Gallerie-dItaliaMilano-arrivano-Leonardo-e-i-leonardeschi"
+    },
+    {
+      "id": "inge-morath-sguardo-laterale-fabbrica-vapore",
+      "name": "Inge Morath. Lo sguardo laterale",
+      "luogo": "mostra",
+      "sede": "Fabbrica del Vapore",
+      "tema": "fotografia",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Oltre cento fotografie di Inge Morath, prima donna reporter dell'agenzia Magnum.",
+      "descrizioneLunga": "La Fabbrica del Vapore dedica una grande mostra a Inge Morath, prima donna entrata nell'agenzia Magnum. Oltre cento fotografie dall'archivio Fotohof, dai primi anni Cinquanta al 2002, insieme a documenti e alla ricostruzione del suo studio, raccontano lo sguardo laterale e curioso della fotografa austriaca. A cura di Kurt Kaindl e Vittoria Mainoldi.",
+      "dataInizio": "2026-12-05",
+      "dataFine": "2027-02-28",
+      "indirizzo": "Via Giulio Cesare Procaccini 4, 20154 Milano",
+      "sitoWeb": "https://www.fabbricadelvapore.org",
+      "fonteUrl": "https://www.fabbricadelvapore.org/-/inge_morath_lo_sguardo_laterale/"
+    },
+    {
       "id": "oriana-fallaci-palazzo-reale",
       "name": "Oriana Fallaci. Solo io posso raccontare la mia storia",
       "luogo": "mostra",
@@ -335,54 +383,6 @@
       "indirizzo": "Largo Isarco 2, 20139 Milano",
       "sitoWeb": "https://www.fondazioneprada.org",
       "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2025/12/mostre-2026-milano-venezia-fondazione-prada/"
-    },
-    {
-      "id": "arnaldo-pomodoro-gallerie-italia",
-      "name": "Arnaldo Pomodoro. Una vita",
-      "luogo": "mostra",
-      "sede": "Gallerie d'Italia - Piazza Scala",
-      "tema": "arte",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Grande retrospettiva su oltre sessant'anni di ricerca di Arnaldo Pomodoro, con più di 40 opere.",
-      "descrizioneLunga": "Alle Gallerie d'Italia di Piazza Scala, la retrospettiva ripercorre oltre sessant'anni di lavoro di Arnaldo Pomodoro attraverso più di 40 opere provenienti dalle Collezioni Intesa Sanpaolo e dalla Fondazione, dai primi bassorilievi degli anni Cinquanta alle sperimentazioni degli anni Duemila.",
-      "dataInizio": "2026-05-29",
-      "dataFine": "2026-10-18",
-      "indirizzo": "Piazza della Scala 6, 20121 Milano",
-      "sitoWeb": "https://gallerieditalia.com/it/milano/",
-      "fonteUrl": "https://gallerieditalia.com/en/milan/exhibitions-and-initiatives/"
-    },
-    {
-      "id": "bellezza-bruttezza-gallerie-italia",
-      "name": "Bellezza e Bruttezza. Ideale, reale e caricaturale nel Rinascimento",
-      "luogo": "mostra",
-      "sede": "Gallerie d'Italia - Piazza Scala",
-      "tema": "arte",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "La dialettica tra bellezza ideale e deformità nel Rinascimento, da Botticelli e Michelangelo a Dürer e Cranach.",
-      "descrizioneLunga": "Alle Gallerie d'Italia di Piazza Scala, in collaborazione con Bozar di Bruxelles, la mostra indaga la tensione rinascimentale tra bellezza ideale, realismo e caricatura, con opere di Botticelli, Michelangelo, Tiziano, Dürer e Cranach. A cura di Chiara Rabbi Bernard.",
-      "dataInizio": "2026-07-10",
-      "dataFine": "2026-10-18",
-      "indirizzo": "Piazza della Scala 6, 20121 Milano",
-      "sitoWeb": "https://gallerieditalia.com/it/milano/",
-      "fonteUrl": "https://gallerieditalia.com/it/milano/mostre-e-iniziative/mostre/2026/07/10/mostra-bellezza-e-bruttezza-ideale-reale-caricaturale-rinascimento-milano/"
-    },
-    {
-      "id": "werner-bischof-museo-diocesano",
-      "name": "Werner Bischof. Point of View",
-      "luogo": "mostra",
-      "sede": "Museo Diocesano Carlo Maria Martini",
-      "tema": "fotografia",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Retrospettiva dedicata al fotografo svizzero Werner Bischof, tra i grandi maestri della Magnum.",
-      "descrizioneLunga": "Il Museo Diocesano dedica un'ampia retrospettiva a Werner Bischof, tra i primi fotografi dell'agenzia Magnum, ripercorrendone lo sguardo poetico e rigoroso attraverso reportage e immagini iconiche realizzate in tutto il mondo.",
-      "dataInizio": "2026-05-19",
-      "dataFine": "2026-10-18",
-      "indirizzo": "Corso di Porta Ticinese 95, 20123 Milano",
-      "sitoWeb": "https://www.museodiocesano.it",
-      "fonteUrl": "https://chiostrisanteustorgio.it/en/mostre-eventi/"
     },
     {
       "id": "museo-novecento-permanente",
@@ -1233,5 +1233,5 @@
       "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2026/06/villepin-milano-chiesa-san-vittore-40-martiri/"
     }
   ],
-  "generatedAt": "2026-10-17T11:56:47.375Z"
+  "generatedAt": "2026-10-23T13:28:15.052Z"
 }
