@@ -1,6 +1,38 @@
 {
   "exhibits": [
     {
+      "id": "lucio-fontana-che-splendida-giornata-tornabuoni",
+      "name": "Lucio Fontana. Che splendida giornata…",
+      "luogo": "galleria",
+      "sede": "Tornabuoni Arte Milano",
+      "tema": "arte",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Trenta opere di Lucio Fontana con uno sguardo inedito sul retro delle tele.",
+      "descrizioneLunga": "Tornabuoni Arte riapre a Milano in uno spazio raddoppiato e rinnovato con una mostra dedicata a Lucio Fontana. A cura di Luca Massimo Barbero, il percorso riunisce trenta opere e propone una riflessione originale sul retro delle celebri tele tagliate, accanto ai principali cicli pittorici dell'artista.",
+      "dataInizio": "2026-11-10",
+      "dataFine": "2027-01-23",
+      "indirizzo": "Via Fatebenefratelli 36, 20121 Milano",
+      "sitoWeb": "https://www.tornabuoniarte.it",
+      "fonteUrl": "https://www.arte.it/calendario-arte/milano/mostra-lucio-fontana-che-splendida-giornata-104515"
+    },
+    {
+      "id": "federico-garolla-gente-ditalia-diocesano",
+      "name": "Federico Garolla. Gente d'Italia. Fotografie 1948-1968",
+      "luogo": "mostra",
+      "sede": "Museo Diocesano Carlo Maria Martini",
+      "tema": "fotografia",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Un centinaio di scatti di Federico Garolla raccontano l'Italia dal dopoguerra agli anni Sessanta.",
+      "descrizioneLunga": "Il Museo Diocesano dedica a Federico Garolla una mostra con circa cento fotografie in bianco e nero scattate in Italia nei due decenni successivi alla Seconda guerra mondiale. A cura di Isabella Garolla e Uliano Lucas, il percorso racconta la rinascita del Paese tra costume, moda, lavoro e vita quotidiana.",
+      "dataInizio": "2026-11-19",
+      "dataFine": "2027-04-04",
+      "indirizzo": "Corso di Porta Ticinese 95, 20123 Milano",
+      "sitoWeb": "https://www.museodiocesano.it",
+      "fonteUrl": "https://www.arte.it/calendario-arte/milano/mostra-federico-garolla-gente-d-italia-fotografie-1948-1968-104269"
+    },
+    {
       "id": "carlo-maria-mariani-eternita-pittura-citterio",
       "name": "Carlo Maria Mariani. L'eternità della pittura",
       "luogo": "mostra",
@@ -351,22 +383,6 @@
       "indirizzo": "Largo Isarco 2, 20139 Milano",
       "sitoWeb": "https://www.fondazioneprada.org",
       "fonteUrl": "https://atpdiary.com/mostre-2026-fondazione-prada-milano-venezia/"
-    },
-    {
-      "id": "hito-steyerl-the-island-osservatorio-prada",
-      "name": "Hito Steyerl. The Island",
-      "luogo": "mostra",
-      "sede": "Osservatorio Fondazione Prada",
-      "tema": "arte",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Un nuovo film e un'installazione immersiva di Hito Steyerl sull'intelligenza artificiale e la crisi climatica.",
-      "descrizioneLunga": "All'Osservatorio di Fondazione Prada, in Galleria Vittorio Emanuele II, Hito Steyerl presenta 'The Island', progetto site-specific imperniato sul tema dell'allagamento, che intreccia derive autoritarie legate all'intelligenza artificiale, crisi climatica e pressioni politiche sulla scienza attraverso un nuovo film e un'installazione video immersiva.",
-      "dataInizio": "2025-12-04",
-      "dataFine": "2026-10-30",
-      "indirizzo": "Galleria Vittorio Emanuele II, 20121 Milano",
-      "sitoWeb": "https://www.fondazioneprada.org",
-      "fonteUrl": "https://www.fondazioneprada.org/project/the-island-hito-steyerl/?lang=en"
     },
     {
       "id": "global-antiquity-fondazione-prada",
@@ -1233,5 +1249,5 @@
       "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2026/06/villepin-milano-chiesa-san-vittore-40-martiri/"
     }
   ],
-  "generatedAt": "2026-10-23T13:28:15.052Z"
+  "generatedAt": "2026-10-31T14:45:47.596Z"
 }
