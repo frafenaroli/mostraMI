@@ -273,22 +273,6 @@
       "fonteUrl": "https://www.milanoguida.com/mostre-milano/"
     },
     {
-      "id": "charmaine-poh-mudec",
-      "name": "Charmaine Poh. Make a travel deep of your inside, and don't forget me to take",
-      "luogo": "mostra",
-      "sede": "MUDEC - Museo delle Culture",
-      "tema": "arte",
-      "abbonamentoLombardia": true,
-      "beneFai": false,
-      "descrizioneBreve": "Prima personale italiana della Deutsche Bank Artist of the Year 2025, tra identita, corpo e futuro.",
-      "descrizioneLunga": "Il MUDEC presenta la prima mostra personale in Italia di Charmaine Poh, artista sino-singaporiana vincitrice del premio Deutsche Bank Artist of the Year 2025. Attraverso video, fotografia e performance, il suo lavoro indaga identita, corpo e immaginari del futuro, interrogando il modo in cui ci raccontiamo e ci rappresentiamo.",
-      "dataInizio": "2026-09-18",
-      "dataFine": "2026-11-01",
-      "indirizzo": "Via Tortona 56, 20144 Milano",
-      "sitoWeb": "https://www.mudec.it",
-      "fonteUrl": "https://www.agenziacult.it/eventi/milano-da-settembre-al-mudec-la-prima-personale-italiana-di-charmaine-poh/"
-    },
-    {
       "id": "shilpa-gupta-furla-series-gam",
       "name": "Furla Series - Shilpa Gupta. One Palm Closer to the Sky",
       "luogo": "mostra",
@@ -367,22 +351,6 @@
       "indirizzo": "Via Tortona 56, 20144 Milano",
       "sitoWeb": "https://www.mudec.it",
       "fonteUrl": "https://www.mudec.it/en/matisse/"
-    },
-    {
-      "id": "mona-hatoum-fondazione-prada",
-      "name": "Mona Hatoum. Over, Under and in Between",
-      "luogo": "mostra",
-      "sede": "Fondazione Prada",
-      "tema": "arte",
-      "abbonamentoLombardia": false,
-      "beneFai": false,
-      "descrizioneBreve": "Tre installazioni site-specific di Mona Hatoum negli spazi della Cisterna, tra ragnatele, mappe e griglie.",
-      "descrizioneLunga": "Negli spazi della Cisterna, Mona Hatoum presenta un progetto site-specific composto da tre installazioni dedicate ai motivi della ragnatela, della mappa e della griglia, che riflettono sull'instabilità e la precarietà dell'esistenza coinvolgendo fisicamente il visitatore.",
-      "dataInizio": "2026-01-29",
-      "dataFine": "2026-11-09",
-      "indirizzo": "Largo Isarco 2, 20139 Milano",
-      "sitoWeb": "https://www.fondazioneprada.org",
-      "fonteUrl": "https://atpdiary.com/mostre-2026-fondazione-prada-milano-venezia/"
     },
     {
       "id": "global-antiquity-fondazione-prada",
@@ -1247,7 +1215,55 @@
       "indirizzo": "Viale Lucania, 20139 Milano",
       "sitoWeb": "https://www.villepinart.com",
       "fonteUrl": "https://www.artribune.com/arti-visive/arte-contemporanea/2026/06/villepin-milano-chiesa-san-vittore-40-martiri/"
+    },
+    {
+      "id": "marina-abramovic-element-citterio",
+      "name": "Marina Abramović. Element",
+      "luogo": "installazione",
+      "sede": "Palazzo Citterio - Grande Brera",
+      "tema": "arte",
+      "abbonamentoLombardia": true,
+      "beneFai": false,
+      "descrizioneBreve": "Una serie di performance digitali di Marina Abramović sul ledwall di Palazzo Citterio.",
+      "descrizioneLunga": "Il ledwall di Palazzo Citterio ospita Element, una serie di performance digitali in cui la pratica di Marina Abramović prosegue attraverso un avatar digitale. Il progetto è promosso dal MNAD - Museo Nazionale d'Arte Digitale e curato da Clelia Patella.",
+      "dataInizio": "2026-11-19",
+      "dataFine": "2027-02-17",
+      "indirizzo": "Via Brera 12, 20121 Milano",
+      "sitoWeb": "https://palazzocitterio.org",
+      "fonteUrl": "https://www.finestresullarte.info/mostre/marina-abramovic-porta-sue-performance-digitali-sul-ledwall-di-palazzo-citterio"
+    },
+    {
+      "id": "wildlife-photographer-62-permanente",
+      "name": "Wildlife Photographer of the Year (62ª edizione)",
+      "luogo": "mostra",
+      "sede": "Museo della Permanente",
+      "tema": "fotografia",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Le cento fotografie premiate al più prestigioso concorso di fotografia naturalistica.",
+      "descrizioneLunga": "Torna alla Permanente la mostra del Wildlife Photographer of the Year, il concorso del Natural History Museum di Londra. Tra le cento immagini premiate c'è The Aftermath dell'italiano Federico Veronesi, vincitore assoluto dell'edizione 2026.",
+      "dataInizio": "2026-11-20",
+      "dataFine": "2027-02-07",
+      "indirizzo": "Via Filippo Turati 34, 20121 Milano",
+      "sitoWeb": "https://www.lapermanente.it",
+      "fonteUrl": "https://www.mentelocale.it/milano/146483-wildlife-photographer-of-the-year-2026-la-mostra-al-museo-della-permanente.htm"
+    },
+    {
+      "id": "mimmo-dabbrescia-tempo-incontro-areab",
+      "name": "Mimmo Dabbrescia. Il tempo dell'incontro",
+      "luogo": "galleria",
+      "sede": "Galleria Area\\B",
+      "tema": "fotografia",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Fotografie di Mimmo Dabbrescia a cura di Giovanna Calvenzi, a ingresso libero.",
+      "descrizioneLunga": "La galleria Area\\B presenta il lavoro del fotografo Mimmo Dabbrescia (Barletta, 1938), con ritratti e scatti tra cui Fabrizio De André a Genova nel 1969. La mostra, curata da Giovanna Calvenzi, ruota attorno alla dimensione sospesa e rivelatrice dell'incontro.",
+      "dataInizio": "2026-11-27",
+      "dataFine": "2027-02-17",
+      "indirizzo": "Via Passo Buole 3, 20135 Milano",
+      "sitoWeb": "https://www.areab.org",
+      "fonteUrl": "https://www.cosedicasa.com/mostre/mimmo-dabbrescia-il-tempo-dellincontro"
     }
   ],
-  "generatedAt": "2026-10-31T14:45:47.596Z"
+  "generatedAt": "2026-11-11T19:18:07.488Z"
 }
