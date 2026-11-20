@@ -1,16 +1,10 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-// Navigates to the exhibit detail popup while remembering the page it was
-// opened from, so the modal can render on top of it (and close back to it).
-export function ExhibitLink({ id, children, style, className }) {
-  const location = useLocation();
+// Links to an exhibit page. `fromApp` tells the page it was opened in-app, so
+// its back control can return to the previous view instead of the home.
+export function ExhibitLink({ id, children, className }) {
   return (
-    <Link
-      to={`/mostra/${id}`}
-      state={{ backgroundLocation: location }}
-      style={{ textDecoration: 'none', ...style }}
-      className={className}
-    >
+    <Link to={`/mostra/${id}`} state={{ fromApp: true }} className={className}>
       {children}
     </Link>
   );

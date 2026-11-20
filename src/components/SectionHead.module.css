@@ -1,0 +1,19 @@
+.head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  font-stretch: var(--stretch-heading);
+}
+
+.link {
+  flex: none;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 600;
+}

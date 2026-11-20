@@ -1,25 +1,36 @@
 .header {
-  position: relative;
-  padding: 36px 22px 0;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  align-items: center;
+  height: 56px;
+  padding: 8px 8px 0;
+}
+
+.slot {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: scale var(--dur-press) ease-out;
+}
+
+button.slot:active,
+a.slot:active {
+  scale: var(--press-scale);
 }
 
 .logo {
-  display: inline-block;
-  text-decoration: none;
-}
-
-.logoImg {
-  height: 22px;
-  width: auto;
+  justify-self: center;
   display: block;
 }
 
-@media (min-width: 900px) {
-  .header {
-    padding: 32px 52px 0;
-  }
-  .logoImg {
-    height: 28px;
-  }
+.logoImg {
+  height: 18px;
+  width: auto;
 }

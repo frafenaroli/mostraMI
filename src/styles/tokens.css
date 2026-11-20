@@ -1,44 +1,43 @@
 :root {
   /* Surfaces */
-  --color-bg: oklch(96% 0.012 70);
-  --color-surface: oklch(99% 0 0);
-  --color-surface-glass: oklch(99% 0 0 / 0.78);
-  --color-surface-glass-card: oklch(99% 0 0 / 0.72);
-  --color-surface-glass-strong: oklch(99% 0 0 / 0.85);
-  --color-border: oklch(90% 0.008 60);
-  --color-border-soft: oklch(89% 0.008 60);
-  --color-border-glass: oklch(100% 0 0 / 0.6);
-  --color-scrim: oklch(18% 0.01 40 / 0.5);
+  --color-bg: #F2F3F0;
+  --color-surface: #FFFFFF;
+  --color-segmented: #E4E6E2;
+  --color-border: #DDE0DC;
+  --color-border-strong: #C4C9C3;
 
   /* Text */
-  --color-text-strong: oklch(20% 0.02 40);
-  --color-text: oklch(22% 0.02 40);
-  --color-text-muted: oklch(45% 0.015 40);
-  --color-text-soft: oklch(48% 0.015 40);
-  --color-text-quiet: oklch(50% 0.015 40);
-  --color-text-faint: oklch(46% 0.015 40);
-  --color-icon-quiet: oklch(60% 0.01 60);
+  --color-text: #0F1E13;
+  --color-text-body: #26302A;
+  --color-text-muted: #5D6660;
+  --color-on-dark: #FFFFFF;
 
-  /* Accent gradient (mood: sobrio) */
-  --gradient-accent: linear-gradient(135deg, oklch(65% 0.14 20), oklch(65% 0.12 300));
-  --aura-rosa: oklch(88% 0.07 20 / 0.55);
-  --aura-lilla: oklch(87% 0.06 300 / 0.5);
-  --aura-pesca: oklch(90% 0.07 55 / 0.5);
+  /* Accent (viola MostraMI) */
+  --color-accent: #9B62C4;
+  --color-accent-strong: #7A43A6;
+  --color-accent-deep: #6B3A94;
+  --color-accent-track: #E4DCEC;
+  --color-accent-track-strong: #D9C8E8;
+  --color-accent-soft: #ECE3F3;
 
-  /* Type-specific (luogo) accent, used for the popup aura */
-  --accent-mostra: oklch(82% 0.11 20 / 0.9);
-
-  /* Shadows */
-  --shadow-glass: 0 6px 20px oklch(0% 0 0 / 0.04);
-  --shadow-soft: 0 4px 20px oklch(0% 0 0 / 0.05);
-  --shadow-modal: 0 24px 60px oklch(0% 0 0 / 0.35);
-  --shadow-sheet: 0 -10px 40px oklch(0% 0 0 / 0.3);
-
-  /* Type */
-  --font-serif: 'Fraunces', serif;
-  --font-sans: 'Poppins', sans-serif;
+  /* Type: Archivo with its width axis (font-stretch 62%–125%) */
+  --font-sans: 'Archivo', system-ui, sans-serif;
+  --stretch-display: 68%;
+  --stretch-heading: 72%;
+  --stretch-title: 78%;
 
   /* Layout */
-  --page-max-width: 1280px;
-  --radius-pill: 100px;
+  --page-max-width: 640px;
+  --gutter: 20px;
+  --radius-control: 6px;
+  --radius-chip: 4px;
+  --control-height: 50px;
+}
+
+/* Motion (values from the better-motion guidelines) */
+:root {
+  --ease-spring: cubic-bezier(0.2, 0, 0, 1); /* CSS stand-in for a bounce-0 spring */
+  --dur-press: 150ms;
+  --dur-enter: 300ms;
+  --press-scale: 0.96;
 }

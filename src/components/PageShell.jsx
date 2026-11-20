@@ -1,11 +1,13 @@
+import { useNavigationType } from 'react-router-dom';
 import styles from './PageShell.module.css';
-import { GradientAura } from './GradientAura';
 
-export function PageShell({ aura = false, children }) {
+// Pages reached by a forward navigation rise in by 8px; back/forward and the
+// first load render in place, so restored scroll positions don't jump.
+export function PageShell({ children }) {
+  const enter = useNavigationType() === 'PUSH';
   return (
     <div className={styles.shell}>
-      {aura && <GradientAura />}
-      <div className={styles.inner}>{children}</div>
+      <div className={`${styles.inner} ${enter ? styles.enter : ''}`}>{children}</div>
     </div>
   );
 }

@@ -7,7 +7,7 @@
  *  - Google Fonts (CSS + font files): cache-first, best-effort.
  * URLs are relative to the SW scope, so the app works from any GitHub Pages subpath.
  */
-const VERSION = 'v1';
+const VERSION = 'v2';
 const SHELL_CACHE = `mostrami-shell-${VERSION}`;
 const ASSET_CACHE = `mostrami-assets-${VERSION}`;
 const DATA_CACHE = `mostrami-data-${VERSION}`;

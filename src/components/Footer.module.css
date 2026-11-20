@@ -1,34 +1,24 @@
 .footer {
-  position: relative;
-  margin-top: 10px;
-  padding: 16px 22px 24px;
+  margin-top: auto;
+  padding: 32px var(--gutter) 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
-}
-
-.copy {
-  font: 400 11.5px/1.6 var(--font-sans);
-  color: var(--color-text-soft);
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
   text-align: center;
 }
 
-/* Claude Code icon sized to match the ❤️ emoji next to it. The source PNG
-   has transparent padding, so it needs a larger box to look the same height. */
-.ccLogo {
-  height: 1.5em;
-  width: auto;
-  vertical-align: -0.4em;
-  display: inline-block;
+.made {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-@media (min-width: 900px) {
-  .footer {
-    margin-top: 44px;
-    padding: 26px 52px;
-  }
-  .copy {
-    font-size: 12px;
-  }
+/* The source PNG has transparent padding, so it needs a taller box. */
+.ccLogo {
+  height: 18px;
+  width: auto;
 }

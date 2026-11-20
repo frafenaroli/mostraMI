@@ -1,6 +1,123 @@
 .status {
-  padding: 80px 22px;
-  text-align: center;
-  font: 400 14px var(--font-sans);
-  color: var(--color-text-soft);
+  padding: 40px var(--gutter);
+  font-size: 15px;
+  color: var(--color-text-muted);
 }
+
+.hero {
+  padding: 30px var(--gutter) 0;
+}
+
+.date {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.headline {
+  margin-top: 6px;
+  font-size: 46px;
+  line-height: 0.95;
+  font-weight: 800;
+  font-stretch: var(--stretch-display);
+  letter-spacing: -0.5px;
+}
+
+.lede {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.search {
+  padding: 22px var(--gutter) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search > :last-child {
+  margin-top: 4px;
+}
+
+.inputBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: var(--control-height);
+  padding: 0 14px;
+  border: 1.5px solid var(--color-text);
+  border-radius: var(--radius-control);
+  background: var(--color-surface);
+}
+
+.inputBox:focus-within {
+  outline: 2px solid var(--color-accent-strong);
+  outline-offset: 2px;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: none;
+  font: 400 16px var(--font-sans);
+  color: var(--color-text);
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.section {
+  padding: 44px var(--gutter) 0;
+}
+
+.legend {
+  margin: 4px 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.dot {
+  color: var(--color-accent-strong);
+  font-size: 12px;
+}
+
+.museums {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.museums li {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.museum {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 46px;
+  padding: 8px 0;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* First-visit entrance: date, headline, lede, search, 100ms apart. */
+.stage {
+  animation: fade-in var(--dur-enter) ease-out both;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .stage {
+    animation-name: fade-in-up;
+  }
+}
+
+.headline.stage { animation-delay: 100ms; }
+.lede.stage { animation-delay: 200ms; }
+.search.stage { animation-delay: 300ms; }

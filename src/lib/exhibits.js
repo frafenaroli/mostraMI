@@ -13,17 +13,6 @@ export const LUOGO_LABELS = {
   altro: 'Altro',
 };
 
-// Hue components behind LUOGO_COLORS, used to color-code the popup's aura per luogo type.
-export const LUOGO_HUES = {
-  mostra: 20,
-  museo: 40,
-  galleria: 300,
-  'mostra-permanente': 190,
-  installazione: 80,
-  monumento: 250,
-  altro: 60,
-};
-
 export const TEMA_LABELS = {
   arte: 'Arte',
   scienza: 'Scienza',
@@ -34,27 +23,48 @@ export const TEMA_LABELS = {
   altro: 'Altro',
 };
 
-// Per-luogo color ramps (oklch), ported 1:1 from the approved design.
-export const LUOGO_COLORS = {
-  mostra: { solid: 'oklch(50% 0.14 20)', light: 'oklch(94% 0.03 20)', fg: 'oklch(50% 0.14 20)', border: 'oklch(88% 0.05 20)' },
-  museo: { solid: 'oklch(46% 0.03 40)', light: 'oklch(94% 0.02 40)', fg: 'oklch(46% 0.03 40)', border: 'oklch(87% 0.02 40)' },
-  galleria: { solid: 'oklch(48% 0.12 300)', light: 'oklch(94% 0.025 300)', fg: 'oklch(48% 0.12 300)', border: 'oklch(88% 0.045 300)' },
-  'mostra-permanente': { solid: 'oklch(48% 0.1 190)', light: 'oklch(94% 0.025 190)', fg: 'oklch(48% 0.1 190)', border: 'oklch(88% 0.045 190)' },
-  installazione: { solid: 'oklch(55% 0.13 80)', light: 'oklch(94% 0.03 80)', fg: 'oklch(50% 0.13 80)', border: 'oklch(88% 0.05 80)' },
-  monumento: { solid: 'oklch(48% 0.1 250)', light: 'oklch(94% 0.025 250)', fg: 'oklch(48% 0.1 250)', border: 'oklch(88% 0.045 250)' },
-  altro: { solid: 'oklch(45% 0.015 60)', light: 'oklch(93% 0.006 60)', fg: 'oklch(45% 0.015 60)', border: 'oklch(86% 0.008 60)' },
-};
+const MS_PER_DAY = 1000 * 60 * 60 * 24;
 
-// Tema badges are uniformly "lilla" regardless of the specific tema (as approved in the design).
-export const TEMA_COLOR = { light: 'oklch(94% 0.025 300)', fg: 'oklch(48% 0.12 300)', border: 'oklch(88% 0.045 300)' };
-export const ABBONAMENTO_COLOR = { light: 'oklch(94% 0.03 150)', fg: 'oklch(45% 0.09 150)', border: 'oklch(88% 0.05 150)' };
-export const FAI_COLOR = { light: 'oklch(94% 0.03 210)', fg: 'oklch(46% 0.1 210)', border: 'oklch(88% 0.05 210)' };
-
-// Threshold for the "ultimi giorni" badge, in days-until-dataFine.
+// Threshold for the "Chiude tra N giorni" urgency line, in days-until-dataFine.
 const ULTIMI_GIORNI_SOGLIA = 14;
 
+// "Aperte da poco" in the calendar's opening-date view.
+const APERTE_DA_POCO_GIORNI = 31;
+
+export const MESI = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+const MESI_BREVI = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
+const GIORNI_BREVI = ['dom', 'lun', 'mar', 'mer', 'gio', 'ven', 'sab'];
+
+// Dates in mostre.json are plain YYYY-MM-DD days: parse them at local midnight
+// so day counts don't drift by the UTC offset.
+export function parseDay(value) {
+  const [y, m, d] = String(value).split('-').map(Number);
+  return new Date(y, m - 1, d);
+}
+
+export function startOfToday(now = new Date()) {
+  return new Date(now.getFullYear(), now.getMonth(), now.getDate());
+}
+
+function daysBetween(from, to) {
+  return Math.round((to - from) / MS_PER_DAY);
+}
+
+// "gen 29": the compact date used under the timeline bars.
+export function formatShort(date) {
+  return `${MESI_BREVI[date.getMonth()]} ${date.getDate()}`;
+}
+
+export function formatLong(date) {
+  return `${date.getDate()} ${MESI[date.getMonth()]} ${date.getFullYear()}`;
+}
+
+export function dateParts(date) {
+  return { mon: MESI_BREVI[date.getMonth()], day: String(date.getDate()), dow: GIORNI_BREVI[date.getDay()] };
+}
+
 // Luoghi that are permanent institutions/collections rather than time-boxed
-// shows: their date range is not meaningful, so we label them "Permanente".
+// shows: their date range is not meaningful, so they go under "Sempre aperti".
 const PERMANENT_LUOGHI = new Set(['museo', 'mostra-permanente', 'monumento']);
 
 // An entry is "permanent" when its luogo is an institution type, or when its
@@ -62,18 +72,7 @@ const PERMANENT_LUOGHI = new Set(['museo', 'mostra-permanente', 'monumento']);
 // still carries a real opening date, like Kiefer's Sette Palazzi Celesti).
 export function isPermanent(exhibit) {
   if (PERMANENT_LUOGHI.has(exhibit.luogo)) return true;
-  const end = new Date(exhibit.dataFine);
-  return !Number.isNaN(end.getTime()) && end.getUTCFullYear() >= 2099;
-}
-
-export function getPeriodo(exhibit, today = new Date()) {
-  const start = new Date(exhibit.dataInizio);
-  const end = new Date(exhibit.dataFine);
-  const msPerDay = 1000 * 60 * 60 * 24;
-  if (today < start) return 'in-arrivo';
-  const daysUntilEnd = Math.ceil((end - today) / msPerDay);
-  if (daysUntilEnd <= ULTIMI_GIORNI_SOGLIA) return 'ultimi-giorni';
-  return 'in-corso';
+  return parseDay(exhibit.dataFine).getFullYear() >= 2099;
 }
 
 // Search Google Maps by venue name + address (not the bare street address),
@@ -83,112 +82,189 @@ export function buildMapsUrl(sede, indirizzo) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }
 
-export function formatDateRange(dataInizio, dataFine) {
-  const fmt = (d) => new Date(d).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
-  return `${fmt(dataInizio)} — ${fmt(dataFine)}`;
-}
-
-// Decorates a raw exhibit with derived display data: periodo, tag list, colors.
-export function decorateExhibit(exhibit, today = new Date()) {
-  const periodo = getPeriodo(exhibit, today);
+// Decorates a raw exhibit with derived display data: status, day counts and
+// the position of today along its run (for the timeline bar).
+export function decorateExhibit(exhibit, today = startOfToday()) {
+  const start = parseDay(exhibit.dataInizio);
+  const end = parseDay(exhibit.dataFine);
   const permanent = isPermanent(exhibit);
-  const luogoColor = LUOGO_COLORS[exhibit.luogo] || LUOGO_COLORS.altro;
-  const luogoHue = LUOGO_HUES[exhibit.luogo] ?? 60;
-  // `aura` is a light, airy pastel per tag used for the popup's blobs: light
-  // colours stay light where they overlap, so several never mix into grey mud.
-  const tags = [
-    { id: 'luogo', label: LUOGO_LABELS[exhibit.luogo] || exhibit.luogo, light: luogoColor.light, fg: luogoColor.fg, border: luogoColor.border, aura: `oklch(83% 0.11 ${luogoHue})` },
-    { id: 'tema', label: TEMA_LABELS[exhibit.tema] || exhibit.tema, light: TEMA_COLOR.light, fg: TEMA_COLOR.fg, border: TEMA_COLOR.border, aura: 'oklch(83% 0.11 300)' },
-  ];
-  if (exhibit.abbonamentoLombardia) {
-    tags.push({ id: 'abbonamento', label: 'Abb. Lombardia', light: ABBONAMENTO_COLOR.light, fg: ABBONAMENTO_COLOR.fg, border: ABBONAMENTO_COLOR.border, aura: 'oklch(82% 0.12 150)' });
-  }
-  if (exhibit.beneFai) {
-    tags.push({ id: 'fai', label: 'Bene FAI', light: FAI_COLOR.light, fg: FAI_COLOR.fg, border: FAI_COLOR.border, aura: 'oklch(82% 0.12 210)' });
-  }
+  const daysToStart = daysBetween(today, start);
+  const daysToEnd = daysBetween(today, end);
+
+  let periodo = 'in-corso';
+  if (daysToEnd < 0) periodo = 'concluse';
+  else if (daysToStart > 0) periodo = 'in-arrivo';
+
+  const span = Math.max(1, end - start);
+  const pct = Math.max(0, Math.min(100, ((today - start) / span) * 100));
+
   return {
     ...exhibit,
+    start,
+    end,
     periodo,
     isPermanent: permanent,
-    isUltimiGiorni: !permanent && periodo === 'ultimi-giorni',
     isInArrivo: !permanent && periodo === 'in-arrivo',
-    tags,
-    luogoColor,
+    isAperta: permanent || periodo === 'in-corso',
+    daysToStart,
+    daysToEnd,
+    isUrgent: !permanent && periodo === 'in-corso' && daysToEnd <= ULTIMI_GIORNI_SOGLIA,
+    progress: `${pct.toFixed(1)}%`,
+    startShort: formatShort(start),
+    endShort: formatShort(end),
+    luogoLabel: LUOGO_LABELS[exhibit.luogo] || exhibit.luogo,
+    temaLabel: TEMA_LABELS[exhibit.tema] || exhibit.tema,
     mapsUrl: buildMapsUrl(exhibit.sede, exhibit.indirizzo),
-    dateRangeLabel: permanent ? 'Permanente' : formatDateRange(exhibit.dataInizio, exhibit.dataFine),
   };
 }
 
-export const SORT_OPTIONS = ['rilevanza', 'alfabetico', 'scadenza'];
-export const SORT_LABELS = { rilevanza: 'Rilevanza', alfabetico: 'Alfabetico', scadenza: 'In scadenza' };
-
-const PERIODO_RANK = { 'ultimi-giorni': 0, 'in-corso': 1, 'in-arrivo': 2 };
-
-export function sortExhibits(list, sortKey) {
-  if (sortKey === 'alfabetico') return [...list].sort((a, b) => a.name.localeCompare(b.name, 'it'));
-  if (sortKey === 'scadenza') return [...list].sort((a, b) => PERIODO_RANK[a.periodo] - PERIODO_RANK[b.periodo]);
-  return list;
+function giorni(n) {
+  return n === 1 ? '1 giorno' : `${n} giorni`;
 }
 
-export function matchesFilters(exhibit, filters) {
-  const { luogo, temi, abbonamento, fai, periodo } = filters;
-  if (luogo !== 'tutti' && exhibit.luogo !== luogo) return false;
-  if (temi.length && !temi.includes(exhibit.tema)) return false;
-  if (abbonamento && !exhibit.abbonamentoLombardia) return false;
-  if (fai && !exhibit.beneFai) return false;
-  if (periodo !== 'tutti' && exhibit.periodo !== periodo) return false;
-  return true;
+export function pluralize(n, singular, plural) {
+  return `${n} ${n === 1 ? singular : plural}`;
 }
 
-export const EMPTY_FILTERS = { luogo: 'tutti', temi: [], abbonamento: false, fai: false, periodo: 'tutti' };
-
-export function countActiveFilters(filters) {
-  return (
-    filters.temi.length +
-    (filters.abbonamento ? 1 : 0) +
-    (filters.fai ? 1 : 0) +
-    (filters.periodo !== 'tutti' ? 1 : 0) +
-    (filters.luogo !== 'tutti' ? 1 : 0)
-  );
+// One-line status, e.g. "Chiude tra 7 giorni", "Apre domani".
+export function statusLabel(e) {
+  if (e.isPermanent) return 'Sempre aperto';
+  if (e.isInArrivo) return e.daysToStart === 1 ? 'Apre domani' : `Apre tra ${giorni(e.daysToStart)}`;
+  if (e.daysToEnd === 0) return 'Chiude oggi';
+  if (e.daysToEnd === 1) return 'Chiude domani';
+  return `Chiude tra ${giorni(e.daysToEnd)}`;
 }
 
-export const ARCHIVE_DEFAULT_TITLE = 'Tutte le mostre';
+// Small-caps meta line for the date-block rows: "tra 3 giorni · fino a mar 1".
+export function runMeta(e) {
+  if (e.isPermanent) return 'sempre aperto';
+  if (e.isInArrivo) return `tra ${giorni(e.daysToStart)} · fino a ${e.endShort}`;
+  return `fino a ${e.endShort}`;
+}
 
-// Plural section labels, used for the archive heading when a single luogo is the
-// only active filter (matches the home page's "Musei" wording).
-const LUOGO_PLURAL_LABELS = {
-  mostra: 'Mostre',
-  museo: 'Musei',
-  'mostra-permanente': 'Mostre permanenti',
-  galleria: 'Gallerie',
-  installazione: 'Installazioni',
-  monumento: 'Monumenti',
-  altro: 'Altro',
-};
+export function byEnd(a, b) {
+  return a.end - b.end || a.name.localeCompare(b.name, 'it');
+}
 
-const PERIODO_TITLES = { 'in-corso': 'In corso', 'in-arrivo': 'In arrivo', 'ultimi-giorni': 'Ultimi giorni' };
+export function byStart(a, b) {
+  return a.start - b.start || a.name.localeCompare(b.name, 'it');
+}
 
-// Contextual heading for the archive page. When the active filters name exactly
-// one facet (e.g. arriving from the "Abbonamento Musei Lombardia" banner or a
-// home section), label the list after that section; when nothing is filtered or
-// several facets are combined, it is the full/mixed set — "Tutte le mostre".
-export function archiveTitle(filters) {
-  if (countActiveFilters(filters) !== 1) return ARCHIVE_DEFAULT_TITLE;
-  if (filters.abbonamento) return 'Abbonamento Musei Lombardia';
-  if (filters.fai) return 'Bene FAI';
-  if (filters.periodo !== 'tutti') return PERIODO_TITLES[filters.periodo] || ARCHIVE_DEFAULT_TITLE;
-  if (filters.luogo !== 'tutti') return LUOGO_PLURAL_LABELS[filters.luogo] || LUOGO_LABELS[filters.luogo] || ARCHIVE_DEFAULT_TITLE;
-  if (filters.temi.length === 1) return TEMA_LABELS[filters.temi[0]] || ARCHIVE_DEFAULT_TITLE;
-  return ARCHIVE_DEFAULT_TITLE;
+export function byName(a, b) {
+  return a.name.localeCompare(b.name, 'it');
+}
+
+function stripAccents(s) {
+  return s.normalize('NFD').replace(/[̀-ͯ]/g, '');
 }
 
 export function matchesQuery(exhibit, query) {
-  const q = query.trim().toLowerCase();
+  const q = stripAccents(query.trim().toLowerCase());
   if (!q) return true;
-  return (
-    exhibit.name.toLowerCase().includes(q) ||
-    exhibit.tema.toLowerCase().includes(q) ||
-    exhibit.sede.toLowerCase().includes(q) ||
-    LUOGO_LABELS[exhibit.luogo].toLowerCase().includes(q)
-  );
+  return [exhibit.name, exhibit.sede, exhibit.temaLabel, exhibit.luogoLabel]
+    .some((field) => stripAccents(field.toLowerCase()).includes(q));
+}
+
+// --- Calendario ---------------------------------------------------------------
+
+export const ORDINI = ['chiusura', 'apertura', 'az'];
+export const ORDINE_LABELS = { chiusura: 'Chiusura', apertura: 'Apertura', az: 'A–Z' };
+const ORDINE_DESC = { chiusura: 'in ordine di chiusura', apertura: 'prima le ultime inaugurate, poi le prossime aperture', az: 'in ordine alfabetico' };
+
+export const TIPI = ['mostre', 'sempre-aperti'];
+export const TIPO_LABELS = { mostre: 'mostre', 'sempre-aperti': 'sempre aperti' };
+
+export function matchesFilters(exhibit, { tipo, tema, abbonamento, fai }) {
+  if ((tipo === 'sempre-aperti') !== exhibit.isPermanent) return false;
+  if (tema && exhibit.tema !== tema) return false;
+  if (abbonamento && !exhibit.abbonamentoLombardia) return false;
+  if (fai && !exhibit.beneFai) return false;
+  return true;
+}
+
+function monthLabel(date, today) {
+  const month = MESI[date.getMonth()];
+  // Past the current month next year, the bare month name would be ambiguous.
+  const farAhead = date.getFullYear() > today.getFullYear() && date.getMonth() >= today.getMonth();
+  return farAhead ? `${month} ${date.getFullYear()}` : month;
+}
+
+function monthKey(date) {
+  return `${date.getFullYear()}-${date.getMonth()}`;
+}
+
+function initialOf(name) {
+  const c = stripAccents(name.trim().charAt(0)).toUpperCase();
+  return /[A-Z]/.test(c) ? c : '#';
+}
+
+// Sorts a list for the calendar and tags each item with its group. Returns the
+// flat ordered list plus group metadata (label, total count), so the page can
+// paginate the flat list and still show each group's full count.
+export function calendarOrder(list, ordine, tipo, today = startOfToday()) {
+  if (tipo === 'sempre-aperti' || ordine === 'az') {
+    const items = [...list].sort(byName).map((e) => ({ e, group: initialOf(e.name) }));
+    return withGroups(items, (key) => ({ label: key, big: true }), (n) => String(n));
+  }
+
+  if (ordine === 'apertura') {
+    const recent = list
+      .filter((e) => !e.isInArrivo && -e.daysToStart <= APERTE_DA_POCO_GIORNI)
+      .sort((a, b) => b.start - a.start);
+    const upcoming = list.filter((e) => e.isInArrivo).sort(byStart);
+    const older = list
+      .filter((e) => !e.isInArrivo && -e.daysToStart > APERTE_DA_POCO_GIORNI)
+      .sort((a, b) => b.start - a.start);
+    const items = [
+      ...recent.map((e) => ({ e, group: 'recenti' })),
+      ...upcoming.map((e) => ({ e, group: `apre-${monthKey(e.start)}` })),
+      ...older.map((e) => ({ e, group: 'meno-recenti' })),
+    ];
+    return withGroups(items, (key, first) => {
+      if (key === 'recenti') return { label: 'Aperte da poco' };
+      if (key === 'meno-recenti') return { label: 'Aperte da più tempo' };
+      return { label: `Aprono a ${monthLabel(first.start, today)}` };
+    });
+  }
+
+  const items = [...list].sort(byEnd).map((e) => ({ e, group: monthKey(e.end) }));
+  return withGroups(items, (key, first) => ({ label: `Chiudono a ${monthLabel(first.end, today)}` }));
+}
+
+function withGroups(items, describe, countLabel = (n) => pluralize(n, 'mostra', 'mostre')) {
+  const groups = new Map();
+  for (const { e, group } of items) {
+    if (!groups.has(group)) groups.set(group, { key: group, ...describe(group, e), total: 0 });
+    groups.get(group).total += 1;
+  }
+  for (const g of groups.values()) g.count = countLabel(g.total);
+  return { items, groups };
+}
+
+// Splits the (already paginated) flat list back into its groups, in order.
+export function groupVisible(items, groups) {
+  const out = [];
+  for (const { e, group } of items) {
+    let last = out[out.length - 1];
+    if (!last || last.key !== group) {
+      last = { ...groups.get(group), items: [] };
+      out.push(last);
+    }
+    last.items.push(e);
+  }
+  return out;
+}
+
+export function calendarSubtitle({ count, tipo, ordine, tema, abbonamento, fai, query }) {
+  const permanent = tipo === 'sempre-aperti';
+  let subject = permanent ? pluralize(count, 'luogo sempre aperto', 'luoghi sempre aperti') : pluralize(count, 'mostra a tempo', 'mostre a tempo');
+  if (abbonamento) subject = permanent
+    ? pluralize(count, 'luogo incluso', 'luoghi inclusi') + ' nell’Abbonamento Musei'
+    : pluralize(count, 'mostra inclusa', 'mostre incluse') + ' nell’Abbonamento Musei';
+  const extra = [];
+  if (tema) extra.push(`tema ${TEMA_LABELS[tema].toLowerCase()}`);
+  if (fai) extra.push('Bene FAI');
+  if (query) extra.push(`per “${query}”`);
+  const order = permanent ? ORDINE_DESC.az : ORDINE_DESC[ordine];
+  return [subject, ...extra].join(', ') + `, ${order}`;
 }

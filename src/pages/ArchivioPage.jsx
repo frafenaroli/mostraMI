@@ -1,93 +1,165 @@
 import { useMemo, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { useExhibitsData } from '../lib/ExhibitsContext';
 import { PageShell } from '../components/PageShell';
-import { IconButton } from '../components/IconButton';
-import { ListToolbar } from '../components/ListToolbar';
-import { ResultsList } from '../components/ResultsList';
-import { FilterSheet } from '../components/FilterSheet';
-import { EmptyState } from '../components/EmptyState';
-import { Pill } from '../components/Pill';
-import { EMPTY_FILTERS, matchesFilters, sortExhibits, countActiveFilters, archiveTitle } from '../lib/exhibits';
+import { Header } from '../components/Header';
+import { Button } from '../components/Button';
+import { Chip, ChipRow, ChipSelect } from '../components/Chip';
+import { TimelineRow, DateRow, PlaceRow } from '../components/Rows';
+import { Icon } from '../icons/Icon';
+import {
+  ORDINI, ORDINE_LABELS, TIPI, TIPO_LABELS, TEMA_LABELS,
+  matchesFilters, matchesQuery, calendarOrder, groupVisible, calendarSubtitle, pluralize,
+} from '../lib/exhibits';
 import styles from './ArchivioPage.module.css';
 
-const PAGE_SIZE = 6;
+const PAGE_SIZE = 12;
+const TEMA_OPTIONS = Object.entries(TEMA_LABELS).map(([value, label]) => ({ value, label }));
 
-function filtersFromParams(params) {
-  const filters = { ...EMPTY_FILTERS };
-  if (params.get('luogo')) filters.luogo = params.get('luogo');
-  if (params.get('periodo')) filters.periodo = params.get('periodo');
-  if (params.get('abbonamento')) filters.abbonamento = true;
-  if (params.get('fai')) filters.fai = true;
-  if (params.get('tema')) filters.temi = params.get('tema').split(',');
-  return filters;
+// All calendar state lives in the URL (?ordine, ?tipo, ?tema, ?abbonamento,
+// ?fai, ?q), so home shortcuts can deep-link and "back" restores the view.
+function readParams(params) {
+  const ordine = params.get('ordine');
+  const tipo = params.get('tipo');
+  const tema = params.get('tema');
+  return {
+    ordine: ORDINI.includes(ordine) ? ordine : 'chiusura',
+    tipo: TIPI.includes(tipo) ? tipo : 'mostre',
+    tema: tema && TEMA_LABELS[tema] ? tema : '',
+    abbonamento: params.has('abbonamento'),
+    fai: params.has('fai'),
+    query: params.get('q') || '',
+  };
 }
 
 export default function ArchivioPage() {
   const { status, exhibits } = useExhibitsData();
-  const [searchParams] = useSearchParams();
-  const [filters, setFilters] = useState(() => filtersFromParams(searchParams));
-  const [sort, setSort] = useState('rilevanza');
+  const [params, setParams] = useSearchParams();
+  const state = readParams(params);
+  const { ordine, tipo, query } = state;
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
-  const [sheetOpen, setSheetOpen] = useState(false);
 
-  const filtered = useMemo(
-    () => sortExhibits(exhibits.filter((e) => matchesFilters(e, filters)), sort),
-    [exhibits, filters, sort],
-  );
-  const visible = filtered.slice(0, visibleCount);
-  const hasMore = filtered.length > visibleCount;
-  const activeFilterCount = countActiveFilters(filters);
-
-  function handleFiltersChange(next) {
-    setFilters(next);
+  function update(changes) {
+    setParams((prev) => {
+      const next = new URLSearchParams(prev);
+      for (const [key, value] of Object.entries(changes)) {
+        if (value === '' || value === false || value == null) next.delete(key);
+        else next.set(key, value === true ? '1' : value);
+      }
+      return next;
+    }, { replace: true });
     setVisibleCount(PAGE_SIZE);
   }
-  function handleClear() {
-    setFilters(EMPTY_FILTERS);
-    setVisibleCount(PAGE_SIZE);
-  }
+
+  const { list, otherTipoMatches } = useMemo(() => {
+    const queried = exhibits.filter((e) => matchesQuery(e, query));
+    const otherTipo = tipo === 'mostre' ? 'sempre-aperti' : 'mostre';
+    return {
+      list: queried.filter((e) => matchesFilters(e, state)),
+      otherTipoMatches: query ? queried.filter((e) => matchesFilters(e, { ...state, tipo: otherTipo })).length : 0,
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [exhibits, params]);
+
+  const { items, groups } = useMemo(() => calendarOrder(list, ordine, tipo), [list, ordine, tipo]);
+  const visibleGroups = groupVisible(items.slice(0, visibleCount), groups);
+  const remaining = items.length - visibleCount;
+  const permanentView = tipo === 'sempre-aperti';
 
   if (status === 'loading') return null;
 
   return (
     <PageShell>
-      <div className={styles.topRow}>
-        <IconButton icon="back" to="/" label="Torna alla home" glass={false} />
-        <div className={styles.title}>{archiveTitle(filters)}</div>
+      <Header back={{ to: '/', label: 'Torna alla home' }} current="calendario" />
+
+      <section className={styles.intro}>
+        <h1 className={styles.title}>Calendario</h1>
+        <p className={styles.subtitle} aria-live="polite">{calendarSubtitle({ count: list.length, ...state })}</p>
+      </section>
+
+      <div className={styles.controls}>
+        <label htmlFor="cal-q" className="visually-hidden">Cerca nel calendario</label>
+        <div className={styles.inputBox}>
+          <Icon name="search" size={16} />
+          <input
+            id="cal-q"
+            type="search"
+            className={styles.input}
+            value={query}
+            onChange={(e) => update({ q: e.target.value })}
+            placeholder="Artista, mostra o luogo"
+            enterKeyHint="search"
+          />
+          {query && (
+            <button type="button" className={styles.clear} onClick={() => update({ q: '' })} aria-label="Cancella ricerca">
+              <Icon name="close" size={16} />
+            </button>
+          )}
+        </div>
+
+        {!permanentView && (
+          <div className={styles.segmented} role="group" aria-label="Ordina per">
+            <span className={styles.indicator} style={{ '--i': ORDINI.indexOf(ordine) }} aria-hidden="true" />
+            {ORDINI.map((o) => (
+              <button
+                key={o}
+                type="button"
+                aria-pressed={ordine === o}
+                className={styles.segment}
+                onClick={() => update({ ordine: o === 'chiusura' ? '' : o })}
+              >
+                {ORDINE_LABELS[o]}
+              </button>
+            ))}
+          </div>
+        )}
+
+        <ChipRow label="Filtri">
+          <Chip onClick={() => update({ tipo: permanentView ? '' : 'sempre-aperti' })} aria-label={`Tipo: ${TIPO_LABELS[tipo]}. Cambia tipo`}>
+            Tipo: {TIPO_LABELS[tipo]}
+          </Chip>
+          <ChipSelect label="Tema" value={state.tema} options={TEMA_OPTIONS} onChange={(v) => update({ tema: v })} />
+          <Chip pressed={state.abbonamento} onClick={() => update({ abbonamento: !state.abbonamento })}>Abbonamento Musei</Chip>
+          <Chip pressed={state.fai} onClick={() => update({ fai: !state.fai })}>Bene FAI</Chip>
+        </ChipRow>
       </div>
 
-      <ListToolbar
-        countLabel={`${filtered.length} risultati`}
-        sort={sort}
-        onCycleSort={setSort}
-        activeFilterCount={activeFilterCount}
-        onToggleFilters={() => setSheetOpen(true)}
-      />
+      {visibleGroups.map((g) => (
+        <section key={g.key} className={styles.group} aria-labelledby={`g-${g.key}`}>
+          <h2 className={styles.groupHead} id={`g-${g.key}`}>
+            <span className={g.big ? styles.letter : undefined}>{g.label}</span>
+            <span className={styles.count}>{g.count}</span>
+          </h2>
+          {g.items.map((item) => {
+            if (permanentView) return <PlaceRow key={item.id} item={item} />;
+            if (ordine === 'apertura') return <DateRow key={item.id} item={item} meta />;
+            return <TimelineRow key={item.id} item={item} showAbb={ordine === 'az'} />;
+          })}
+        </section>
+      ))}
 
-      {visible.length > 0 && <ResultsList items={visible} />}
-
-      {hasMore && (
-        <div className={styles.loadMoreRow}>
-          <Pill variant="outline" onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}>Mostrami di più</Pill>
+      {list.length === 0 && (
+        <div className={styles.empty}>
+          <p className={styles.emptyTitle}>Nessun risultato</p>
+          <p className={styles.emptyText}>Prova a togliere qualche filtro o a cercare un'altra parola.</p>
         </div>
       )}
 
-      {filtered.length === 0 && (
-        <EmptyState iconName="search" title="Nessun risultato con questi filtri" desc="Prova a rimuovere qualche filtro attivo per vedere più mostre.">
-          <Pill variant="outline" small onClick={handleClear}>Cancella filtri</Pill>
-          <Pill as={Link} to="/" variant="primary" small>Portami in home</Pill>
-        </EmptyState>
+      {otherTipoMatches > 0 && (
+        <div className={styles.crossLink}>
+          <button type="button" onClick={() => update({ tipo: permanentView ? '' : 'sempre-aperti' })}>
+            {pluralize(otherTipoMatches, 'risultato', 'risultati')} anche tra {permanentView ? 'le mostre a tempo' : 'i luoghi sempre aperti'}
+          </button>
+        </div>
       )}
 
-      <FilterSheet
-        open={sheetOpen}
-        onClose={() => setSheetOpen(false)}
-        filters={filters}
-        onChange={handleFiltersChange}
-        onClear={handleClear}
-        resultsCount={filtered.length}
-      />
+      <div className={styles.more}>
+        {remaining > 0 && (
+          <Button compact onClick={() => setVisibleCount(items.length)}>
+            {remaining === 1 ? 'Mostrami l’ultima' : `Mostrami le altre ${remaining}`}
+          </Button>
+        )}
+      </div>
     </PageShell>
   );
 }

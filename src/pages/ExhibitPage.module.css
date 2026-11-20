@@ -1,0 +1,98 @@
+.article {
+  padding: 22px var(--gutter) 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.kicker {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.title {
+  margin-top: 8px;
+  font-size: 44px;
+  line-height: 0.95;
+  font-weight: 800;
+  font-stretch: 66%;
+  letter-spacing: -0.3px;
+  overflow-wrap: break-word;
+}
+
+.card {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 800;
+  font-stretch: 75%;
+}
+
+.cardTimeline {
+  margin-top: 16px;
+}
+
+.facts {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.facts dt,
+.facts dd {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.facts dt {
+  color: var(--color-text-muted);
+}
+
+.facts strong {
+  font-weight: 600;
+}
+
+.lead {
+  margin-top: 22px;
+  font-size: 19px;
+  line-height: 1.35;
+  font-weight: 600;
+  font-stretch: 90%;
+}
+
+.body {
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--color-text-body);
+}
+
+.related {
+  margin-top: 34px;
+}
+
+.relatedTitle {
+  padding-bottom: 2px;
+  font-size: 20px;
+  font-weight: 800;
+  font-stretch: var(--stretch-heading);
+}
+
+.actions {
+  position: sticky;
+  bottom: 0;
+  margin-top: auto;
+  padding: 14px var(--gutter) calc(22px + env(safe-area-inset-bottom));
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 10px;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+}

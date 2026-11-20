@@ -1,0 +1,37 @@
+.button {
+  height: var(--control-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 18px;
+  border-radius: var(--radius-control);
+  border: 1.5px solid var(--color-text);
+  font: 600 15px var(--font-sans);
+  text-decoration: none;
+  cursor: pointer;
+  transition-property: scale, background-color, color;
+  transition-duration: var(--dur-press);
+  transition-timing-function: ease-out;
+}
+
+.button:not(:disabled):active {
+  scale: var(--press-scale);
+}
+
+.primary,
+.primary:hover {
+  background: var(--color-text);
+  color: var(--color-on-dark);
+}
+
+.outline {
+  background: transparent;
+  color: var(--color-text);
+}
+
+.compact {
+  height: 48px;
+  padding: 0 22px;
+  font-size: 14px;
+}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { decorateExhibit } from './exhibits';
+import { decorateExhibit, startOfToday } from './exhibits';
 
 const DATA_URL = `${import.meta.env.BASE_URL}mostre.json`;
 
@@ -17,8 +17,11 @@ export function useExhibits() {
       })
       .then((data) => {
         if (cancelled) return;
-        const today = new Date();
-        const exhibits = data.exhibits.map((e) => decorateExhibit(e, today));
+        const today = startOfToday();
+        // Shows that ended since the last data refresh are dropped client-side.
+        const exhibits = data.exhibits
+          .map((e) => decorateExhibit(e, today))
+          .filter((e) => e.isPermanent || e.periodo !== 'concluse');
         setState({ status: 'ready', exhibits, generatedAt: data.generatedAt, error: null });
       })
       .catch((error) => {

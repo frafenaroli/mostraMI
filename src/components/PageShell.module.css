@@ -1,12 +1,23 @@
 .shell {
-  position: relative;
   min-height: 100vh;
-  overflow-x: hidden;
   background: var(--color-bg);
 }
 
 .inner {
-  position: relative;
   max-width: var(--page-max-width);
+  min-height: 100vh;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.enter {
+  animation: fade-in 200ms ease-out both;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .enter {
+    animation-name: page-in;
+    animation-duration: 250ms;
+  }
 }
