@@ -1263,7 +1263,39 @@
       "indirizzo": "Via Passo Buole 3, 20135 Milano",
       "sitoWeb": "https://www.areab.org",
       "fonteUrl": "https://www.cosedicasa.com/mostre/mimmo-dabbrescia-il-tempo-dellincontro"
+    },
+    {
+      "id": "costantino-nivola-scolpire-il-vento-triennale",
+      "name": "Costantino Nivola. Scolpire il vento",
+      "luogo": "mostra",
+      "sede": "Triennale Milano",
+      "tema": "arte",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Oltre duecento opere di Costantino Nivola, lo scultore sardo protagonista del modernismo tra Italia e Stati Uniti.",
+      "descrizioneLunga": "Curata da Cecilia Alemani, la mostra riunisce oltre duecento opere di Costantino Nivola (1911-1988), figura chiave del dialogo tra le arti e del modernismo transatlantico, tra la Sardegna e New York. Molti prestiti arrivano dal Museo Nivola di Orani; l'allestimento è di Alessandro Floris.",
+      "dataInizio": "2026-11-11",
+      "dataFine": "2027-02-14",
+      "indirizzo": "Viale Emilio Alemagna 6, 20121 Milano",
+      "sitoWeb": "https://triennale.org",
+      "fonteUrl": "https://triennale.org/en/events/costantino-nivola"
+    },
+    {
+      "id": "alberto-giacometti-e-l-italia-palazzo-reale",
+      "name": "Alberto Giacometti e l'Italia",
+      "luogo": "mostra",
+      "sede": "Palazzo Reale",
+      "tema": "arte",
+      "abbonamentoLombardia": false,
+      "beneFai": false,
+      "descrizioneBreve": "Oltre cento opere di Giacometti raccontano il legame dell'artista con l'Italia.",
+      "descrizioneLunga": "La prima grande mostra milanese su Alberto Giacometti da oltre trent'anni, ideata con la Fondation Giacometti di Parigi e curata da Romain Perrin. Più di cento sculture, dipinti e disegni, insieme a documenti d'archivio inediti, ricostruiscono il rapporto dell'artista con l'Italia.",
+      "dataInizio": "2027-02-25",
+      "dataFine": "2027-06-20",
+      "indirizzo": "Piazza del Duomo 12, 20122 Milano",
+      "sitoWeb": "https://www.palazzorealemilano.it",
+      "fonteUrl": "https://www.finestresullarte.info/mostre/alberto-giacometti-italia-palazzo-reale-oltre-cento-opere-raccontano-legame-con-penisola"
     }
   ],
-  "generatedAt": "2026-11-11T19:18:07.488Z"
+  "generatedAt": "2026-11-20T13:21:43.287Z"
 }
