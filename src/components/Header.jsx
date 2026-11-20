@@ -27,7 +27,7 @@ export function Header({ back, current }) {
       </Link>
       {current === 'calendario' ? (
         <span className={styles.slot} aria-current="page" title="Sei nel calendario">
-          <Icon name="calendar" size={22} fill="var(--color-border)" />
+          <Icon name="calendar" size={22} fill="var(--color-border-subtle)" />
         </span>
       ) : (
         <Link to="/mostre" className={styles.slot} aria-label="Calendario delle mostre">

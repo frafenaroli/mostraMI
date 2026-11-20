@@ -1,5 +1,5 @@
 .intro {
-  padding: 18px var(--gutter) 0;
+  padding: 18px var(--space-gutter) 0;
 }
 
 .title {
@@ -17,7 +17,7 @@
 }
 
 .controls {
-  padding: 18px var(--gutter) 16px;
+  padding: 18px var(--space-gutter) 16px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -29,13 +29,13 @@
   gap: 10px;
   height: 44px;
   padding: 0 4px 0 12px;
-  border: 1.5px solid var(--color-text);
+  border: 1.5px solid var(--color-border-strong);
   border-radius: var(--radius-control);
-  background: var(--color-surface);
+  background: var(--color-bg-surface);
 }
 
 .inputBox:focus-within {
-  outline: 2px solid var(--color-accent-strong);
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 
@@ -46,7 +46,7 @@
   outline: none;
   background: none;
   font: 400 16px var(--font-sans);
-  color: var(--color-text);
+  color: var(--color-text-primary);
 }
 
 .input::placeholder {
@@ -76,7 +76,7 @@
   gap: 4px;
   padding: 4px;
   border-radius: 8px;
-  background: var(--color-segmented);
+  background: var(--color-bg-sunken);
 }
 
 /* Travelling indicator: 3 equal columns, 4px gap/padding; --i is the index. */
@@ -87,7 +87,7 @@
   width: calc((100% - 16px) / 3);
   height: 36px;
   border-radius: 5px;
-  background: var(--color-text);
+  background: var(--color-bg-inverse);
   transform: translateX(calc(var(--i) * (100% + 4px)));
   pointer-events: none;
 }
@@ -104,7 +104,7 @@
   border: none;
   border-radius: 5px;
   background: transparent;
-  color: var(--color-text);
+  color: var(--color-text-primary);
   font: 500 13px var(--font-sans);
   cursor: pointer;
   transition-property: scale, color;
@@ -117,12 +117,12 @@
 }
 
 .segment[aria-pressed='true'] {
-  color: var(--color-on-dark);
+  color: var(--color-text-inverse);
   font-weight: 600;
 }
 
 .group {
-  padding: 0 var(--gutter);
+  padding: 0 var(--space-gutter);
 }
 
 .groupHead {
@@ -151,7 +151,7 @@
 }
 
 .empty {
-  padding: 24px var(--gutter) 0;
+  padding: 24px var(--space-gutter) 0;
 }
 
 .emptyTitle {
@@ -168,7 +168,7 @@
 }
 
 .crossLink {
-  padding: 18px var(--gutter) 0;
+  padding: 18px var(--space-gutter) 0;
 }
 
 .crossLink button {
@@ -176,14 +176,14 @@
   padding: 0;
   border: none;
   background: none;
-  color: var(--color-text);
+  color: var(--color-text-primary);
   font: 600 14px var(--font-sans);
   text-decoration: underline;
   cursor: pointer;
 }
 
 .more {
-  padding: 28px var(--gutter) 32px;
+  padding: 28px var(--space-gutter) 32px;
   display: flex;
   justify-content: center;
 }

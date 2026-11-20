@@ -1,11 +1,11 @@
 .wrap {
-  padding: 44px var(--gutter) 0;
+  padding: 44px var(--space-gutter) 0;
 }
 
 .box {
   display: block;
   padding: 16px;
-  border: 1px solid var(--color-border-strong);
+  border: 1px solid var(--color-border-default);
   border-radius: var(--radius-control);
   text-decoration: none;
 }

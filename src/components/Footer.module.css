@@ -1,6 +1,6 @@
 .footer {
   margin-top: auto;
-  padding: 32px var(--gutter) 28px;
+  padding: 32px var(--space-gutter) 28px;
   display: flex;
   flex-direction: column;
   align-items: center;

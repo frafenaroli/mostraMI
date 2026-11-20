@@ -8,8 +8,8 @@ html, body {
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: var(--color-bg-canvas);
+  color: var(--color-text-primary);
   font-family: var(--font-sans);
   font-stretch: 100%;
   -webkit-font-smoothing: antialiased;
@@ -24,7 +24,7 @@ h1, h2, h3, h4, p, figure, dl, dd {
 }
 
 a {
-  color: var(--color-text);
+  color: var(--color-text-primary);
 }
 
 @media (hover: hover) {
@@ -43,7 +43,7 @@ img, svg {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-accent-strong);
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 

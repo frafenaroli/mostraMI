@@ -8,6 +8,7 @@
     "build": "vite build",
     "lint": "oxlint",
     "validate": "node scripts/validate-mostre.mjs",
+    "tokens": "node scripts/build-tokens.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

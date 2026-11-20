@@ -1,5 +1,5 @@
 .article {
-  padding: 22px var(--gutter) 40px;
+  padding: 22px var(--space-gutter) 40px;
   display: flex;
   flex-direction: column;
 }
@@ -23,8 +23,8 @@
   margin-top: 24px;
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-surface);
 }
 
 .cardTitle {
@@ -48,7 +48,7 @@
 .facts dt,
 .facts dd {
   padding: 12px 0;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .facts dt {
@@ -89,10 +89,10 @@
   position: sticky;
   bottom: 0;
   margin-top: auto;
-  padding: 14px var(--gutter) calc(22px + env(safe-area-inset-bottom));
+  padding: 14px var(--space-gutter) calc(22px + env(safe-area-inset-bottom));
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   gap: 10px;
-  background: var(--color-bg);
-  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-canvas);
+  border-top: 1px solid var(--color-border-subtle);
 }

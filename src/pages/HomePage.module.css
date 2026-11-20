@@ -1,11 +1,11 @@
 .status {
-  padding: 40px var(--gutter);
+  padding: 40px var(--space-gutter);
   font-size: 15px;
   color: var(--color-text-muted);
 }
 
 .hero {
-  padding: 30px var(--gutter) 0;
+  padding: 30px var(--space-gutter) 0;
 }
 
 .date {
@@ -30,7 +30,7 @@
 }
 
 .search {
-  padding: 22px var(--gutter) 0;
+  padding: 22px var(--space-gutter) 0;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -44,15 +44,15 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  height: var(--control-height);
+  height: var(--size-control);
   padding: 0 14px;
-  border: 1.5px solid var(--color-text);
+  border: 1.5px solid var(--color-border-strong);
   border-radius: var(--radius-control);
-  background: var(--color-surface);
+  background: var(--color-bg-surface);
 }
 
 .inputBox:focus-within {
-  outline: 2px solid var(--color-accent-strong);
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 
@@ -63,7 +63,7 @@
   outline: none;
   background: none;
   font: 400 16px var(--font-sans);
-  color: var(--color-text);
+  color: var(--color-text-primary);
 }
 
 .input::placeholder {
@@ -71,7 +71,7 @@
 }
 
 .section {
-  padding: 44px var(--gutter) 0;
+  padding: 44px var(--space-gutter) 0;
 }
 
 .legend {
@@ -92,7 +92,7 @@
 }
 
 .museums li {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .museum {

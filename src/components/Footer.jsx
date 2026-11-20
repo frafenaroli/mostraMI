@@ -12,7 +12,7 @@ export function Footer({ generatedAt }) {
       <span>© 2026 MostraMI by Francesca Fenaroli</span>
       <span className={styles.made}>
         Made with
-        <Icon name="heart" size={13} color="var(--color-accent)" fill="var(--color-accent)" />
+        <Icon name="heart" size={13} color="var(--color-accent-default)" fill="var(--color-accent-default)" />
         <span className="visually-hidden">amore</span>
         &amp;
         <img src={CLAUDE_CODE_SRC} alt="Claude Code" className={styles.ccLogo} />
