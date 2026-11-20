@@ -5,6 +5,7 @@ import './styles/tokens.css';
 import './styles/global.css';
 import App from './App.jsx';
 import { registerSW } from './registerSW.js';
+import { suppressTransitionsOnSchemeChange } from './lib/schemeChange.js';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -15,3 +16,4 @@ createRoot(document.getElementById('root')).render(
 );
 
 registerSW();
+suppressTransitionsOnSchemeChange();

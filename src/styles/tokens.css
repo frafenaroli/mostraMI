@@ -104,6 +104,7 @@
 /* Destinazione: app. Interfaccia quotidiana (web app, PWA). Carta chiara, inchiostro, accento usato con parsimonia. */
 :root,
 [data-destination="app"] {
+  color-scheme: light;
   --color-bg-canvas: var(--color-ink-50);
   --color-bg-surface: var(--color-ink-0);
   --color-bg-sunken: var(--color-ink-100);
@@ -122,10 +123,13 @@
   --color-accent-track: var(--accent-200);
   --color-accent-track-strong: var(--accent-300);
   --color-focus: var(--accent-600);
+  --color-logo-ink: var(--color-ink-900);
+  --color-logo-accent: var(--accent-500);
 }
 
-/* Destinazione: notte. Interfaccia su fondo scuro. Definita ma non attiva in automatico. */
+/* Destinazione: notte. Interfaccia su fondo scuro. Attiva quando il sistema è in modalità scura, se nessuna destinazione è impostata. */
 [data-destination="notte"] {
+  color-scheme: dark;
   --color-bg-canvas: var(--color-ink-950);
   --color-bg-surface: var(--color-ink-900);
   --color-bg-sunken: var(--color-ink-800);
@@ -144,10 +148,40 @@
   --color-accent-track: var(--accent-800);
   --color-accent-track-strong: var(--accent-700);
   --color-focus: var(--accent-300);
+  --color-logo-ink: var(--color-ink-50);
+  --color-logo-accent: var(--accent-400);
+}
+
+/* notte: segue la preferenza di sistema */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-destination]) {
+    color-scheme: dark;
+    --color-bg-canvas: var(--color-ink-950);
+    --color-bg-surface: var(--color-ink-900);
+    --color-bg-sunken: var(--color-ink-800);
+    --color-bg-inverse: var(--color-ink-50);
+    --color-text-primary: var(--color-ink-50);
+    --color-text-body: var(--color-ink-100);
+    --color-text-muted: var(--color-ink-400);
+    --color-text-inverse: var(--color-ink-950);
+    --color-border-subtle: var(--color-ink-800);
+    --color-border-default: var(--color-ink-700);
+    --color-border-strong: var(--color-ink-100);
+    --color-accent-default: var(--accent-400);
+    --color-accent-strong: var(--accent-300);
+    --color-accent-text: var(--accent-200);
+    --color-accent-subtle: var(--accent-900);
+    --color-accent-track: var(--accent-800);
+    --color-accent-track-strong: var(--accent-700);
+    --color-focus: var(--accent-300);
+    --color-logo-ink: var(--color-ink-50);
+    --color-logo-accent: var(--accent-400);
+  }
 }
 
 /* Destinazione: campagna. Comunicazione: social, poster, affissioni. L'accento diventa il campo, il testo è carta. */
 [data-destination="campagna"] {
+  color-scheme: dark;
   --color-bg-canvas: var(--accent-600);
   --color-bg-surface: var(--accent-700);
   --color-bg-sunken: var(--accent-700);
@@ -166,10 +200,13 @@
   --color-accent-track: var(--accent-400);
   --color-accent-track-strong: var(--accent-300);
   --color-focus: var(--color-ink-0);
+  --color-logo-ink: var(--color-ink-0);
+  --color-logo-accent: var(--accent-200);
 }
 
 /* Destinazione: stampa. Monocromo: fotocopie, B/N, timbri. Tutti gli accenti collassano sull'inchiostro. */
 [data-destination="stampa"] {
+  color-scheme: light;
   --color-bg-canvas: var(--color-ink-0);
   --color-bg-surface: var(--color-ink-0);
   --color-bg-sunken: var(--color-ink-100);
@@ -188,4 +225,6 @@
   --color-accent-track: var(--color-ink-300);
   --color-accent-track-strong: var(--color-ink-300);
   --color-focus: var(--color-ink-900);
+  --color-logo-ink: var(--color-ink-900);
+  --color-logo-accent: var(--color-ink-600);
 }

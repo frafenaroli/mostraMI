@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import { Icon } from '../icons/Icon';
-
-const LOGO_SRC = `${import.meta.env.BASE_URL}logo.svg`;
+import { Logo } from './Logo';
 
 // Three-slot app bar: optional back control, centered logo, calendar shortcut
 // (rendered as the "you are here" state on the calendar itself).
@@ -23,7 +22,7 @@ export function Header({ back, current }) {
         <span aria-hidden="true" />
       )}
       <Link to="/" className={styles.logo} aria-label="MostraMI, home">
-        <img src={LOGO_SRC} alt="MostraMI" className={styles.logoImg} />
+        <Logo className={styles.logoImg} />
       </Link>
       {current === 'calendario' ? (
         <span className={styles.slot} aria-current="page" title="Sei nel calendario">

@@ -43,7 +43,7 @@ Per aggiungere un accento: una nuova scala in `color`, una voce in `accent`. Le 
 | Destinazione | Dove | Logica cromatica |
 | --- | --- | --- |
 | `app` | Web app e PWA | Carta `ink.50`, inchiostro `ink.900`. L'accento solo su timeline, tag e logo. |
-| `notte` | Interfaccia su fondo scuro | Scala ink invertita, accento schiarito (400). **Definita, non attiva**: il logo SVG ha i colori fissi e va prima adattato. |
+| `notte` | Interfaccia su fondo scuro | Scala ink invertita, accento schiarito (400). Si attiva da sola quando il sistema è in modalità scura e nessuna destinazione è impostata. |
 | `campagna` | Social, poster, affissioni | L'accento diventa il campo (600), il testo è carta. La timeline è bianca. |
 | `stampa` | B/N, fotocopie, timbri | Gli accenti collassano sull'inchiostro: la forma basta a riconoscere il marchio. |
 
@@ -69,6 +69,8 @@ Per aggiungere un accento: una nuova scala in `color`, una voce in `accent`. Le 
 | `accent.track` | accent.200 | accent.800 | accent.400 | ink.300 |
 | `accent.track-strong` | accent.300 | accent.700 | accent.300 | ink.300 |
 | `focus` | accent.600 | accent.300 | ink.0 | ink.900 |
+| `logo.ink` ("mostra") | ink.900 | ink.50 | ink.0 | ink.900 |
+| `logo.accent` ("mi") | accent.500 | accent.400 | accent.200 | ink.600 |
 
 ### Contrasti verificati (WCAG)
 
@@ -126,7 +128,10 @@ Le date usano il maiuscoletto con cifre tabulari, larghezza 72%. I token di corp
 | AbbTag | `src/components/AbbTag.jsx` | Tag Abbonamento Musei |
 | SectionHead | `src/components/SectionHead.jsx` | Titolo di sezione con link |
 
+## Logo
+
+Nell'app il logo è il componente `Logo` (`src/components/Logo.jsx`), un SVG in linea: "mostra" usa `logo.ink`, "mi" usa `logo.accent`, quindi segue destinazione e accento. `public/logo.svg` resta la versione fissa (app · viola) per usi esterni.
+
 ## Limiti noti
 
-- `public/logo.svg` ha i colori fissi (ink.900 e viola.500): in `notte` e `campagna` va prima reso adattabile.
 - `data-accent` va messo sullo stesso elemento di `data-destination`: i valori semantici si risolvono dove sono dichiarati.

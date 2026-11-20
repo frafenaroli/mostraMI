@@ -34,9 +34,13 @@ function cssValue({ $type, $value }) {
   return String($value);
 }
 
-function block(selector, entries, comment) {
-  const lines = entries.map(([name, token]) => `  --${name}: ${cssValue(token)};`);
+function block(selector, entries, comment, extra = []) {
+  const lines = [...extra, ...entries.map(([name, token]) => `--${name}: ${cssValue(token)};`)].map((l) => `  ${l}`);
   return `${comment ? `/* ${comment} */\n` : ''}${selector} {\n${lines.join('\n')}\n}\n`;
+}
+
+function indent(css) {
+  return css.trimEnd().split('\n').map((l) => (l ? `  ${l}` : l)).join('\n');
 }
 
 const { accent, destination, ...base } = tokens;
@@ -55,7 +59,16 @@ for (const family of Object.keys(accent).filter((k) => !k.startsWith('$'))) {
 for (const name of Object.keys(destination).filter((k) => !k.startsWith('$'))) {
   const selector = name === DEFAULT_DESTINATION ? `:root,\n[data-destination="${name}"]` : `[data-destination="${name}"]`;
   const d = destination[name];
-  parts.push(block(selector, leaves(d).map(([p, t]) => [p.join('-'), t]), `Destinazione: ${name}. ${d.$description ?? ''}`.trim()));
+  const ext = d.$extensions?.['com.mostrami'] ?? {};
+  const extra = ext.colorScheme ? [`color-scheme: ${ext.colorScheme};`] : [];
+  const entries = leaves(d).map(([p, t]) => [p.join('-'), t]);
+  parts.push(block(selector, entries, `Destinazione: ${name}. ${d.$description ?? ''}`.trim(), extra));
+  // A destination marked followsSystem takes over the page root when the OS
+  // asks for a dark scheme and no destination was set explicitly.
+  if (ext.followsSystem) {
+    const auto = block(':root:not([data-destination])', entries, null, extra);
+    parts.push(`/* ${name}: segue la preferenza di sistema */\n@media (prefers-color-scheme: dark) {\n${indent(auto)}\n}\n`);
+  }
 }
 
 const css = parts.join('\n');
